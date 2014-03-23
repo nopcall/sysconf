@@ -1,0 +1,57 @@
+"{{{ Keybinding Start--------------------------------------------------------}}}
+map -count -modes=c,i,n,t,v <C-c> <Pass>
+map -count -modes=c,i,t <C-v> <Pass>
+map -count -modes=c,i,t <C-x> <Pass>
+map -count -modes=c,i,t <C-z> <Pass>
+" move tabs
+map -count -modes=i <C-n> <Esc>:tabnext<Return>
+map -count -modes=i <C-p> <Esc>:tabprev<Return>
+" move more step
+map -count -modes=n,v j -builtin <count>5j
+map -count -modes=n,v k -builtin <count>5k
+map -count -modes=n,v d -builtin <count><C-d>
+map -count -modes=n,v u -builtin <count><C-u>
+" close tab and undo
+map -count -modes=n,v x -builtin <count>d
+map -count -modes=n,v X -builtin <count>u
+" select next tab
+map -count -modes=n,v w -builtin <count><C-n>
+map -count -modes=n,v q -builtin <count><C-p>
+" prev selected tab
+nmap -builtin J <C-^>
+nmap -builtin K <C-^>
+" other
+map -count -modes=n,v c -builtin <count><C-o>
+map -count -modes=n,v v -builtin <count><C-i>
+" select next&prev in command line
+cmap <C-n> <tab>
+cmap <C-p> <S-Tab>
+" U list closed tabs
+nmap -builtin U :undo<Space>
+" tabgroup
+if config.OS.isMacOSX
+	nmap -builtin ,e <S-M-e>
+else
+	nmap -builtin ,e <S-C-e>
+end
+" viewsource in new tab
+nmap -builtin gf :tab viewsource<CR>
+" leader bindings for downloads, addons etc.
+map -builtin ,la :addons<cr>
+map -builtin ,ld :downloads<cr>
+map -builtin ,da :dialog addons<cr>
+map -builtin ,dd :dialog downloads<cr>
+map -builtin ,dp :dialog preference<cr>
+map -builtin ,ac :tabopen about:config<cr>
+" quick change website encoding display
+map -builtin ,es :set encoding=Shift_JIS
+map -builtin ,ec :set encoding=EUC-JP
+map -builtin ,eu :set encoding=UTF-8
+map -builtin ,eg :set encoding=GB2312
+" auto add -tags option when adding bookmark
+nmap -builtin a a<Space>-tags<Space>
+" quick find bookmarks by tags
+nmap -builtin <C-b> :bmarks<Space>-tags<Space>
+" collect all buffers' address to clipboard
+map -description='Yank all locations to the clipboard' -modes=n,v <C-y> -ex yank :tabdo :echo buffer.uri.spec
+"{{{ Keybinding Ends---------------------------------------------------------}}}

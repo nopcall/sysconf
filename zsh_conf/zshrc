@@ -1,0 +1,53 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+DEFAULT_USER=nopcall
+
+# custom config dir environment
+DATA=/home/Data
+SYSCONF_DIR=$HOME/Data/git_projects/sysconf/
+SYSCONF_ZSH_DIR=$SYSCONF_DIR/zsh_conf
+
+# zsh theme
+source $SYSCONF_ZSH_DIR/zshrc.theme
+
+# oh-my-zsh plugins dependence on platform
+if [ `uname` = 'Linux' ]; then
+    plugins=(autojump git history-substring-search knife)
+else if [ `uname` = 'Darwin' ]; then
+    plugins=(brew autojump git history-substring-search knife)
+fi
+fi
+
+# source oh-my-zsh environment
+source $ZSH/oh-my-zsh.sh
+
+# environment
+source $SYSCONF_ZSH_DIR/zshrc.env
+# functions
+source $SYSCONF_ZSH_DIR/zshrc.func
+# zsh plus
+source $SYSCONF_ZSH_DIR/zshrc.plus
+# source alias
+source $SYSCONF_ZSH_DIR/zshrc.alias
+
+#{{{ special system
+# Ubuntu
+if [[ $(lsb_release -is 2>/dev/null) == "Ubuntu" ]] ; then
+    source $SYSCONF_ZSH_DIR/zshrc.ubuntu
+fi
+# Gentoo
+if [[ $(lsb_release -is 2>/dev/null) == "Gentoo" ]] ; then
+    source $SYSCONF_ZSH_DIR/zshrc.gentoo
+fi
+# Mac
+if [ `uname` = 'Darwin' ]; then
+    source $SYSCONF_ZSH_DIR/zshrc.mac
+fi
+#}}}
+
+# Customize to your needs...
+# setxkbmap -option terminate:ctrl_alt_bksp
+# source alias
+if [[ -f ~/.zshrc.secret ]]; then
+	source $HOME/.zshrc.secrets
+fi

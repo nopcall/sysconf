@@ -1,0 +1,30 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url(chrome://browser/content/browser.xul) {
+    /*菜单字体大小*/
+    menuitem,menu,.splitmenu-menu,.splitmenu-menuitem{font-size:16px !important;}
+    /*全局字体*/
+    *{font-style: normal !important;
+      font-family: "Xhei",Xhei !important;}
+
+    *:not([class*="icon"]):not(i){font-family: "Source Sans Pro","Tahoma","Microsoft YaHei","SimSun","FontAwesome","FZSongS","Segoe UI","Segoe UI Symbol","Symbola","Meiryo","Malgun Gothic","Arial Unicode MS"  !important;}
+    .iconfont > em{font-family: "shop-iconfont","global-iconfont"  !important;}
+    span.fui-logo-text{font-family: "IterCast-Icon"  !important;}
+    span.diffstat-bar,span.diff-added{font-family: "octicons"  !important;}
+    .pointsPanel h2 > span, .pointsPanel h2 > strong,#indexbutton{font-family: "League Gothic","html5test"  !important;}
+    .toolbox ins a,.tool_ul li a ins,.panel ins a{font-family: "2345"  !important;}
+    span.nba_matchnav_score{font-family: "SimSun"  !important}
+    #go_top{font-family: "w3cplus"  !important;}
+    .social li a{font-family: "JustVectorRegular"  !important;}
+    /*update:⏳2014.02.12⏱16:15*//*【此行出现乱码，请安装Symbola字体，正常字符是：漏沙和秒表】*/
+/*常见字体集
+    有衬线：serif
+    无衬线：sans-serif
+    中国大陆：Microsoft YaHei/FZSongS/SimSun/Simsun (Founder Extended)
+    日本：Meiryo
+    韩国：Malgun Gothic
+    英文：Tahoma/Georgia/Times New Roma/Segoe UI
+    混合：Segoe UI Symbol
+    编程字体：Source Sans Pro
+    Unicode：Symbola/Arial Unicode MS/Unifont
+    常见字体集*/
+}

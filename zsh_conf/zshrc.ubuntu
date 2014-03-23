@@ -1,0 +1,5 @@
+if [ ! -f "screenfetch-dev" ]; then
+    screenfetch-dev
+fi
+PATH=$HOME/project/git_project/rtags/bin:$PATH
+echo 'You are using Ubuntu!'

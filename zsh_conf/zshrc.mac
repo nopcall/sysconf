@@ -1,0 +1,11 @@
+#{{{ path
+PATH=/usr/local/mysql/bin:$PATH
+#}}}
+
+#{{{
+alias flushdns="sudo killall -HUP mDNSResponder"
+alias wpx="python ~/wallproxy/local/startup.py"
+alias svim="sudo -H vim "
+#}}}
+
+echo 'You are using Gentoo!'

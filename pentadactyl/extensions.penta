@@ -1,0 +1,25 @@
+"{{{ Plugins Config Start----------------------------------------------------}}}
+" Group
+group user
+" Load all match plugins or style files under 'plugins' directory
+loadplugins '\.(css|js|penta)$'
+
+" plugin: flashblocker.js
+set fbwhitelist=music.baidu.com,play.baidu.com,music.163.com,box.zhangmen.baidu.com,http://v.youku.com/v_showMini/*
+:map -silent <A-f> :flashtoggle<CR>
+:map -silent <A-p> :flashtoggle<CR>
+
+" plugin: noscript-dev.js
+:map <A-S-s> :set nst!=<A-Tab><CR><C-r>
+
+"{{ plugin: buftabs.js works perfect with tab-on-statusline.js
+set bte=nbht
+hi -a BufTabSelected {background-repeat:no-repeat; background-size:contain, contain; background-position: 4px top; color:#fff; background-color:#f92672; padding:0 4px; font-weight:normal; border-radius:8px;}
+hi -a BufTabAlternate {background-repeat:no-repeat; background-size:contain, contain; background-position: 4px top; padding:0 4px; cursor:pointer !important; border-radius:8px;}
+hi -a BufTab {background-repeat:no-repeat; background-size:contain, contain; background-position: 4px top; padding:0 4px; cursor:pointer !important;border-radius:8px; border-radius:8px;}
+hi -a BufTab:hover {color:#2e3330; background-color:#88b090; border-radius:2px; border-radius:8px;}
+hi -a BufTabAlternate:hover {color:#2e3330; background-color:#88b090; border-radius:2px; border-radius:8px;}
+" move status panel to top
+:style chrome://browser/content/browser.xul #browser-bottombox {-moz-box-ordinal-group:0;}
+"}}
+"{{{ Plugins Config Ends-----------------------------------------------------}}}

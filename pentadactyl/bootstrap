@@ -1,0 +1,118 @@
+"" {{{ Search Engines
+"" hide all browser search engines except google(for suggestion)
+js services.browserSearch.getEngines().forEach(function (e) {if(e.name!="Google") e.hidden = true})
+silent bmark -tags searchengine -title='Google SSL Search' https://www.google.com/search?q=%s&ion=0&safe=off&lr=lang_zh-CN|lang_zh-TW|lang_en -keyword g
+silent bmark -tags searchengine -title='Google Lucky Search' https://www.google.com/search?q=%s&ion=0&lr=lang_zh-CN|lang_zh-TW|lang_en&btnI=1 -keyword gl
+silent bmark -tags searchengine -title='DuckDuckGo Search' https://duckduckgo.com/?q=%s&kf=fw&kj=b2&ks=t&kw=n&ka=g&ko=s&kt=Lucida%20Grande&km=m&k1=-1&kv=1 -keyword ddg
+silent bmark -tags searchengine -title='Google Code Search' http://google.com/codesearch?q=%s -keyword gc
+silent bmark -tags searchengine -title='Wikipedia Search' http://en.wikipedia.org/wiki/Special:Search?search=%s -keyword w
+silent bmark -tags searchengine -title='Twitter Search' https://twitter.com/search/%s -keyword t
+silent bmark -tags searchengine -title='Debian Package Search' http://packages.debian.org/search?keywords=%s -keyword d
+silent bmark -tags searchengine -title='Debian File Search' http://packages.debian.org/search?searchon=contents&mode=filename&keywords=%s -keyword df
+silent bmark -tags searchengine -title='Mtime Movie Search' http://search.mtime.com/search/?%s -keyword m
+silent bmark -tags searchengine -title='Douban Movie Search' http://movie.douban.com/subject_search?search_text=%s&cat=1002 -keyword dm
+silent bmark -tags searchengine -title='Shooter Subtitle Search' http://shooter.cn/search/%s -keyword s
+silent bmark -tags searchengine -title='Baidu Search' -charset=GB2312 http://www.baidu.com/s?wd=%s&rsv_bp=0&rsv_spt=3 -keyword b
+silent bmark -tags searchengine -title='KTXP Torrent Search' http://bt.ktxp.com/search.php?keyword=%s -keyword k
+silent bmark -tags searchengine -title='CHDBits Search' http://chdbits.org/torrents.php?incldead=1&spstate=0&inclbookmarked=0&search=%s&search_area=0&search_mode=0 -keyword c
+silent bmark -tags searchengine -title='Baidu MP3 Search' -charset=GB2312 http://mp3.baidu.com/m?f=ms&rf=idx&tn=baidump3&ct=134217728&lf=&rn=&word=%s&lm=-1 -keyword bm
+silent bmark -tags searchengine -title='Mobilism Search' http://forum.mobilism.org/search.php?keywords=%s&fid[]=398&sc=1&sr=topics&sf=titleonly -keyword mo
+silent bmark -tags searchengine -title='Taobao Search' http://s.taobao.com/search?q=%s -keyword tb
+"" }}}
+
+"" {{{ Firefox Setting
+set! ui.caretWidth=5
+set! ui.caretBlinkTime=0
+"" disable web page accesskey, this leads to key conflict
+set! ui.key.generalAccessKey=0
+set! browser.tabs.closeWindowWithLastTab=false
+set! browser.tabs.insertRelatedAfterCurrent=true
+set! network.dns.disableIPv6=true
+set! network.proxy.socks_remote_dns=true
+"" set proxy.pac
+js <<EOF
+   prefs.set("network.proxy.type", 2);
+   prefs.set("network.proxy.autoconfig_url", "file://" + io.File(IO.runtimePath).path + "/proxy.pac");
+EOF
+"" shorten http connection timout
+set! network.http.connection-timeout=15
+set! browser.startup.homepage="about:blank"
+set! browser.download.useDownloadDir=false
+set! browser.download.manager.showWhenStarting=false
+set! browser.download.manager.showAlertOnComplete=true
+set! general.warnOnAboutConfig=false
+set! intl.accept_languages="en-us,en,zh-cn,zh"
+set! view_source.wrap_long_lines=true
+"" do not reload tabs when restarting firefox, see http://blog.zpao.com/post/1140456188/cascaded-session-restore-a-hidden-bonus
+set! browser.sessionstore.restore_on_demand=true
+"" save session every 5min, see http://lifehacker.com/5342636/
+set! browser.sessionstore.interval=300000
+"" http://www.stayupdate.com/firefox/increase-firefox-speed-and-decrease-firefox-memory-usage-20-tips/567
+set! nglayout.initialpaint.delay=150
+set! content.notify.interval=500000
+set! content.notify.ontimer=true
+set! content.switch.threshold=250000
+set! content.interrupt.parsing=false
+"" disable the install-dialog delay
+set! security.dialog_enable_delay=0
+"" disable tabgroup animation
+set! browser.panorama.animate_zoom=false
+"" do not track
+set! privacy.donottrackheader.enabled=true
+"" enable builtin flashblock
+set! plugins.click_to_play=true
+if config.OS.isMacOSX
+   set! font.name.monospace.x-western="Source Code Pro"
+end
+if config.OS.isWindows
+   set! font.name.monospace.zh-CN="Consolas"
+   set! font.name.sans-serif.zh-CN="微软雅黑"
+   set! font.name.serif.zh-CN="微软雅黑"
+end
+if config.OS.isLinux
+   set! font.name.monospace.zh-CN="Source Code Pro"
+   set! font.name.sans-serif.zh-CN="微软雅黑"
+   set! font.name.serif.zh-CN="微软雅黑"
+end
+"" disable addons compatibility check
+js <<EOF
+// get version, kanged from https://addons.mozilla.org/en-us/firefox/addon/checkcompatibility/
+   let appVersion = Services.appinfo.version.replace(/^([^\.]+\.[0-9]+[a-z]*).*/i, "$1");
+   prefs.set("extensions.checkCompatibility." + appVersion, false);
+   prefs.set("extensions.checkCompatibility." + (parseInt(appVersion) + 1) + ".0", false);
+   prefs.set("extensions.checkCompatibility.nightly", false);
+EOF
+"" speedup
+js <<EOF
+   prefs.set("extensions.amcontextmenu.firstRun", false);
+   prefs.set("extensions.cckwizard.firstrun", false);
+   prefs.set("extensions.dntp.firstrun", false);
+   prefs.set("extensions.https_everywhere.firstrun_context_menu", false);
+   prefs.set("extensions.httpsfinder.firstrun", false);
+   prefs.set("signed.applets.codebase_principal_support", true);//添加迅雷支持？好像，没什么效果，先加着吧。
+   prefs.set("security.dialog_enable_delay", 0);//页面显示加快，加快。
+   prefs.set("network.dns.disableIPv6", true);//默认为false，设置为true，禁用掉IPV6，而且，我的网络不是ipv6。
+   prefs.set("network.proxy.type", 0);//网络链接规则？0 直接链接；1 手动配置；2 使用PAC；4 自动检查带来设置；5 使用系统配置（默认）
+   prefs.set("network.http.max-connections", 128);//连接同一个伺服器允许的最大连接数
+   prefs.set("network.http.pipelining.maxrequests", 32);//Firefox可同时启动HTTP request的上限值
+   prefs.set("network.dns.disablePrefetch", true);//关闭dns预解析
+   prefs.set("network.dnsCacheExpirationGracePeriod", 0);//DNS缓存的时间，设为0如要清空浏览器的DNS缓存则不需要重启浏览器
+   prefs.set("network.http.pipelining", true);//开启http流水线
+   prefs.set("network.http.spdy.enabled", true);//默认开启spdy
+   prefs.set("network.http.pipelining.ssl", true);//加强HTTP利用率
+   prefs.set("network.http.proxy.pipelining", true);//加强代{过}{滤}理HTTP利用率
+   prefs.set("network.prefetch-next", false);//默认关闭预读引擎，同Opera SimpleU的设置
+   prefs.set("network.proxy.socks_remote_dns", true);//remote dns, 这个对提高网速，预防dns劫持有没有意义还在实验
+   prefs.set("network.cookie.lifetimePolicy", 3);//cookies过期：0，由服务器的cookies生命周期决定，默认。 ,1， cookies 到期会提示 2，关闭浏览器cookies过期  3：过期时间由 network.cookie.lifetime.days 的取值天数决定。
+   prefs.set("network.cookie.lifetime.days", 15);//配合network.cookie.lifetimePolicy定义cookies过期天数。
+EOF
+"" }}}
+
+"" {{{ Extension
+"" adblock plus
+set! extensions.adblockplus.frameobjects=false
+set! extensions.adblockplus.showinstatusbar=true
+set! extensions.adblockplus.showintoolbar=false
+"" }}}
+
+" vim: set ft=pentadactyl fdm=marker:

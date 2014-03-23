@@ -1,0 +1,45 @@
+"{{{ Functions Config Start--------------------------------------------------}}}
+"{{ change proxy
+command! -d=切换AutoProxy模式为自动 proxyAuto js document.getElementById("aup-command-modeauto").doCommand();
+command! -d=切换AutoProxy模式为全局 proxyGlobal js document.getElementById("aup-command-modeglobal").doCommand();
+command! -d=切换AutoProxy模式为禁用 proxyDisable js document.getElementById("aup-command-modedisabled").doCommand();
+"}}
+
+"{{ smart reload
+command smartReload -js <<EOF
+if (buffer.URL.spec.indexOf('#') >= 0) {
+    dactyl.execute("reload");
+} else {
+    dactyl.open(buffer.URL.spec);
+}
+EOF
+nmap -builtin r :smartReload<CR>
+"}}
+
+"{{ delete duplicate tabs
+command -description 'Delete duplicate tabs' tabcloseduplicates,tabclosed -js <<EOF
+let seen = {}, vtabs = tabs.visibleTabs, i = vtabs.length;
+while (i--) {
+    let loc = vtabs[i].linkedBrowser.contentDocument.location.href || "";
+    if (Object.prototype.hasOwnProperty.call(seen, loc)) {
+        config.tabbrowser.removeTab(vtabs[i]);
+    } else {
+        seen[loc] = true;
+    }
+}
+EOF
+" nmap -builtin ,D :tabcloseduplicates<CR>
+"}}
+
+"{{ toggle javascript and loading images
+command! imgyes set! permissions.default.image=1
+command! imgno set! permissions.default.image=2
+command! jsyes set! javascript.enabled=true
+command! jsno set! javascript.enabled=false
+"}}
+
+"{{ search for site
+command! sitesearchgoogle -nargs=* -description 'search for current site use Google' exe 't http://www.google.com/search?q=' + encodeURIComponent("<args>") + '&sitesearch=' + window.content.location.hostname
+command! sitesearchbaidu -nargs=* -description 'search for current site use Baidu ' exe 't http://www.baidu.com/s?ie=utf-8&word=' + encodeURIComponent("<args> site:" + window.content.location.hostname);
+"}}
+"{{{ Functions Config Ends---------------------------------------------------}}}

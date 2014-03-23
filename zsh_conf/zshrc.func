@@ -1,0 +1,99 @@
+#{{{ 自动解压 ex *.*
+ex () {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1        ;;
+            *.tar.xz)    tar xJf $1        ;;
+            *.tar.gz)    tar xzf $1        ;;
+            *.tar.lzma)  tar --lzma -xf $1 ;;
+            *.bz2)       bunzip2 $1        ;;
+            *.rar)       unrar x $1        ;;
+            *.gz)        gunzip $1         ;;
+            *.tar)       tar xf $1         ;;
+            *.tbz2)      tar xjf $1        ;;
+            *.tgz)       tar xzf $1        ;;
+            *.zip)       unzip $1          ;;
+            *.Z)         uncompress $1     ;;
+            *.7z)        7z x $1           ;;
+            *.zip)       7z x $1           ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+#}}}
+
+#{{{ 漂亮又实用的命令高亮界面
+setopt extended_glob
+TOKENS_FOLLOWED_BY_COMMANDS=('|' '||' ';' '&' '&&' 'sudo' 'do' 'time' 'strace')
+
+recolor-cmd() {
+    region_highlight=()
+    colorize=true
+    start_pos=0
+    for arg in ${(z)BUFFER}; do
+         ((start_pos+=${#BUFFER[$start_pos+1,-1]}-${#${BUFFER[$start_pos+1,-1]## #}}))
+         ((end_pos=$start_pos+${#arg}))
+         if $colorize; then
+             colorize=false
+             res=$(LC_ALL=C builtin type $arg 2>/dev/null)
+             case $res in
+                 *'reserved word'*)   style="fg=magenta,bold";;
+                 *'alias for'*)       style="fg=cyan,bold";;
+                 *'shell builtin'*)   style="fg=yellow,bold";;
+                 *'shell function'*)  style='fg=green,bold';;
+                 *"$arg is"*)
+                     [[ $arg = 'sudo' ]] && style="fg=red,bold" || style="fg=blue,bold";;
+                 *)                   style='none,bold';;
+             esac
+             region_highlight+=("$start_pos $end_pos $style")
+         fi
+         [[ ${${TOKENS_FOLLOWED_BY_COMMANDS[(r)${arg//|/\|}]}:+yes} = 'yes' ]] && colorize=true
+         start_pos=$end_pos
+    done
+}
+check-cmd-self-insert() { zle .self-insert && recolor-cmd }
+check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
+
+zle -N self-insert check-cmd-self-insert
+zle -N backward-delete-char check-cmd-backward-delete-char
+#}}}
+
+#{{{ weather
+shweather() { curl -s http://newsrss.bbc.co.uk/weather/forecast/1713/Next3DaysRSS.xml | awk -F'</*title>' '!a[$2]++&&NF!=1 {gsub("&#xB0;","",$2); print $2}'; }
+#}}}
+
+#{{{
+png2jpg() {
+    for img in *.png; do
+        filename=${img%.*}
+        convert "$filename.png" "$filename.jpg"
+    done
+}
+jpg2png() {
+    for img in *.jpg; do
+        filename=${img%.*}
+        convert "$filename.jpg" "$filename.png"
+    done
+}
+#}}}
+
+#{{{ reboot comfirm
+confirm_yes() {
+    sure=$(dialog --stdout  --inputbox "Are you sure that you want to run '$1' command? Type YES to confirm." 10 50)
+    [[ $sure == YES ]] && $1
+}
+
+for c in reboot halt shutdown; do
+    alias $c="confirm_yes $c";
+done
+#}}}
+
+#{{{ check if a binary exists in path
+bin-exist() {[[ -n ${commands[$1]} ]]}
+#}}}
+
+#{{{ delete to trash
+del() {mv -vif -- $* ~/.Trash}
+#}}}

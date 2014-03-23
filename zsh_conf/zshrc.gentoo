@@ -1,0 +1,13 @@
+#{{{gentoo portage complete
+if [[ $(lsb_release -is 2>/dev/null) == "Gentoo" ]] ; then
+     autoload -U compinit promptinit
+     compinit
+     promptinit; prompt gentoo
+     alias emerge="emerge -avt"
+fi
+#}}}
+
+
+alias genlinux="make -j9 && make modules install && genkernel initramfs && echo 'Make Linux Kernel completed. Happy hacking'"
+
+echo 'You are using Gentoo!'
