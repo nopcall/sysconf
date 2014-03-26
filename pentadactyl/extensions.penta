@@ -5,8 +5,8 @@ group user
 loadplugins '\.(css|js|penta)$'
 
 " plugin: flashblocker.js
-set fbwhitelist=music.baidu.com,play.baidu.com,music.163.com,box.zhangmen.baidu.com,http://v.youku.com/v_showMini/*
-:map -silent <A-f> :flashtoggle<CR>
+set fbwhitelist=music|tieba|play.baidu.com,music.163.com,box.zhangmen.baidu.com,v.youku.com/v_showMini/*
+:map -silent <C-f> :flashtoggle<CR>
 :map -silent <A-p> :flashtoggle<CR>
 
 " plugin: noscript-dev.js
