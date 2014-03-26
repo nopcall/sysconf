@@ -1,0 +1,16 @@
+" Pentadactyl hg6928 (created 2013/06/28 00:00:04) running on:
+" Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:23.0) Gecko/20100101 Firefox/23.0
+
+" keybinding
+source ~/.pentadactyl/keybindings.penta
+" misc
+source ~/.pentadactyl/misc.penta
+" appearance
+source ~/.pentadactyl/appearance.penta
+" functions
+source ~/.pentadactyl/func.penta
+" thirdparty functions
+source ~/.pentadactyl/extensions.penta
+" mode plus
+source ~/.pentadactyl/modeplus.penta
+" vim: set ft=pentadactyl fdm=marker:
