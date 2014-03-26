@@ -49,10 +49,12 @@ set! browser.sessionstore.restore_on_demand=true
 set! browser.sessionstore.interval=300000
 "" http://www.stayupdate.com/firefox/increase-firefox-speed-and-decrease-firefox-memory-usage-20-tips/567
 set! nglayout.initialpaint.delay=150
-set! content.notify.interval=500000
+set! content.notify.interval=750000
 set! content.notify.ontimer=true
-set! content.switch.threshold=250000
-set! content.interrupt.parsing=false
+set! content.notify.backoffcount=5
+set! content.switch.threshold=750000
+set! nglayout.initialpaint.delay=0
+set! content.interrupt.parsing=true
 "" disable the install-dialog delay
 set! security.dialog_enable_delay=0
 "" disable tabgroup animation
@@ -61,6 +63,40 @@ set! browser.panorama.animate_zoom=false
 set! privacy.donottrackheader.enabled=true
 "" enable builtin flashblock
 set! plugins.click_to_play=true
+"" disable addons compatibility check
+js <<EOF
+// get version, kanged from https://addons.mozilla.org/en-us/firefox/addon/checkcompatibility/
+   let appVersion = Services.appinfo.version.replace(/^([^\.]+\.[0-9]+[a-z]*).*/i, "$1");
+   prefs.set("extensions.checkCompatibility." + appVersion, false);
+   prefs.set("extensions.checkCompatibility." + (parseInt(appVersion) + 1) + ".0", false);
+   prefs.set("extensions.checkCompatibility.nightly", false);
+EOF
+"" speedup
+set! extensions.amcontextmenu.firstRun=false
+set! extensions.cckwizard.firstrun=false
+set! extensions.dntp.firstrun=false
+set! extensions.https_everywhere.firstrun_context_menu=false
+set! extensions.httpsfinder.firstrun=false
+set! network.http.pipelining=true ""开启http流水线
+set! network.http.pipelining.maxrequests=32 ""Firefox可同时启动HTTP request的上限值
+set! network.http.proxy.pipelining=true ""加强代{过}{滤}理HTTP利用率
+set! network.dns.disablePrefetch=true ""关闭dns预解析
+set! network.dnsCacheExpirationGracePeriod=0 ""DNS缓存的时间，设为0如要清空浏览器的DNS缓存则不需要重启浏览器
+set! network.http.spdy.enabled=true ""默认开启spdy
+set! network.http.pipelining.ssl=true ""加强HTTP利用率
+set! content.max.tokenizing.time=2250000 ""指定一个循环事件的处理周期,单位是微秒,这个值取的越小，网页载入的越流畅，理论上可以加速网页的载入
+set! network.prefetch-next=false ""默认关闭预读引擎，同Opera SimpleU的设置
+set! network.proxy.socks_remote_dns=true ""remote dns, 这个对提高网速，预防dns劫持有没有意义还在实验
+set! network.cookie.lifetimePolicy=3 ""cookies过期：0，由服务器的cookies生命周期决定，默认。 ,1， cookies 到期会提示 2，关闭浏览器cookies过期  3：过期时间由 network.cookie.lifetime.days 的取值天数决定。
+set! network.cookie.lifetime.days=14 ""配合network.cookie.lifetimePolicy定义cookies过期天数。
+set! signed.applets.codebase_principal_support=true ""添加迅雷支持？好像，没什么效果，先加着吧。
+set! security.dialog_enable_delay=0 ""页面显示加快，加快。
+set! network.dns.disableIPv6=true ""默认为false，设置为true，禁用掉IPV6，而且，我的网络不是ipv6。
+set! network.proxy.type=0 ""网络链接规则？0 直接链接；1 手动配置；2 使用PAC；4 自动检查带来设置；5 使用系统配置（默认）
+set! network.http.max-connections=128 ""连接同一个伺服器允许的最大连接数
+"" }}}
+
+"" {{{ font in different platform
 if config.OS.isMacOSX
    set! font.name.monospace.x-western="Source Code Pro"
 end
@@ -74,38 +110,6 @@ if config.OS.isLinux
    set! font.name.sans-serif.zh-CN="微软雅黑"
    set! font.name.serif.zh-CN="微软雅黑"
 end
-"" disable addons compatibility check
-js <<EOF
-// get version, kanged from https://addons.mozilla.org/en-us/firefox/addon/checkcompatibility/
-   let appVersion = Services.appinfo.version.replace(/^([^\.]+\.[0-9]+[a-z]*).*/i, "$1");
-   prefs.set("extensions.checkCompatibility." + appVersion, false);
-   prefs.set("extensions.checkCompatibility." + (parseInt(appVersion) + 1) + ".0", false);
-   prefs.set("extensions.checkCompatibility.nightly", false);
-EOF
-"" speedup
-js <<EOF
-   prefs.set("extensions.amcontextmenu.firstRun", false);
-   prefs.set("extensions.cckwizard.firstrun", false);
-   prefs.set("extensions.dntp.firstrun", false);
-   prefs.set("extensions.https_everywhere.firstrun_context_menu", false);
-   prefs.set("extensions.httpsfinder.firstrun", false);
-   prefs.set("signed.applets.codebase_principal_support", true);//添加迅雷支持？好像，没什么效果，先加着吧。
-   prefs.set("security.dialog_enable_delay", 0);//页面显示加快，加快。
-   prefs.set("network.dns.disableIPv6", true);//默认为false，设置为true，禁用掉IPV6，而且，我的网络不是ipv6。
-   prefs.set("network.proxy.type", 0);//网络链接规则？0 直接链接；1 手动配置；2 使用PAC；4 自动检查带来设置；5 使用系统配置（默认）
-   prefs.set("network.http.max-connections", 128);//连接同一个伺服器允许的最大连接数
-   prefs.set("network.http.pipelining.maxrequests", 32);//Firefox可同时启动HTTP request的上限值
-   prefs.set("network.dns.disablePrefetch", true);//关闭dns预解析
-   prefs.set("network.dnsCacheExpirationGracePeriod", 0);//DNS缓存的时间，设为0如要清空浏览器的DNS缓存则不需要重启浏览器
-   prefs.set("network.http.pipelining", true);//开启http流水线
-   prefs.set("network.http.spdy.enabled", true);//默认开启spdy
-   prefs.set("network.http.pipelining.ssl", true);//加强HTTP利用率
-   prefs.set("network.http.proxy.pipelining", true);//加强代{过}{滤}理HTTP利用率
-   prefs.set("network.prefetch-next", false);//默认关闭预读引擎，同Opera SimpleU的设置
-   prefs.set("network.proxy.socks_remote_dns", true);//remote dns, 这个对提高网速，预防dns劫持有没有意义还在实验
-   prefs.set("network.cookie.lifetimePolicy", 3);//cookies过期：0，由服务器的cookies生命周期决定，默认。 ,1， cookies 到期会提示 2，关闭浏览器cookies过期  3：过期时间由 network.cookie.lifetime.days 的取值天数决定。
-   prefs.set("network.cookie.lifetime.days", 15);//配合network.cookie.lifetimePolicy定义cookies过期天数。
-EOF
 "" }}}
 
 "" {{{ Extension
