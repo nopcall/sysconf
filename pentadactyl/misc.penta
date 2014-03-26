@@ -1,20 +1,20 @@
 "{{{ Misc Config Start-------------------------------------------------------}}}
-" activate when view
+" activate immediately when open listed items
 set activate=addons,diverted,downloads,extoptions,help,homepage,tabopen,paste
 " set activate=addons,bookmarks,diverted,downloads,extoptions,help,homepage,tabopen,paste
-" open things at new tab
+" open everything at new tab
 set newtab=all
 " ~ as pwd
 silent cd ~
 " disable smooth scroll
-set scrollsteps=1
-set scrolltime=0
+" set scrollsteps=1
+" set scrolltime=0
 " disable annoying auto focus
 set strictfocus^=tao123.com:despotic
 " flush browser dns
 command flushdns set! network.dnsCacheExpiration=0 | set! network.dnsCacheExpiration&
 " default search engine
-set defsearch=google
+set defsearch=Baidu
 " complete search engine suguest
 set complete=location,suggestion,search,file,bookmark,history
 " search current selected text with google
