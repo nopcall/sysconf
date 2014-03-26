@@ -7,7 +7,7 @@ set showtabline=never
 colorscheme pentadactyl-solarized/colors/solarized-light
 colorscheme solarized-light-append
 " set fonts
-hi FontFixed font-size: 10pt; font-family: 'Source Code Pro', Cousine, 'Letter Gothic Std Bold', 'Lucida Console', Consolas, monospace !important;
-hi FontCode font-size: 10pt; font-family: 'Source Code Pro', Cousine, 'Letter Gothic Std Bold', 'Lucida Console', Consolas, monospace !important;
+hi FontFixed font-size: 10pt; font-family: 'monaco','Source Code Pro', 'Cousine', 'Letter Gothic Std Bold', 'Lucida Console', 'Consolas', 'monospace' !important;
+hi FontCode font-size: 10pt; font-family: 'monaco','Source Code Pro', 'Cousine', 'Letter Gothic Std Bold', 'Lucida Console', 'Consolas', 'monospace' !important;
 " hi -a FontProportional font-size: 12pt; font-family: sans-serif;
 "}}
