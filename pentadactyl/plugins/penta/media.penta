@@ -3,7 +3,7 @@ command! hls -nargs=? -count -js <<EOF
 let hls = function(url){
     let m3u8 = youku(url);
     if (m3u8) {
-        io.run('/usr/local/bin/mplayer', [m3u8]);
+        io.run('vlc', [m3u8]);
     }
 };
 let youku = function(url) {
@@ -32,7 +32,7 @@ let format = '';
 if (count) {
     format = ['', '&fmt=37', '&fmt=22', '&fmt=18'][count];
 }
-io.run('/usr/local/bin/mplayer', ['--socks', '127.0.0.1:8087', url+format]);
+io.run('vlc', ['--socks', '127.0.0.1:8087', url+format]);
 EOF
 group -locations http://www.youtube.com/watch* youtube
 nmap -builtin -ex ge <count>youtube
@@ -75,12 +75,12 @@ let dta = function(urls) {
 let mplayer = function(urls) {
     let mpcmd = "mplayer \\\n'" + urls.join("' \\\n'") + "'";
     dactyl.clipboardWrite(mpcmd);
-    io.system("urxvt -e " + mpcmd);
+    io.system("xterm" + "-e" + mpcmd);
 };
 let mplist = function(urls) {
     let plist = "/tmp/mplist"
     io.File(plist).write(urls.join("\n") + "\n");
-    io.run("urxvt", ["-g", "72x60", "-e", io.File(IO.runtimePath).path + "/scripts/mplist", window.navigator.userAgent, plist]);
+    io.run("xterm", ["-geometry", "72x60", "-title", "VideoDownLoadING","-e", io.File(IO.runtimePath).path + "/scripts/mplist", window.navigator.userAgent, plist]);
 };
 let url = args.length ? args : buffer.URL.spec;
 //dta(flvcd(url));
