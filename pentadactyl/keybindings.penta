@@ -23,6 +23,9 @@ map -count -modes=n,v q -builtin <count><C-p>
 " prev selected tab
 map -modes=n -builtin J <C-^>
 map -modes=n -builtin K <C-^>
+" jumping at hint mode, see http://code.google.com/p/dactyl/issues/detail?id=158
+map -modes hints <C-d> -ex normal! <C-d>
+map -modes hints <C-b> -ex normal! <C-b>
 " other
 map -count -modes=n,v c -builtin <count><C-o>
 map -count -modes=n,v v -builtin <count><C-i>
