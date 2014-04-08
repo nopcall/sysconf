@@ -101,10 +101,10 @@ alias xidofwin='xwininfo | grep "Window id:" | cut -d ' ' -f4 '
 (bin-exist zathura) && alias -s pdf=zathura || (bin-exist apvlv) && alias -s pdf=apvlv
 (bin-exist chmsee) && alias -s chm=chmsee
 alias -s ps=gv
-for i in gif jpeg jpg png;              alias -s $i=imgsee                #sxiv
-for i in avi rmvb wmv mp4;                  alias -s $i=smplayer
-for i in mp3 m4a ape flac kgx ;                  alias -s $i=mocp
-for i in rar zip 7z lzma;               alias -s $i="7z x"
+for i in gif jpeg jpg png;	alias -s $i=imgsee                #sxiv
+for i in avi rmvb wmv mp4;	alias -s $i=smplayer
+for i in mp3 m4a ape flac kgx; alias -s $i=mocp
+for i in rar zip 7z lzma;	alias -s $i="7z x"
 #}}}
 
 #{{{ advance utils
