@@ -91,7 +91,6 @@ set! network.cookie.lifetimePolicy=3 ""cookies过期：0，由服务器的cookie
 set! network.cookie.lifetime.days=14 ""配合network.cookie.lifetimePolicy定义cookies过期天数。
 set! signed.applets.codebase_principal_support=true ""添加迅雷支持？好像，没什么效果，先加着吧。
 set! security.dialog_enable_delay=0 ""页面显示加快，加快。
-set! network.dns.disableIPv6=true ""默认为false，设置为true，禁用掉IPV6，而且，我的网络不是ipv6。
 set! network.proxy.type=0 ""网络链接规则？0 直接链接；1 手动配置；2 使用PAC；4 自动检查带来设置；5 使用系统配置（默认）
 set! network.http.max-connections=128 ""连接同一个伺服器允许的最大连接数
 "" }}}
@@ -106,7 +105,7 @@ if config.OS.isWindows
    set! font.name.serif.zh-CN="微软雅黑"
 end
 if config.OS.isLinux
-   set! font.name.monospace.zh-CN="Source Code Pro"
+   set! font.name.monospace.zh-CN="Monaco"
    set! font.name.sans-serif.zh-CN="微软雅黑"
    set! font.name.serif.zh-CN="微软雅黑"
 end
