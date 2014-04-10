@@ -1,6 +1,6 @@
 /* 适用于 win/*nix 系统 和 FireFox/IE/Chrome 内核浏览器 */
 @-moz-document regexp("((?!telnet://).)*"){/*非火狐浏览器,使用时要删除这行代码*/
-    *:not([class*="icon"]):not(i){font-family: "Comic Sans MS","Tahoma","Microsoft YaHei","SimSun","FontAwesome","Segoe UI","Segoe UI Symbol","Symbola","Meiryo","Malgun Gothic","NSimSun","Nimbus Roman No9 L","文泉驿微米黑","文泉驿正黑","FZSongS","方正宋体S-超大字符集","Arial Unicode MS"  !important;}
+    *:not([class*="icon"]):not(i){font-family: "Inconsolata","Comic Sans MS","Tahoma","Microsoft YaHei","SimSun","FontAwesome","Segoe UI","Segoe UI Symbol","Symbola","Meiryo","Malgun Gothic","NSimSun","Nimbus Roman No9 L","文泉驿微米黑","文泉驿正黑","FZSongS","方正宋体S-超大字符集","Arial Unicode MS"  !important;}
     .iconfont > em{font-family: "shop-iconfont","global-iconfont"  !important;}
     span.fui-logo-text{font-family: "IterCast-Icon"  !important;}
     span.diffstat-bar,span.diff-added{font-family: "octicons"  !important;}
@@ -35,7 +35,7 @@
       }
      }
     /*---中文雅黑，英文Comic Sans---*/
-    *{font-family: "Comic Sans MS", "微软雅黑" !important;}
-    pre, code, kbd, samp, var {
-	font-family: "Consolas", "文泉驿等宽微米黑" !important;}
+    /* *{font-family: "Comic Sans MS", "微软雅黑" !important;} */
+    /* pre, code, kbd, samp, var { */
+    /* 	font-family: "Consolas", "文泉驿等宽微米黑" !important;} */
 }
