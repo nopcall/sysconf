@@ -34,10 +34,12 @@ userContext.MGLIST = [
 	['U' , 'GotoPageTop' , function() {content.scrollTo(0,0);}],
 	['D' , 'GotoPageBottom' , function() {content.scrollTo(0,1e10);}],
 	// ['UDR' , '添加当前页到书签' , ':dialog addbookmark'],
-	['L>R' , '前进' , '#Browser:Forward'],
-	['L<R' , '后退' , '#Browser:Back'],
-	['W-' , 'PrevTab' , function() window.gBrowser.tabContainer.advanceSelectedTab(-1, true)],
-	['W+' , 'NextTab' , function() window.gBrowser.tabContainer.advanceSelectedTab(+1, true)],
+	// 摇杆
+	// ['L>R' , '前进' , '#Browser:Forward'],
+	// ['L<R' , '后退' , '#Browser:Back'],
+	// 鼠标滚轮
+	// ['W-' , 'PrevTab' , function() window.gBrowser.tabContainer.advanceSelectedTab(-1, true)],
+	// ['W+' , 'NextTab' , function() window.gBrowser.tabContainer.advanceSelectedTab(+1, true)],
 ];
 
 /**
