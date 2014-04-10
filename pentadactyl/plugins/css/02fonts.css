@@ -17,7 +17,7 @@
         font-family: "Source Sans Pro";
         src: local("Source Sans Pro Semibold");
     }
-    *{font-weight:450!important;}
+    *{font-weight:500!important;}
     *{font-weight: normal;}
     *{text-shadow: 0.002em 0.002em 0.005em #999999 !important;
       /*
@@ -34,4 +34,8 @@
 	  font-size: 16px !important;
       }
      }
+    /*---中文雅黑，英文Comic Sans---*/
+    *{font-family: "Comic Sans MS", "微软雅黑" !important;}
+    pre, code, kbd, samp, var {
+	font-family: "Consolas", "文泉驿等宽微米黑" !important;}
 }
