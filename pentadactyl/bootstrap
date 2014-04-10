@@ -96,19 +96,19 @@ set! network.http.max-connections=128 ""连接同一个伺服器允许的最大�
 "" }}}
 
 "" {{{ font in different platform
-if config.OS.isMacOSX
-   set! font.name.monospace.x-western="Source Code Pro"
-end
-if config.OS.isWindows
-   set! font.name.monospace.zh-CN="Consolas"
-   set! font.name.sans-serif.zh-CN="微软雅黑"
-   set! font.name.serif.zh-CN="微软雅黑"
-end
-if config.OS.isLinux
-   set! font.name.monospace.zh-CN="Monaco"
-   set! font.name.sans-serif.zh-CN="微软雅黑"
-   set! font.name.serif.zh-CN="微软雅黑"
-end
+""if config.OS.isMacOSX
+""   set! font.name.monospace.x-western="Source Code Pro"
+""end
+""if config.OS.isWindows
+""   set! font.name.monospace.zh-CN="Consolas"
+""   set! font.name.sans-serif.zh-CN="微软雅黑"
+""   set! font.name.serif.zh-CN="微软雅黑"
+""end
+""if config.OS.isLinux
+""   set! font.name.monospace.zh-CN="Monaco"
+""   set! font.name.sans-serif.zh-CN="微软雅黑"
+""   set! font.name.serif.zh-CN="微软雅黑"
+""end
 "" }}}
 
 "" {{{ Extension
