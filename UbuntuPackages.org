@@ -1,0 +1,161 @@
+* Installed Packages
+** Basic Tools
+# another apt frontend
+aptitude
+# unity manager
+unity-tweak-tool
+# compiz desktop management
+compizconfig-settings-manager compiz-plugins-extra
+# third-party packages
+ubuntu-restricted-extras
+# english words flash card
+anki
+# editor
+vim-gtk
+# global hotkey
+autokey-gtk
+# mouse navigator
+keynav
+# input
+fcitx fcitx-table-wbpy
+# dictionary
+goldendict
+# drop-down terminal
+guake
+# disk manager
+gparted
+# media player
+vlc mplayer2
+# Clipboard manager
+[[https://github.com/hluk/CopyQ version 1.9.3 work better then other][CopyQ]]
+# network analyse
+wireshark
+
+** Diable by default
+## steam
+## mednafen	# GBA FC NES simulator
+## nemo
+## jstest-gtk	# joystick configuration tool
+# Games
+## teeworlds
+# Fonts
+## typecatcher
+# speed up system responsive
+## ulatency ulatencyd
+
+** PPA
+indicator-multiload
+# sudo add-apt-repository ppa:cassou/emacs
+emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
+# sudo add-apt-repository ppa:atareao/atareao
+my-weather-indicator
+# sudo add-apt-repository ppa:linrunner/tlp
+[[http://www.webupd8.org/2013/04/improve-power-usage-battery-life-in.html][TLP]]
+tlp tlp-rdw smartmontools ethtool tp-smapi-dkms acpi-call-tools
+indicator-cpufreq
+# intel_pstate
+thermald
+# sudo add-apt-repository ppa:jconti/recent-notifications
+indicator-notifications
+# sudo add-apt-repository ppa:nilarimogard/webupd8
+prime-indicator nvidia-prime nvidia-331
+mesa-utils
+# sudo add-apt-repository ppa:webupd8team/java
+oracle-java8-installer oracle-java8-set-default
+# sudo add-apt-repository ppa:mc3man/trusty-media
+gstreamer0.10-ffmpeg	# likely replace by gstreamer1.0-libav in ubuntu 14.04
+# sudo add-apt-repository ppa:numix/ppa
+numix-icon-theme-circle numix-gtk-theme
+# sudo add-apt-repository ppa:tuxonice/ppa
+## [[http://www.pauljoyceuk.com/codex/2012/howto-make-ubuntu-12-04-hibernate-successfully/][hibernate on ubuntu 12.04]]
+## [[http://ubuntuhandbook.org/index.php/2013/10/enable-hibernation-ubuntu-13-10/][hibernate on ubuntu 13.10]]
+tuxonice-userui linux-generic-tuxonice linux-headers-generic-tuxonice
+sudo ln -s /usr/lib/tuxonice-userui/tuxoniceui /usr/local/sbin/tuxoniceui_text
+
+** Drop
+# sudo add-apt-repository ppa:diesch/testing
+## classicmenu-indicator
+# sudo add-apt-repository ppa:noobslab/apps
+## indicator-synapse
+# sudo add-apt-repository ppa:atareao/atareao
+## calendar-indicator
+# sudo add-apt-repository ppa:eugenesan/ppa ######FUCK YOU
+## smartgithg
+# sudo add-apt-repository ppa:danjaredg/jayatana
+## jayatana
+# sudo add-apt-repository ppa:otto-kesselgulasch/gimp-edge
+gimp
+gimp-resynthesizer
+
+** Shell Tools
+zsh
+tmux
+# speed up program
+preload
+# quick jump to a directory
+autojump
+# quick search
+silversearcher-ag
+# version control system
+git
+# powerfull downloader
+aria2
+# https://launchpad.net/~apt-fast/+archive/stable
+apt-fast
+xdotool
+cmake
+# CLI clipboard
+xsel
+xclip
+xbacklight
+htop
+# gtk+ development library
+##libgtk2.0-dev
+# uncompressor
+p7zip-full
+p7zip-rar
+# DBMS
+postgresql postgresql-contrib pgadmin3 libpq-dev libpqxx-dev libpqxx-doc
+# emacs auto-complete-clang-async
+llvm clang llvm-dev libclang-dev
+# emacs irony-mode
+## ninja-build
+## doxygen doxygen-gui
+# rtags denpendence
+zlib1g-dev	# emacs c complete
+libtinfo-dev  	 # for ld -ltinfo issure
+libssl-dev	 # for ld -lcrypto issure
+libstdc++-4.8-dev # for rtags building
+
+** ARM Development
+# cross compiler for arm architecture
+gcc-arm-linux-gnueabi
+# fundamental build tools
+build-essential
+# kernel menuconfig lib
+libncurses5-dev		# make menuconfig
+# QT Development
+qt-sdk
+# embedded debug
+openocd
+[[/etc/exports][nfs-config]] ---  "/home/Data/nfs 192.168.1.*(rw,sync,no_subtree_check)"
+rpcbind nfs-kernel-server
+# tftp server config --- "/etc/default/tftpd-hpa : OPTION(-l -c -s) DIRECTORY(/home/Data/tftp)"
+tftpd-hpa
+# Connect target machine
+secureCRT
+## minicom
+## ckermit
+
+** Issue
+# set dash show in half screen
+gsettings set com.canonical.Unity form-factor 'Desktop'
+# update with proxy
+sudo aptitude -o Acquire::http::proxy="http://127.0.0.1:8087/" update
+[[https://launchpad.net/~xorg-edgers/+archive/ppa][Intel SNB driver]]
+libva1 vainfo i965-va-driver libva-glx1 libva-dev
+[[/etc/default/grub][GRUB_CMDLINE_LINUX_DEFAULT]]
+zswap.enabled=1
+intel_pstate=enable
+[[/etc/apt/apt.conf.d/00aptitude][Don't get language update]]
+Acquire::Languages "none";

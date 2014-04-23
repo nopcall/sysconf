@@ -4,7 +4,7 @@ DEFAULT_USER=nopcall
 
 # custom config dir environment
 DATA=/home/Data
-SYSCONF_DIR=$HOME/Data/git_projects/sysconf/
+SYSCONF_DIR=$HOME/git_projects/sysconf/
 SYSCONF_ZSH_DIR=$SYSCONF_DIR/zsh_conf
 
 # zsh theme
