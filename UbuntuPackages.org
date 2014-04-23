@@ -66,12 +66,17 @@ oracle-java8-installer oracle-java8-set-default
 gstreamer0.10-ffmpeg	# likely replace by gstreamer1.0-libav in ubuntu 14.04
 # sudo add-apt-repository ppa:numix/ppa
 numix-icon-theme-circle numix-gtk-theme
+# https://pf.natalenko.name/
+linux-image-$(version)-pf2 linux-headers-$(version)-pf2
 # sudo add-apt-repository ppa:tuxonice/ppa
+linux-generic-tuxonice linux-headers-generic-tuxonice
 ## [[http://www.pauljoyceuk.com/codex/2012/howto-make-ubuntu-12-04-hibernate-successfully/][hibernate on ubuntu 12.04]]
 ## [[http://ubuntuhandbook.org/index.php/2013/10/enable-hibernation-ubuntu-13-10/][hibernate on ubuntu 13.10]]
-tuxonice-userui linux-generic-tuxonice linux-headers-generic-tuxonice
+tuxonice-userui
 sudo ln -s /usr/lib/tuxonice-userui/tuxoniceui /usr/local/sbin/tuxoniceui_text
 
+** Lib
+libdevil-dev
 ** Drop
 # sudo add-apt-repository ppa:diesch/testing
 ## classicmenu-indicator
