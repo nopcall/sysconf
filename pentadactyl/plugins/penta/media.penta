@@ -75,16 +75,16 @@ let dta = function(urls) {
 let mplayer = function(urls) {
     let mpcmd = "mplayer \\\n'" + urls.join("' \\\n'") + "'";
     dactyl.clipboardWrite(mpcmd);
-    io.system("xterm" + "-e" + mpcmd);
+    io.system("xterm" + "-geometry" + "320x200" + "-e" + mpcmd);
 };
 let mplist = function(urls) {
     let plist = "/tmp/mplist"
     io.File(plist).write(urls.join("\n") + "\n");
-    io.run("xterm", ["-geometry", "72x60", "-title", "VideoDownLoadING","-e", io.File(IO.runtimePath).path + "/scripts/mplist", window.navigator.userAgent, plist]);
+    io.run("xterm", ["-geometry", "320x200", "-title", "VideoDownLoadING","-e", io.File(IO.runtimePath).path + "/scripts/mplist", window.navigator.userAgent, plist]);
 };
 let url = args.length ? args : buffer.URL.spec;
-//dta(flvcd(url));
-//mplayer(flvcd(url));
+// dta(flvcd(url));
+// mplayer(flvcd(url));
 mplist(flvcd(url));
 EOF
 group -locations http://www.youku.com/playlist_show/*,http://www.tudou.com/programs/view/*,http://www.tudou.com/playlist/*,http://v.qq.com/*,http://film.qq.com/* flvcd
