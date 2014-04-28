@@ -4772,3 +4772,531 @@ DBusException: org.freedesktop.DBus.Error.ServiceUnknown: The name org.autokey.S
 2014-04-22 19:35:54,489 INFO - service - Service now marked as running
 2014-04-22 19:35:54,503 INFO - root - Entering main()
 2014-04-22 22:32:16,269 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:43:17,854 ERROR - interface - Error in X event loop thread
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/autokey/interface.py", line 116, in __eventLoop
+    method(*args)
+  File "/usr/lib/python2.7/dist-packages/autokey/interface.py", line 807, in __handleKeyPress
+    focus = self.localDisplay.get_input_focus().focus
+  File "/usr/lib/python2.7/dist-packages/Xlib/display.py", line 566, in get_input_focus
+    return request.GetInputFocus(display = self.display)
+  File "/usr/lib/python2.7/dist-packages/Xlib/protocol/rq.py", line 1478, in __init__
+    self.reply()
+  File "/usr/lib/python2.7/dist-packages/Xlib/protocol/rq.py", line 1490, in reply
+    self._display.send_and_recv(request = self._serial)
+  File "/usr/lib/python2.7/dist-packages/Xlib/protocol/display.py", line 556, in send_and_recv
+    gotreq = self.parse_response(request)
+  File "/usr/lib/python2.7/dist-packages/Xlib/protocol/display.py", line 643, in parse_response
+    gotreq = self.parse_request_response(request) or gotreq
+  File "/usr/lib/python2.7/dist-packages/Xlib/protocol/display.py", line 720, in parse_request_response
+    req = self.get_waiting_replyrequest()
+  File "/usr/lib/python2.7/dist-packages/Xlib/protocol/display.py", line 847, in get_waiting_replyrequest
+    raise RuntimeError("Request reply to unknown request.  Can't happen!")
+RuntimeError: Request reply to unknown request.  Can't happen!
+2014-04-22 22:49:05,703 INFO - root - Shutting down
+2014-04-22 22:49:05,703 INFO - service - Service shutting down
+2014-04-22 22:49:10,596 INFO - root - Displaying configuration window
+2014-04-22 22:49:16,296 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-22 22:49:16,297 INFO - config-manager - Persisting configuration
+2014-04-22 22:49:16,299 INFO - config-manager - Backing up existing config file
+2014-04-22 22:49:16,303 INFO - config-manager - Finished persisting configuration - no errors
+2014-04-22 22:59:13,104 INFO - root - Initialising application
+2014-04-22 22:59:13,117 INFO - root - Initialise global hotkeys
+2014-04-22 22:59:13,117 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-22 22:59:13,124 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-22 22:59:13,125 INFO - config-manager - Successfully loaded configuration
+2014-04-22 22:59:13,126 INFO - service - Starting service
+2014-04-22 22:59:13,164 INFO - interface - XRecord interface thread starting
+2014-04-22 22:59:13,166 INFO - service - Service now marked as running
+2014-04-22 22:59:13,193 INFO - root - Displaying configuration window
+2014-04-22 22:59:13,514 INFO - root - Entering main()
+2014-04-22 22:59:15,159 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:16,473 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:16,867 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:18,005 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:18,203 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:22,319 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-22 22:59:22,319 INFO - config-manager - Persisting configuration
+2014-04-22 22:59:22,320 INFO - config-manager - Backing up existing config file
+2014-04-22 22:59:22,321 INFO - config-manager - Finished persisting configuration - no errors
+2014-04-22 22:59:29,203 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:29,403 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:29,649 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:29,857 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:30,900 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:31,180 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:34,788 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 22:59:35,053 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:21:18,709 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:21:18,874 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:21:19,769 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:23:01,782 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:23:36,352 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:23:36,519 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:23:37,937 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:33:43,438 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:33:44,764 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:33:47,065 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:53:03,108 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-22 23:59:22,355 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:00:23,691 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:00:36,770 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:03:54,118 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:03:55,291 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:03:58,762 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:04:05,369 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:04:07,792 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:04:12,642 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:07:02,742 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:14:33,744 INFO - root - Initialising application
+2014-04-23 00:14:33,807 INFO - root - Initialise global hotkeys
+2014-04-23 00:14:33,808 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-23 00:14:34,080 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-23 00:14:34,081 INFO - config-manager - Successfully loaded configuration
+2014-04-23 00:14:34,082 INFO - service - Starting service
+2014-04-23 00:14:34,168 INFO - interface - XRecord interface thread starting
+2014-04-23 00:14:34,172 INFO - service - Service now marked as running
+2014-04-23 00:14:34,223 INFO - root - Entering main()
+2014-04-23 00:15:07,514 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:15:34,973 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 00:15:35,759 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:00:12,996 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:00:18,236 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:00:27,884 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:00:32,052 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:07,835 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:11,371 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:11,555 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:16,908 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:20,835 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:26,451 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:37,819 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:46,875 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:57,701 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:02:57,891 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:03:20,051 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:03:27,955 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:04:37,018 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:04:40,995 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:04:52,394 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:04:59,106 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:05:02,378 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:05:10,946 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:05:18,234 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:07:16,433 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:07:35,249 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:07:43,850 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:07:45,969 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:07:50,785 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:07:53,553 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:07:53,737 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:07:59,633 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:08:15,297 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:08:16,825 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:08:17,001 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:08:48,345 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:08:58,809 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:09:03,432 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:10:16,928 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:10:20,688 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:15:25,046 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 01:18:12,493 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:13:39,443 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:13:47,179 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:13:59,531 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:15:44,587 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:16:10,987 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:16:12,266 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:16:12,706 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:16:35,492 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:19:57,505 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:19:58,568 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:20:02,856 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:20:06,625 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:20:29,648 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:25:14,014 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:34:59,875 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 02:35:22,723 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 09:33:14,514 INFO - root - Initialising application
+2014-04-23 09:33:14,567 INFO - root - Initialise global hotkeys
+2014-04-23 09:33:14,568 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-23 09:33:14,850 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-23 09:33:14,851 INFO - config-manager - Successfully loaded configuration
+2014-04-23 09:33:14,852 INFO - service - Starting service
+2014-04-23 09:33:14,940 INFO - interface - XRecord interface thread starting
+2014-04-23 09:33:14,941 INFO - service - Service now marked as running
+2014-04-23 09:33:14,975 INFO - root - Entering main()
+2014-04-23 09:37:43,497 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 09:38:42,961 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 09:39:46,977 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 09:39:51,824 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 16:52:25,020 INFO - root - Initialising application
+2014-04-23 16:52:25,074 INFO - root - Initialise global hotkeys
+2014-04-23 16:52:25,075 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-23 16:52:25,085 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-23 16:52:25,103 INFO - config-manager - Successfully loaded configuration
+2014-04-23 16:52:25,104 INFO - service - Starting service
+2014-04-23 16:52:25,206 INFO - interface - XRecord interface thread starting
+2014-04-23 16:52:25,209 INFO - service - Service now marked as running
+2014-04-23 16:52:25,259 INFO - root - Entering main()
+2014-04-23 17:14:11,863 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 17:14:17,031 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 17:14:41,030 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 17:16:31,238 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 17:59:30,374 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 17:59:40,118 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 17:59:40,318 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 17:59:43,606 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 18:02:22,325 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 18:04:46,749 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 18:09:59,010 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 18:10:02,402 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-23 18:12:48,577 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-24 12:33:15,970 INFO - root - Initialising application
+2014-04-24 12:33:16,026 INFO - root - Initialise global hotkeys
+2014-04-24 12:33:16,027 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-24 12:33:17,083 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-24 12:33:17,085 INFO - config-manager - Successfully loaded configuration
+2014-04-24 12:33:17,086 INFO - service - Starting service
+2014-04-24 12:33:17,162 INFO - interface - XRecord interface thread starting
+2014-04-24 12:33:17,163 INFO - service - Service now marked as running
+2014-04-24 12:33:17,204 INFO - root - Entering main()
+2014-04-25 03:08:04,321 INFO - root - Initialising application
+2014-04-25 03:08:04,530 INFO - root - Initialise global hotkeys
+2014-04-25 03:08:04,530 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-25 03:08:05,879 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-25 03:08:05,881 INFO - config-manager - Successfully loaded configuration
+2014-04-25 03:08:05,881 INFO - service - Starting service
+2014-04-25 03:08:07,463 INFO - interface - XRecord interface thread starting
+2014-04-25 03:08:07,464 INFO - service - Service now marked as running
+2014-04-25 03:08:07,479 INFO - root - Entering main()
+2014-04-25 03:09:08,849 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:12:57,287 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:12:57,453 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:12:59,926 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:13:05,954 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:13:06,153 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:13:08,579 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:24:31,834 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:24:55,074 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:25:01,427 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:25:46,985 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:25:48,425 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:49:27,874 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 03:49:34,626 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 05:38:19,934 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 05:43:32,300 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 05:43:38,652 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 05:52:28,954 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 20:01:06,840 INFO - root - Initialising application
+2014-04-25 20:01:06,975 INFO - root - Initialise global hotkeys
+2014-04-25 20:01:06,976 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-25 20:01:08,679 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-25 20:01:08,680 INFO - config-manager - Successfully loaded configuration
+2014-04-25 20:01:08,681 INFO - service - Starting service
+2014-04-25 20:01:09,606 INFO - interface - XRecord interface thread starting
+2014-04-25 20:01:09,608 INFO - service - Service now marked as running
+2014-04-25 20:01:09,651 INFO - root - Entering main()
+2014-04-25 21:13:50,791 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 21:13:54,920 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 21:14:07,443 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 21:14:09,155 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 21:14:10,665 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 21:23:02,124 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 22:21:53,041 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 22:27:02,309 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 22:36:00,474 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 22:36:23,354 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 23:09:22,302 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 23:09:36,693 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 23:20:31,800 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 23:20:31,984 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 23:21:16,457 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 23:21:17,578 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-25 23:39:31,601 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:39:11,244 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:40:03,100 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:41:39,147 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:42:05,682 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:42:10,587 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:42:36,722 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:46:01,153 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:47:28,145 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:47:33,905 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:53:27,454 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:56:05,101 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:56:27,949 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:56:36,293 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:56:36,476 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:56:45,117 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:57:13,109 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 02:58:47,276 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 03:01:02,339 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 03:56:42,093 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 03:56:52,029 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 03:57:03,653 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 03:57:22,709 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 03:57:45,517 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:06:03,122 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:06:14,521 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:06:15,689 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:06:44,465 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:07:35,369 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:08:30,664 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:08:56,728 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:09:02,929 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:09:10,240 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:09:33,152 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 04:10:44,360 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 11:36:04,590 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 11:53:48,239 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 11:53:55,623 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 13:42:55,432 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 13:43:01,864 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 13:43:42,760 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 13:43:56,520 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 13:43:57,737 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 13:44:03,250 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 13:58:12,547 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 13:58:27,930 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 13:59:19,154 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:00:25,939 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:01:44,041 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:01:46,610 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:01:50,441 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:01:51,338 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:01:53,634 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:04:51,728 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:08:14,703 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:08:17,119 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:08:20,031 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:08:51,087 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:08:52,822 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:08:55,767 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:10:08,582 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:10:50,814 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 14:11:27,157 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:29:28,679 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:30:14,071 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:34:21,190 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:34:22,469 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:34:25,037 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:34:25,206 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:34:27,109 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:34:28,445 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:35:16,829 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:35:17,373 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:35:20,021 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:35:21,973 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:35:29,749 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:35:42,061 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:35:42,645 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:35:58,813 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:39:00,947 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:44:55,761 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:44:56,753 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:45:05,729 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:45:09,929 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:46:03,896 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:46:07,953 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:46:39,816 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 15:46:41,360 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 16:58:21,863 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 17:05:38,390 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 17:08:35,675 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 17:12:20,235 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 17:16:12,441 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 17:24:00,210 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:23,091 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:32,426 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:33,362 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:33,602 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:34,394 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:34,842 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:36,722 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:37,146 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:39,002 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:41,402 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:43,386 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:46,026 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:48,018 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:48,642 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:49,674 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:50,074 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:55,418 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:57,282 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:58,666 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:59,130 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:23:59,450 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:01,442 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:02,634 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:04,090 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:05,010 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:06,122 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:09,090 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:11,906 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:13,098 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:14,210 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:14,410 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:15,410 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:15,691 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:20,586 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:23,266 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:25,610 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:24:26,666 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:29:53,817 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:30:16,832 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:31:02,944 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:32:23,639 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:32:27,016 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 18:32:30,463 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 20:35:22,288 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 20:35:38,864 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 20:59:23,366 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 21:02:17,381 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 21:13:13,081 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 21:13:22,025 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 21:27:23,651 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 21:27:57,532 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-26 21:30:12,075 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 11:43:25,295 INFO - root - Initialising application
+2014-04-27 11:43:25,976 INFO - root - Initialise global hotkeys
+2014-04-27 11:43:25,977 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-27 11:43:26,269 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-27 11:43:26,271 INFO - config-manager - Successfully loaded configuration
+2014-04-27 11:43:26,271 INFO - service - Starting service
+2014-04-27 11:43:26,506 INFO - interface - XRecord interface thread starting
+2014-04-27 11:43:26,508 INFO - service - Service now marked as running
+2014-04-27 11:43:26,553 INFO - root - Entering main()
+2014-04-27 13:25:58,249 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 14:02:47,618 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 14:03:28,986 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 14:09:27,926 INFO - root - Initialising application
+2014-04-27 14:09:28,216 INFO - root - Initialise global hotkeys
+2014-04-27 14:09:28,216 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-27 14:09:28,500 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-27 14:09:28,501 INFO - config-manager - Successfully loaded configuration
+2014-04-27 14:09:28,502 INFO - service - Starting service
+2014-04-27 14:09:28,645 INFO - interface - XRecord interface thread starting
+2014-04-27 14:09:28,647 INFO - service - Service now marked as running
+2014-04-27 14:09:28,696 INFO - root - Entering main()
+2014-04-27 14:09:53,001 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 14:09:54,953 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 14:10:57,493 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:16:11,777 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:16:22,985 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:19:15,516 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:19:42,884 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:19:45,772 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:23:49,784 INFO - root - Initialising application
+2014-04-27 18:23:50,785 INFO - root - Initialise global hotkeys
+2014-04-27 18:23:50,790 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-27 18:23:51,111 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-27 18:23:51,112 INFO - config-manager - Successfully loaded configuration
+2014-04-27 18:23:51,113 INFO - service - Starting service
+2014-04-27 18:23:51,239 INFO - interface - XRecord interface thread starting
+2014-04-27 18:23:51,241 INFO - service - Service now marked as running
+2014-04-27 18:23:51,294 INFO - root - Entering main()
+2014-04-27 18:24:09,151 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:24:09,967 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:28:59,256 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:31:45,137 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:34:16,735 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:36:04,990 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:43:24,716 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:54:40,940 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 18:55:54,643 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:00:58,353 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:00:59,081 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:03:25,513 INFO - root - Initialising application
+2014-04-27 19:03:25,893 INFO - root - Initialise global hotkeys
+2014-04-27 19:03:25,893 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-27 19:03:26,186 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-27 19:03:26,188 INFO - config-manager - Successfully loaded configuration
+2014-04-27 19:03:26,188 INFO - service - Starting service
+2014-04-27 19:03:26,315 INFO - interface - XRecord interface thread starting
+2014-04-27 19:03:26,316 INFO - service - Service now marked as running
+2014-04-27 19:03:26,367 INFO - root - Entering main()
+2014-04-27 19:07:59,089 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:08:01,529 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:09:36,824 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:17:20,625 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:17:24,049 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:18:09,657 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:34:53,162 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:34:53,979 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:37:02,570 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:37:03,857 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:38:44,777 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:38:45,489 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 19:38:46,745 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 20:27:15,310 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 20:29:51,429 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 21:01:51,480 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 21:04:51,929 INFO - root - Initialising application
+2014-04-27 21:04:52,054 INFO - root - Initialise global hotkeys
+2014-04-27 21:04:52,054 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-27 21:04:52,347 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-27 21:04:52,348 INFO - config-manager - Successfully loaded configuration
+2014-04-27 21:04:52,349 INFO - service - Starting service
+2014-04-27 21:04:52,475 INFO - interface - XRecord interface thread starting
+2014-04-27 21:04:52,478 INFO - service - Service now marked as running
+2014-04-27 21:04:52,525 INFO - root - Entering main()
+2014-04-27 21:05:17,115 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-27 21:05:17,995 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 07:28:03,872 INFO - root - Initialising application
+2014-04-28 07:28:04,176 INFO - root - Initialise global hotkeys
+2014-04-28 07:28:04,176 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-28 07:28:08,524 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-28 07:28:08,525 INFO - config-manager - Successfully loaded configuration
+2014-04-28 07:28:08,526 INFO - service - Starting service
+2014-04-28 07:28:08,957 INFO - interface - XRecord interface thread starting
+2014-04-28 07:28:08,958 INFO - service - Service now marked as running
+2014-04-28 07:28:09,010 INFO - root - Entering main()
+2014-04-28 07:37:23,120 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 07:37:24,319 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 07:37:40,214 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 07:40:52,696 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 07:43:34,877 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 07:43:35,726 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:31:48,927 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:38:08,269 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:38:09,132 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:44:33,730 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:47:37,480 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:47:38,745 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:47:51,377 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:52:05,771 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:52:31,379 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:53:25,571 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:54:22,051 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:56:32,969 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:58:36,849 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:59:22,185 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 13:59:36,001 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 14:03:33,647 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 14:03:36,911 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 14:04:26,887 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:04:41,351 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:04:49,463 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:08:57,893 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:11:22,644 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:13:51,452 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:14:07,308 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:14:35,227 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:14:38,939 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:21:40,409 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 15:21:50,016 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 19:17:11,078 INFO - root - Initialising application
+2014-04-28 19:17:11,193 INFO - root - Initialise global hotkeys
+2014-04-28 19:17:11,193 INFO - config-manager - Loading config from existing file: /home/nopcall/.config/autokey/autokey.json
+2014-04-28 19:17:11,475 INFO - config-manager - Configuration changed - rebuilding in-memory structures
+2014-04-28 19:17:11,477 INFO - config-manager - Successfully loaded configuration
+2014-04-28 19:17:11,478 INFO - service - Starting service
+2014-04-28 19:17:11,589 INFO - interface - XRecord interface thread starting
+2014-04-28 19:17:11,591 INFO - service - Service now marked as running
+2014-04-28 19:17:11,618 INFO - root - Entering main()
+2014-04-28 19:17:33,707 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 19:17:34,843 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 19:17:37,291 INFO - service - Matched hotkey phrase/script with prompt=False
+2014-04-28 19:29:30,946 INFO - service - Matched hotkey phrase/script with prompt=False

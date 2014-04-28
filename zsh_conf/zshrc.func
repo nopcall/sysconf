@@ -1,4 +1,4 @@
-#{{{ 自动解压 ex *.*
+#{{{ auto uncompress ex *.*
 ex () {
     if [ -f $1 ] ; then
         case $1 in
@@ -24,7 +24,7 @@ ex () {
 }
 #}}}
 
-#{{{ 漂亮又实用的命令高亮界面
+#{{{ colorfull & usefull interface for CLI
 setopt extended_glob
 TOKENS_FOLLOWED_BY_COMMANDS=('|' '||' ';' '&' '&&' 'sudo' 'do' 'time' 'strace')
 

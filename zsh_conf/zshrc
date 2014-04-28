@@ -47,7 +47,6 @@ fi
 
 # Customize to your needs...
 # setxkbmap -option terminate:ctrl_alt_bksp
-# source alias
-if [[ -f ~/.zshrc.secret ]]; then
+if [[ -f ~/.zshrc.secrets ]]; then
 	source $HOME/.zshrc.secrets
 fi

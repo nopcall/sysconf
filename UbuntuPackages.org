@@ -2,6 +2,8 @@
 ** Basic Tools
 # another apt frontend
 aptitude
+# find file in package
+apt-file
 # unity manager
 unity-tweak-tool
 # compiz desktop management
@@ -30,6 +32,8 @@ vlc mplayer2
 [[https://github.com/hluk/CopyQ version 1.9.3 work better then other][CopyQ]]
 # network analyse
 wireshark
+# mathematic utility
+matlab
 
 ** Diable by default
 ## steam
@@ -66,6 +70,9 @@ oracle-java8-installer oracle-java8-set-default
 gstreamer0.10-ffmpeg	# likely replace by gstreamer1.0-libav in ubuntu 14.04
 # sudo add-apt-repository ppa:numix/ppa
 numix-icon-theme-circle numix-gtk-theme
+# sudo add-apt-repository ppa:otto-kesselgulasch/gimp-edge
+gimp
+gimp-resynthesizer
 # https://pf.natalenko.name/
 linux-image-$(version)-pf2 linux-headers-$(version)-pf2
 # sudo add-apt-repository ppa:tuxonice/ppa
@@ -88,13 +95,14 @@ libdevil-dev
 ## smartgithg
 # sudo add-apt-repository ppa:danjaredg/jayatana
 ## jayatana
-# sudo add-apt-repository ppa:otto-kesselgulasch/gimp-edge
-gimp
-gimp-resynthesizer
 
 ** Shell Tools
 zsh
 tmux
+xdotool
+cmake
+xbacklight
+htop
 # speed up program
 preload
 # quick jump to a directory
@@ -107,15 +115,9 @@ git
 aria2
 # https://launchpad.net/~apt-fast/+archive/stable
 apt-fast
-xdotool
-cmake
 # CLI clipboard
 xsel
 xclip
-xbacklight
-htop
-# gtk+ development library
-##libgtk2.0-dev
 # uncompressor
 p7zip-full
 p7zip-rar
@@ -141,26 +143,26 @@ build-essential
 libncurses5-dev		# make menuconfig
 # QT Development
 qt-sdk
+# gtk+ development library
+##libgtk2.0-dev
 # embedded debug
 openocd
 [[/etc/exports][nfs-config]] ---  "/home/Data/nfs 192.168.1.*(rw,sync,no_subtree_check)"
 rpcbind nfs-kernel-server
-# tftp server config --- "/etc/default/tftpd-hpa : OPTION(-l -c -s) DIRECTORY(/home/Data/tftp)"
+[[file:/etc/default/tftpd-hpa][tftpd-hpa]] --- "OPTION(-l -c -s) DIRECTORY(/home/Data/tftp)"
 tftpd-hpa
 # Connect target machine
 secureCRT
-## minicom
-## ckermit
 
 ** Issue
 # set dash show in half screen
 gsettings set com.canonical.Unity form-factor 'Desktop'
 # update with proxy
 sudo aptitude -o Acquire::http::proxy="http://127.0.0.1:8087/" update
-[[https://launchpad.net/~xorg-edgers/+archive/ppa][Intel SNB driver]]
+[[https://launchpad.net/~xorg-edgers/%2Barchive/ppa][Intel SNB Driver PPA]]
 libva1 vainfo i965-va-driver libva-glx1 libva-dev
-[[/etc/default/grub][GRUB_CMDLINE_LINUX_DEFAULT]]
+[[/etc/default/grub][GrubConfig]]
 zswap.enabled=1
 intel_pstate=enable
-[[/etc/apt/apt.conf.d/00aptitude][Don't get language update]]
+[[/etc/apt/apt.conf.d/00aptitude][00aptitude]]
 Acquire::Languages "none";

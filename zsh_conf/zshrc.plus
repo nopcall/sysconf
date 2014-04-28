@@ -1,14 +1,14 @@
-#{{{ 关于历史纪录的配置
-export HISTSIZE=10000								#历史纪录条目数量
-export SAVEHIST=10000								#注销后保存的历史纪录条目数量
-export HISTFILE=~/.zhistory							#历史纪录文件
-setopt INC_APPEND_HISTORY							#以附加的方式写入历史纪录
-setopt HIST_IGNORE_DUPS								#如果连续输入的命令相同，历史纪录中只保留一个
-setopt EXTENDED_HISTORY								#为历史纪录中的命令添加时间戳
-setopt AUTO_PUSHD								#启用 cd 命令的历史纪录，cd -[TAB]进入历史路径
-setopt PUSHD_IGNORE_DUPS							#相同的历史路径只保留一个
+# {{{ 关于历史纪录的配置
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE=~/.zhistory
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS								# only save one of duplicate iterms
+setopt EXTENDED_HISTORY								# add time-stamp for commands
+setopt AUTO_PUSHD								# cd with hitorical directory
+setopt PUSHD_IGNORE_DUPS
 
-# #{{{ 每个目录使用独立的历史纪录
+# # {{{ 每个目录使用独立的历史纪录
 # HISTDIR="$HOME/.zhistory"
 # [[ ! -d "$HISTDIR" ]] && mkdir -p "$HISTDIR"
 # HISTFILE="$HISTDIR/${PWD//\//:}"
@@ -38,27 +38,27 @@ setopt PUSHD_IGNORE_DUPS							#相同的历史路径只保留一个
 # #全部历史纪录 top55
 # function top55 { allhistory | awk -F':[ 0-9]*:[0-9]*;' '{ $1="" ; print }' |	\
 #     sed 's/ /\n/g' | sed '/^$/d' | sort | uniq -c | sort -nr | head -n 55 }
-# #}}}
+# # }}}
 
-#以下字符视为单词的一部分
+# 以下字符视为单词的一部分
 #WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 WORDCHARS='*?[]~=&;!#$%^(){}<>'
-#}}}
+# }}}
 
-#自动补全功能 {{{
+# {{{ 自动补全功能
 setopt AUTO_LIST
 setopt AUTO_MENU
-#setopt MENU_COMPLETE								#开启此选项,补全时会直接选中菜单项
+#setopt MENU_COMPLETE								# auto select the first iterm of candidates
 
 autoload -U compinit
 compinit
 
-#自动补全缓存
+# auto complete cache
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path .zcache
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
-#自动补全选项
+# auto complete candidate
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select
 zstyle ':completion:*:*:default' force-list always
@@ -69,12 +69,12 @@ zstyle ':completion:predict:*' completer _complete
 zstyle ':completion:incremental:*' completer _complete _correct
 zstyle ':completion:*' completer _complete _prefix _correct _prefix _match _approximate
 
-#路径补全
+# complete path
 zstyle ':completion:*' expand 'yes'
 zstyle ':completion:*' squeeze-slashes 'yes'
 zstyle ':completion::complete:*' '\\'
 
-#彩色补全菜单 mac下无效
+# colofull menu *not* work with MAC
 if [ `uname` != 'Darwin' ]; then
     eval $(dircolors -b)
     export ZLSCOLORS="${LS_COLORS}"
@@ -83,20 +83,20 @@ if [ `uname` != 'Darwin' ]; then
     zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 fi
 
-#修正大小写
+# 修正大小写
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-#错误校正
+# 错误校正
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-#kill 命令补全
+# kill 命令补全
 compdef pkill=killall
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:*:*:*:processes' force-list always
 zstyle ':completion:*:processes' command 'ps -au$USER'
 
-#补全类型提示分组
+# category candidate with group
 zstyle ':completion:*:matches' group 'yes'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:options' description 'yes'
@@ -108,16 +108,16 @@ zstyle ':completion:*:corrections' format $'\e[01;32m -- %d (errors: %e) --\e[0m
 
 # cd ~ 补全顺序
 zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
-#}}}
+# }}}
 
-##行编辑高亮模式 {{{
+## {{{ 行编辑高亮模式
 # Ctrl+@ 设置标记，标记和光标点之间为 region
 zle_highlight=(region:bg=magenta #选中区域
 	       special:bold      #特殊字符
 	       isearch:underline)#搜索时使用的关键字
-#}}}
+# }}}
 
-##空行(光标在行首)补全 "cd " {{{
+## {{{ 空行(光标在行首)补全 "cd "
 user-complete(){
     case $BUFFER in
 	"" )                       # 空行填入 "cd "
@@ -152,11 +152,11 @@ user-complete(){
 zle -N user-complete
 bindkey "\t" user-complete
 
-#显示 path-directories ,避免候选项唯一时直接选中
+# 显示 path-directories ,避免候选项唯一时直接选中
 cdpath="$HOME"
-#}}}
+# }}}
 
-##在命令前插入 sudo {{{
+## {{{ inser 'sudo' to the head of command
 sudo-command-line() {
     [[ -z $BUFFER ]] && zle up-history
     [[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
@@ -164,9 +164,9 @@ sudo-command-line() {
 }
 zle -N sudo-command-line
 bindkey "\e\e" sudo-command-line						#定义快捷键为： [Esc] [Esc]
-#}}}
+# }}}
 
-#{{{
+# {{{
 zshaddhistory() {
     cmd=${1%%$'\n'}
     print -sr -- $cmd
@@ -174,14 +174,14 @@ zshaddhistory() {
     first_arg=${${(z)LASTCMD}[1]}
     ( [[ `id -u $USER` -eq 0 ]] || [[ $first_arg == sudo ]] ) && logger -t "$USER@${TTY/\/dev\/}[$PWD]" $LASTCMD
 }
-#}}}
+# }}}
 
-#{{{ pinyin change dir
+# {{{ pinyin change dir
 zstyle ':completion:*' user-expand _pinyin
 function _pinyin() { reply=($($HOME/bin/chsdir 0 $*)) }
-#}}}
+# }}}
 
-#{{{ 设置参数
+# {{{ 设置参数
 setopt complete_aliases         #do not expand aliases _before_ completion has finished
 setopt auto_cd                  # if not a command, try to cd to it.
 setopt auto_pushd               # automatically pushd directories on dirstack
@@ -209,4 +209,4 @@ setopt numeric_glob_sort        # when globbing numbered files, use real countin
 setopt inc_append_history       # append to history once executed
 setopt prompt_subst             # prompt more dynamic, allow function in prompt
 setopt nonomatch
-#}}}
+# }}}
