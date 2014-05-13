@@ -2,3 +2,6 @@ pentadactyl/info
 .\#*
 \#*
 /.project
+*~
+/autokey/autokey.log
+/autokey/autokey.pid
