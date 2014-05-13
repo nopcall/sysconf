@@ -42,6 +42,9 @@ matlab
 ## jstest-gtk	# joystick configuration tool
 # Games
 ## teeworlds
+# game cheat
+gameconqueror
+scanmem
 # Fonts
 ## typecatcher
 # speed up system responsive
