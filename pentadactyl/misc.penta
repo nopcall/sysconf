@@ -16,7 +16,7 @@ command flushdns set! network.dnsCacheExpiration=0 | set! network.dnsCacheExpira
 " default search engine
 set defsearch=g
 " complete search engine suguest
-set complete=location,suggestion,file,bookmark,history
+"set complete=location,suggestion,file,bookmark,history
 " search current selected text with google
 map t -js content.getSelection().toString()!=""?dactyl.execute(':tabopen '+ content.getSelection()):CommandExMode().open('tabopen ')
 map o -js content.getSelection().toString()!=""?dactyl.execute(':open '+ content.getSelection()):CommandExMode().open('open ')
@@ -26,8 +26,6 @@ set hintkeys=sdfglkjhuinp
 set hinttimeout=1500
 " hint mode include labels
 " set ht+=a,[contenteditable=false],div.arrLeft,div.arrRight,img,label,span.pager,span.item-quote-hidden,.appButton
-" Unload current tab using BarTab
-command! unload -description 'Unload current tab' -js gBrowser.BarTabHandler.unloadTab(gBrowser.mCurrentTab)
 " set default editor
 set editor='emacsclient'
 " next and previous
