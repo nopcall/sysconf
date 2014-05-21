@@ -34,6 +34,8 @@ vlc mplayer2
 wireshark
 # mathematic utility
 matlab
+# GTK-Warning "pixmap"
+gtk2-engines-pixbuf
 
 ** Diable by default
 ## steam
@@ -62,6 +64,8 @@ tlp tlp-rdw smartmontools ethtool tp-smapi-dkms acpi-call-tools
 indicator-cpufreq
 # intel_pstate
 thermald
+# sudo add-apt-repository ppa:kilian/f.lux
+fluxgui # Xinyang coordinates: 32.1333° N, 114.0500° E
 # sudo add-apt-repository ppa:jconti/recent-notifications
 indicator-notifications
 # sudo add-apt-repository ppa:nilarimogard/webupd8
