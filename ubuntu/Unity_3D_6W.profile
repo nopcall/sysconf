@@ -49,6 +49,9 @@ s0_initiate = <Super>n
 s0_speed = 1.000000
 s0_rotate_left_key = <Super>h
 s0_rotate_right_key = <Super>l
+s0_initiate_button = <Shift><Alt>Button1
+s0_rotate_left_button = <Shift><Alt>Button4
+s0_rotate_right_button = <Shift><Alt>Button5
 s0_rotate_left_window_key = <Shift><Super>h
 s0_rotate_right_window_key = <Shift><Super>l
 s0_rotate_to_1_key = <Super>1
@@ -220,4 +223,3 @@ s0_prev_key = Disabled
 s0_next_all_key = Disabled
 s0_prev_all_key = Disabled
 s0_saturation = 0
-
