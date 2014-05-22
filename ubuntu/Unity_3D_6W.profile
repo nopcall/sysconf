@@ -39,7 +39,7 @@ s0_outline_color = #e6e6e6ff
 s0_mode_matches = class=Emacs;class=Gnome-terminal;class=Evince;class=Thunderbird;
 s0_mode_modes = 3;3;3;3;
 s0_viewport_matches = class=Gnome-terminal;class=Evince;class=Thunderbird;class=Emacs;class=Firefox;
-s0_viewport_x_values = 1;1;2;5;6;
+s0_viewport_x_values = 1;5;2;5;6;
 s0_viewport_y_values = 1;1;1;1;1;
 
 [mag]
