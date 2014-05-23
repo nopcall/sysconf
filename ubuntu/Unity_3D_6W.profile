@@ -36,8 +36,8 @@ s0_gradient_3 = #d9d9d9cc
 s0_outline_color = #e6e6e6ff
 
 [place]
-s0_mode_matches = class=Emacs;class=Gnome-terminal;class=Evince;class=Thunderbird;
-s0_mode_modes = 3;3;3;3;
+s0_mode_matches = class=Gnome-terminal;class=Evince;class=Thunderbird;
+s0_mode_modes = 3;3;3;
 s0_viewport_matches = class=Gnome-terminal;class=Evince;class=Thunderbird;class=Emacs;class=Firefox;
 s0_viewport_x_values = 1;5;2;5;6;
 s0_viewport_y_values = 1;1;1;1;1;
@@ -47,10 +47,10 @@ s0_initiate = <Super>n
 
 [rotate]
 s0_speed = 1.000000
-s0_rotate_left_key = <Super>h
-s0_rotate_right_key = <Super>l
 s0_initiate_button = <Shift><Alt>Button1
+s0_rotate_left_key = <Super>h
 s0_rotate_left_button = <Shift><Alt>Button4
+s0_rotate_right_key = <Super>l
 s0_rotate_right_button = <Shift><Alt>Button5
 s0_rotate_left_window_key = <Shift><Super>h
 s0_rotate_right_window_key = <Shift><Super>l
@@ -205,6 +205,7 @@ s0_show_hud = Disabled
 s0_execute_command = Disabled
 s0_show_desktop_key = Disabled
 s0_panel_first_menu = Disabled
+s0_shortcut_overlay = false
 s0_inactive_shadow_color = #000000a5
 s0_show_launcher = Disabled
 s0_keyboard_focus = Disabled
@@ -215,6 +216,7 @@ s0_launcher_minimize_window = true
 s0_reveal_pressure = 1
 s0_icon_size = 32
 s0_menus_fadein = 0
+s0_show_minimized_windows = false
 s0_disable_show_desktop = true
 
 [staticswitcher]
@@ -223,3 +225,4 @@ s0_prev_key = Disabled
 s0_next_all_key = Disabled
 s0_prev_all_key = Disabled
 s0_saturation = 0
+
