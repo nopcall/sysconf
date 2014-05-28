@@ -32,6 +32,8 @@ vlc mplayer2
 [[https://github.com/hluk/CopyQ version 1.9.3 work better then other][CopyQ]]
 # network analyse
 wireshark
+# ssh replace
+mosh
 # mathematic utility
 matlab
 # GTK-Warning "pixmap"
