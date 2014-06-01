@@ -55,11 +55,15 @@ scanmem
 ## ulatency ulatencyd
 
 ** PPA
-indicator-multiload
+
 # sudo add-apt-repository ppa:cassou/emacs
 emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
+
+# indicator
+indicator-multiload
 # sudo add-apt-repository ppa:atareao/atareao
 my-weather-indicator
+
 # sudo add-apt-repository ppa:linrunner/tlp
 [[http://www.webupd8.org/2013/04/improve-power-usage-battery-life-in.html][TLP]]
 tlp tlp-rdw smartmontools ethtool tp-smapi-dkms acpi-call-tools
@@ -80,12 +84,12 @@ gstreamer0.10-ffmpeg	# likely replace by gstreamer1.0-libav in ubuntu 14.04
 # sudo add-apt-repository ppa:numix/ppa
 numix-icon-theme-circle numix-gtk-theme
 # sudo add-apt-repository ppa:otto-kesselgulasch/gimp-edge
-gimp
-gimp-resynthesizer
+# gimp
+# gimp-resynthesizer
 # https://pf.natalenko.name/
 linux-image-$(version)-pf2 linux-headers-$(version)-pf2
 # sudo add-apt-repository ppa:tuxonice/ppa
-linux-generic-tuxonice linux-headers-generic-tuxonice
+# linux-generic-tuxonice linux-headers-generic-tuxonice
 ## [[http://www.pauljoyceuk.com/codex/2012/howto-make-ubuntu-12-04-hibernate-successfully/][hibernate on ubuntu 12.04]]
 ## [[http://ubuntuhandbook.org/index.php/2013/10/enable-hibernation-ubuntu-13-10/][hibernate on ubuntu 13.10]]
 tuxonice-userui
@@ -123,7 +127,7 @@ git
 # powerfull downloader
 aria2
 # https://launchpad.net/~apt-fast/+archive/stable
-apt-fast
+# apt-fast
 # CLI clipboard
 xsel
 xclip
@@ -169,7 +173,7 @@ gsettings set com.canonical.Unity form-factor 'Desktop'
 # update with proxy
 sudo aptitude -o Acquire::http::proxy="http://127.0.0.1:8087/" update
 [[https://launchpad.net/~xorg-edgers/%2Barchive/ppa][Intel SNB Driver PPA]]
-libva1 vainfo i965-va-driver libva-glx1 libva-dev
+# libva1 vainfo i965-va-driver libva-glx1 libva-dev
 [[/etc/default/grub][GrubConfig]]
 zswap.enabled=1
 intel_pstate=enable
