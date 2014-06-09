@@ -38,6 +38,14 @@ mosh
 matlab
 # GTK-Warning "pixmap"
 gtk2-engines-pixbuf
+# mail utils
+offlineimap	# get mails
+mutt		# read mail and write
+w3m		# addon for read html
+msmtp		# send mail after write
+urlview
+# Proxy
+proxychains
 
 ** Diable by default
 ## steam
