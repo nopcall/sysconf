@@ -19,9 +19,9 @@
 # Project page; http://www.semicomplete.com/projects/keynav
 
 #comma	  	逗号
-#period	句号
+#period		句号
 #semicolon	分号
-#slash		这个符号 "/"
+#slash		符号 "/"
 
 # Use 'clear' to blow away any previous keybindings
 clear
