@@ -8,9 +8,6 @@ s0_deformation = 0
 s0_top_images = /home/nopcall/Pictures/background/awesome_daily.png;
 s0_bottom_images = /home/nopcall/Pictures/background/awesome_daily.png;
 
-[composite]
-s0_refresh_rate = 75
-
 [unityshell]
 s0_show_menu_bar = Disabled
 s0_lock_screen = Disabled
@@ -18,12 +15,14 @@ s0_show_hud = Disabled
 s0_execute_command = Disabled
 s0_show_desktop_key = Disabled
 s0_panel_first_menu = Disabled
+s0_panel_opacity = 0.770000
 s0_shortcut_overlay = false
 s0_inactive_shadow_color = #000000a5
 s0_show_launcher = Disabled
 s0_keyboard_focus = Disabled
 s0_launcher_switcher_forward = <Super>r
 s0_launcher_switcher_prev = <Shift><Super>r
+s0_launcher_opacity = 0.670000
 s0_launcher_hide_mode = 1
 s0_launcher_minimize_window = true
 s0_reveal_pressure = 1
@@ -165,16 +164,18 @@ s0_run_command_terminal_key = <Control><Alt>t
 [core]
 s0_active_plugins = core;composite;opengl;decor;compiztoolbox;widget;annotate;move;shelf;gnomecompat;regex;shift;imgjpeg;grid;vpswitch;resize;imgpng;wobbly;mousepoll;place;cube;animation;session;thumbnail;scale;workarounds;rotate;unitymtgrabhandles;cubeaddon;expo;ezoom;switcher;staticswitcher;ring;unityshell;
 s0_outputs = 1440x900+0+0;1366x768+0+900;
-s0_autoraise = false
-s0_autoraise_delay = 500
+s0_toggle_window_shaded_key = Disabled
 s0_hsize = 6
+
+[move]
+s0_initiate_key = Disabled
 
 [place]
 s0_mode_matches = class=Gnome-terminal;class=Evince;class=Thunderbird;
 s0_mode_modes = 3;3;3;
-s0_viewport_matches = class=Gnome-terminal;class=Evince;class=Thunderbird;class=Firefox;
-s0_viewport_x_values = 1;5;2;6;
-s0_viewport_y_values = 1;1;1;1;
+s0_viewport_matches = class=Gnome-terminal;class=Thunderbird;class=Firefox;
+s0_viewport_x_values = 1;2;6;
+s0_viewport_y_values = 1;1;1;
 
 [workarounds]
 s0_firefox_menu_fix = true
@@ -205,7 +206,6 @@ s0_ground_color2 = #b3b3b300
 
 [thumbnail]
 s0_thumb_color = #0000007f
-s0_current_viewport = false
 s0_font_background_color = #0000007f
 
 [grid]
@@ -220,11 +220,10 @@ s0_zoom_box_outline_color = #2f2f4f9f
 s0_zoom_box_fill_color = #2f2f2f4f
 
 [resize]
+s0_initiate_key = Disabled
 s0_mode = 2
 
 [staticswitcher]
-s0_next_key = Disabled
-s0_prev_key = Disabled
 s0_next_all_key = Disabled
 s0_prev_all_key = Disabled
 s0_saturation = 0
