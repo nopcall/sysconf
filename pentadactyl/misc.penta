@@ -35,16 +35,15 @@ set previouspattern=^\s*[上前][一]?[页张个篇章节步封]\s*$,^\s*(较新
 " set previouspattern^='[上前]\s*一?\s*[页张个篇章頁]','\bnewer\s*posts\b','^←$'
 
 "{{ quickmarks
-silent qmark w http://www.worldcommunitygrid.org/ms/viewMemberStatHistory.do
-silent qmark r https://ripple.com/graph/#r46985FYnfJgDY5XGae1J3eJj482e4XM41
+" silent qmark w http://www.worldcommunitygrid.org/ms/viewMemberStatHistory.do
+" silent qmark r https://ripple.com/graph/#r46985FYnfJgDY5XGae1J3eJj482e4XM41
+" silent qmark k http://k.ripplecn.org/
 
-silent qmark a http://www.acfun.com/
+silent qmark a http://www.acfun.tv/
+silent qmark f https://www.feedly.com/
 silent qmark d file:///home/Data/Git_projects/webui-aria2/index.html
-silent qmark g https://github.com/
-silent qmark k http://k.ripplecn.org/
 
+silent qmark g https://github.com/
 silent qmark c http://www.cplusplus.com/reference/
-silent qmark b http://www.baidu.com/
-silent qmark m http://music.163.com/#/m/discover/
 "}}
 "{{{ Misc Config Ends--------------------------------------------------------}}}

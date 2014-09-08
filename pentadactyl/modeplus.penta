@@ -92,7 +92,7 @@ EOF
 "{{  source boostrap if modified
 command bootstrap :runtime bootstrap
 js <<EOF
-let bootstrapFile = 'bootstrap';
+let bootstrapFile = 'bootstrap.penta';
 let bootstrapPref = 'extensions.dactyl.bootstrapTime';
 let file = io.File(IO.runtimePath + '/' + bootstrapFile);
 if (file.exists() && file.isFile() && file.isReadable()) {
