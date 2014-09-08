@@ -130,6 +130,8 @@ xdotool
 cmake
 xbacklight
 htop
+# gnu software manager
+stow
 # speed up program
 preload
 # quick jump to a directory
@@ -193,3 +195,6 @@ zswap.enabled=1
 intel_pstate=enable
 [[/etc/apt/apt.conf.d/00aptitude][00aptitude]]
 Acquire::Languages "none";
+
+# http://www.webupd8.org/2014/03/install-bittorrent-sync-gui-in-ubuntu.html
+BtTorrent Sync
