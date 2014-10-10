@@ -58,13 +58,21 @@ proxychains
 gameconqueror
 scanmem
 # Fonts
+ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy
 ## typecatcher
 # speed up system responsive
 ## ulatency ulatencyd
 
 ** PPA
 # sudo add-apt-repository ppa:cassou/emacs
-emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
+# emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
+
+# try ubuntu elisp ppa to install the latest emacs
+# enable global menu by follow step.
+# 1.   open dconf editor (search "dconf" in the Unity dash)
+# 2.   go to "com | canonical | unity-gtk-module"
+# 3.   add emacs24 to whitelist, e.g. ['emacs24']
+
 # sudo add-apt-repository ppa:wiznote-team
 wiznote
 # indicator
