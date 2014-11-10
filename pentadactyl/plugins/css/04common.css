@@ -22,6 +22,3 @@
 
 /* no click to play popup */
 panel[popupid="click-to-play-plugins"] {display: none !important;}
-
-/* hide menubar for fxchrome theme */
-#main-menubar {display: none !important;}

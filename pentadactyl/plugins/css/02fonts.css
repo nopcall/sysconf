@@ -43,3 +43,14 @@
     /* pre, code, kbd, samp, var { */
     /* 	font-family: "Consolas", "文泉驿等宽微米黑" !important;} */
 }
+
+/*---字体增强---*/
+body, input {text-shadow: 0px 0px 1px #999;}
+menubar > menu, menubar, menubutton, menulist, menuitem {
+    text-shadow: 0px 0px 1px #999;}
+menupopup > * {
+    text-shadow: 0px 0px 1px #999;}
+dialog, box, button, page, label, caption, textbox, input, select {
+    text-shadow: 0px 0px 1px #999;}
+window {
+    text-shadow: 0px 0px 1px #999;}

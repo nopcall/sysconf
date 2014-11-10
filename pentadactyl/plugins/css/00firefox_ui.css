@@ -226,3 +226,7 @@
 	position:fixed;
     }
 }
+/* hide menubar for fxchrome theme */
+/*
+#main-menubar {display: none !important;}
+*/
