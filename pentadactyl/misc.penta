@@ -41,6 +41,7 @@ set previouspattern=^\s*[上前][一]?[页张个篇章节步封]\s*$,^\s*(较新
 
 silent qmark a http://www.acfun.tv/
 silent qmark f https://www.feedly.com/
+silent qmark i http://www.inoreader.com/
 silent qmark d file:///home/Data/Git_projects/webui-aria2/index.html
 
 silent qmark g https://github.com/
