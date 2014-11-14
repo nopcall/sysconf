@@ -1,0 +1,8 @@
+/*显示缺失图像占位符*/
+@-moz-document url-prefix(http), url-prefix(file){
+    img:-moz-broken{
+        -moz-force-broken-image-icon: 1 !important;
+        width: 32px;
+        height: 32px;
+    }
+}
