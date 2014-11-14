@@ -15,7 +15,8 @@ s0_show_hud = Disabled
 s0_execute_command = Disabled
 s0_show_desktop_key = Disabled
 s0_panel_first_menu = Disabled
-s0_panel_opacity = 0.770000
+s0_panel_opacity = 0.950000
+s0_dash_blur_experimental = 0
 s0_shortcut_overlay = false
 s0_inactive_shadow_color = #000000a5
 s0_show_launcher = Disabled
@@ -136,6 +137,9 @@ s0_wave_amp_mult = 1.500000
 s0_selection_outline_color = #2f2f4f9f
 s0_selection_fill_color = #2f2f4f4f
 
+[opengl]
+s0_texture_filter = 0
+
 [cube]
 s0_mipmap = false
 s0_skydome = true
@@ -163,7 +167,7 @@ s0_run_command_terminal_key = <Control><Alt>t
 
 [core]
 s0_active_plugins = core;composite;opengl;decor;compiztoolbox;widget;annotate;move;shelf;gnomecompat;regex;shift;imgjpeg;grid;vpswitch;resize;imgpng;wobbly;mousepoll;place;cube;animation;session;thumbnail;scale;workarounds;rotate;unitymtgrabhandles;cubeaddon;expo;ezoom;switcher;staticswitcher;ring;unityshell;
-s0_outputs = 1440x900+0+0;1366x768+0+900;
+s0_outputs = 1366x768+0+0;
 s0_toggle_window_shaded_key = Disabled
 s0_hsize = 6
 
