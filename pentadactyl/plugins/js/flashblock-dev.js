@@ -148,7 +148,7 @@ var data = {
            xmlns:xbl="http://www.mozilla.org/xbl"
            xmlns:html="http://www.w3.org/1999/xhtml">
 
-          <binding id="flash">
+          <binding id="flash"  bindToUntrustedContent="true">
             <implementation>
               <constructor>
                 <![CDATA[
