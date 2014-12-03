@@ -176,6 +176,8 @@ zlib1g-dev	# emacs c complete
 libtinfo-dev  	 # for ld -ltinfo issure
 libssl-dev	 # for ld -lcrypto issure
 libstdc++-4.8-dev # for rtags building
+# [[http://libguestfs.org/][VDI mount]]
+libguestfs-tools
 
 ** ARM Development
 # cross compiler for arm architecture
