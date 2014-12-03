@@ -1,5 +1,5 @@
 {
-    "usageCount": 20, 
+    "usageCount": 74, 
     "omitTrigger": false, 
     "prompt": false, 
     "description": "minus->'-'", 
@@ -15,9 +15,7 @@
         "hotKey": "<np_subtract>", 
         "modifiers": []
     }, 
-    "modes": [
-        3
-    ], 
+    "modes": [], 
     "showInTrayMenu": false, 
     "matchCase": false, 
     "filter": {

@@ -1,5 +1,5 @@
 {
-    "usageCount": 9, 
+    "usageCount": 14, 
     "omitTrigger": false, 
     "prompt": false, 
     "description": "plus->'+'", 
@@ -15,9 +15,7 @@
         "hotKey": "<np_add>", 
         "modifiers": []
     }, 
-    "modes": [
-        3
-    ], 
+    "modes": [], 
     "showInTrayMenu": false, 
     "matchCase": false, 
     "filter": {
