@@ -1,34 +1,34 @@
 "{{{ Mode Plus Start---------------------------------------------------------}}}
 "{{ try to guess if param of :open is a url, and add buffer to :open/tabopen complition
-js <<EOF
-let isURL = function (url) {
-    if (typeof url !== 'string')
-        return false;
-    if (url.indexOf('google ') === 0)
-        return false;
-    if (url.indexOf('~/') === 0)
-        return true;
-    let m = url.match(/^(?:[^.:\/ ]+\.)+([A-Za-z]+)($|\/)/);
-    return (!m || m[1].match(/^(?:com|net|tv|org|name|edu|gov|au|tw|cz|cn|cc|us|me|info|co|jp|ly|gd|gl|de|tk|fm|io)$/));
-};
-overlay.overlayObject(dactyl, {
-    open: function open(urls, params, force) {
-        if (typeof urls === 'string') {
-            let matches = urls.match(/^(\d+): /);
-            if (matches) {
-                tabs.switchTo(urls, true);
-                return;
-            }
-        }
-        if (!isURL(urls)) {
-            arguments[0] = options['defsearch'] + ' ' + arguments[0];
-        }
-        open.superapply(this, arguments);
-    }
-});
-completion.addUrlCompleter('buffer', 'Open Tabs', completion.buffer);
-options["complete"].splice(0, 0, 'buffer');
-EOF
+" js <<EOF
+" let isURL = function (url) {
+"     if (typeof url !== 'string')
+"         return false;
+"     if (url.indexOf('google ') === 0)
+"         return false;
+"     if (url.indexOf('~/') === 0)
+"         return true;
+"     let m = url.match(/^(?:[^.:\/ ]+\.)+([A-Za-z]+)($|\/)/);
+"     return (!m || m[1].match(/^(?:com|net|tv|org|name|edu|gov|au|tw|cz|cn|cc|us|me|info|co|jp|ly|gd|gl|de|tk|fm|io)$/));
+" };
+" overlay.overlayObject(dactyl, {
+"     open: function open(urls, params, force) {
+"         if (typeof urls === 'string') {
+"             let matches = urls.match(/^(\d+): /);
+"             if (matches) {
+"                 tabs.switchTo(urls, true);
+"                 return;
+"             }
+"         }
+"         if (!isURL(urls)) {
+"             arguments[0] = options['defsearch'] + ' ' + arguments[0];
+"         }
+"         open.superapply(this, arguments);
+"     }
+" });
+" completion.addUrlCompleter('buffer', 'Open Tabs', completion.buffer);
+" options["complete"].splice(0, 0, 'buffer');
+" EOF
 "}}
 
 "{{ jump to a command, mapping or option source definition, from https://gist.github.com/3331062
@@ -63,31 +63,6 @@ overlay.overlayObject(modes, {
 });
 EOF
 "}}
-
-"{{ Manage proxy.pac
-command! reloadPAC,rp -js Components.classes['@mozilla.org/network/protocol-proxy-service;1'].getService().reloadPAC();
-js <<EOF
-group.commands.add(["pac"],
-    "Add domain to proxy.pac",
-    function (args) {
-        function addDomain(pac, domain) {
-            pac = pac.replace('//MARK1', '|| dnsDomainIs(host, "' + domain + "\")\n        //MARK1");
-            return pac.replace('//MARK2', '|| dnsDomainIs(host, ".' + domain + "\")\n    //MARK2");
-        }
-        let hostname = args.length ? args : util.subdomains(window.content.location.hostname)[0];
-        let pacfile = io.File(IO.runtimePath + '/proxy.pac');
-        let pac = pacfile.read();
-        pac = addDomain(pac, hostname);
-        pacfile.write(pac);
-        Components.classes['@mozilla.org/network/protocol-proxy-service;1'].getService().reloadPAC();
-    }, {
-        argCount: "?",
-        completer: function (context) {
-            modules.completion.visibleHosts(context);
-        },
-    }, true);
-EOF
-" }}}
 
 "{{  source boostrap if modified
 command bootstrap :runtime bootstrap

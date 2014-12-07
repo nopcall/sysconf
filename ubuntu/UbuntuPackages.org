@@ -77,6 +77,8 @@ ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy
 # http://www.sysads.co.uk/2014/05/integrate-keepass-2-firefox-keefox-ubuntu-14-04-13-10/
 # https://robertmassaioli.wordpress.com/2012/02/19/installing-keepass2-on-ubuntu-linux-11-10-to-work-in-google-chrome-via-keepasshttp/
 
+# sudo add-apt-repository ppa:i2p.packages/i2p
+sigil
 # sudo add-apt-repository ppa:wiznote-team
 wiznote
 # indicator
