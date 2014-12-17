@@ -46,6 +46,8 @@ msmtp		# send mail after write
 urlview
 # Proxy
 proxychains
+# Ebook reader
+calibre
 
 ** Diable by default
 ## steam
