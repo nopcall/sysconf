@@ -15,9 +15,7 @@
         "hotKey": "<np_divide>", 
         "modifiers": []
     }, 
-    "modes": [
-        3
-    ], 
+    "modes": [], 
     "showInTrayMenu": false, 
     "matchCase": false, 
     "filter": {
