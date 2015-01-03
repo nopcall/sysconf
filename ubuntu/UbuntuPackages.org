@@ -113,6 +113,8 @@ sudo apt-get install simplescreenrecorder-lib:i386
 # sudo add-apt-repository ppa:numix/ppa
 numix-icon-theme-circle numix-gtk-theme
 gnome-themes-standard
+# sudo apt-add-repository ppa:synapse-core/testing
+synapse indicator-synapse
 # sudo add-apt-repository ppa:otto-kesselgulasch/gimp-edge
 # gimp
 # gimp-resynthesizer
