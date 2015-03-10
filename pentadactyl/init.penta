@@ -1,16 +1,20 @@
 " Pentadactyl hg6928 (created 2013/06/28 00:00:04) running on:
 " Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:23.0) Gecko/20100101 Firefox/23.0
 
+" USESAGE: link this file to $HOME/.pentadactylrc
+
 " keybinding
-source ~/.pentadactyl/keybindings.penta
+source ~/.sysconf/pentadactyl/keybindings.penta
 " misc
-source ~/.pentadactyl/misc.penta
+source ~/.sysconf/pentadactyl/misc.penta
 " appearance
-source ~/.pentadactyl/appearance.penta
+source ~/.sysconf/pentadactyl/appearance.penta
 " functions
-source ~/.pentadactyl/func.penta
+source ~/.sysconf/pentadactyl/func.penta
 " thirdparty functions
-source ~/.pentadactyl/extensions.penta
+source ~/.sysconf/pentadactyl/extensions.penta
 " mode plus
-source ~/.pentadactyl/modeplus.penta
+source ~/.sysconf/pentadactyl/modeplus.penta
+
+
 " vim: set ft=pentadactyl fdm=marker:

@@ -1,4 +1,6 @@
 "{{{ Misc Config Start-------------------------------------------------------}}}
+" custom runtimepath
+set runtimepath+=$HOME/.sysconf/pentadactyl
 " activate immediately when open listed items
 set activate=addons,diverted,downloads,extoptions,help,homepage,tabopen,paste
 " set activate=addons,bookmarks,diverted,downloads,extoptions,help,homepage,tabopen,paste

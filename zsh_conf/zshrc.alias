@@ -1,12 +1,10 @@
 #{{{ my alias configuration
-alias em="emacsclient -nw"
+alias em="emacsclient "
 alias top10='print -l  ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 alias web_python="python -m SimpleHTTPServer 3000"
 alias admin="sudo su -"
 alias x="startx"
 alias mspeed="xinput --set-prop 'pointer:Game mouse' 'Device Accel Constant Deceleration' 4 &"
-alias wpx="python2 /home/Data/wallproxy/local/startup.py"
-alias goa="python2 /home/Data/goagent/local/proxy.py"
 alias kbdoff="sleep 0.1 ; xinput set-prop 'AT Translated Set 2 keyboard' 'Device Enabled' 0 "
 alias kbdon="sleep 0.1; xinput set-prop 'AT Translated Set 2 keyboard' 'Device Enabled' 1"
 alias touchoff="sleep 1; synclient touchpadoff=1"

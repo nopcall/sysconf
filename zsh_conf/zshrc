@@ -1,10 +1,10 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.sysconf/zsh_conf/oh-my-zsh
 DEFAULT_USER=nopcall
 
 # custom config dir environment
-DATA=/home/Data
-SYSCONF_DIR=$HOME/git_projects/sysconf/
+DATA=$HOME/Data
+SYSCONF_DIR=$HOME/.sysconf/
 SYSCONF_ZSH_DIR=$SYSCONF_DIR/zsh_conf
 
 # zsh theme
