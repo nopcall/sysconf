@@ -7,7 +7,8 @@ apt-file
 # unity manager
 unity-tweak-tool
 # compiz desktop management
-compizconfig-settings-manager compiz-plugins-extra
+dconf-editor
+compizconfig-settings-manager # compiz-plugins-extra
 # third-party packages
 ubuntu-restricted-extras
 # english words flash card
@@ -27,10 +28,10 @@ guake
 # disk manager
 gparted
 # media player
-vlc mplayer2
+smplayer # vlc mplayer2
 # Clipboard manager
 [[https://github.com/hluk/CopyQ version 1.9.3 work better then other][CopyQ]]
-# network analyse
+# network analyseq
 wireshark
 # ssh replace
 mosh
@@ -39,15 +40,17 @@ matlab
 # GTK-Warning "pixmap"
 gtk2-engines-pixbuf
 # mail utils
-offlineimap	# get mails
-mutt		# read mail and write
-w3m		# addon for read html
-msmtp		# send mail after write
-urlview
+# offlineimap	# get mails
+# mutt		# read mail and write
+# w3m		# addon for read html
+# msmtp		# send mail after write
+# urlview
 # Proxy
 proxychains
 # Ebook reader
 calibre
+# uml drawer
+dia
 
 ** Diable by default
 ## steam
@@ -92,7 +95,8 @@ my-weather-indicator
 tlp tlp-rdw smartmontools ethtool tp-smapi-dkms acpi-call-tools
 indicator-cpufreq
 # intel_pstate
-thermald
+cpufrequtils thermald
+sudo sed -i 's/^GOVERNOR=.*/GOVERNOR="powersave"/' /etc/init.d/cpufrequtils
 # sudo add-apt-repository ppa:kilian/f.lux
 #fluxgui # Xinyang coordinates: 32.1333° N, 114.0500° E
 # sudo add-apt-repository ppa:jconti/recent-notifications
@@ -105,13 +109,14 @@ oracle-java8-installer oracle-java8-set-default
 # sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins
 rhythmbox-plugin-complete
 # sudo add-apt-repository ppa:mc3man/trusty-media
-gstreamer0.10-ffmpeg	# likely replace by gstreamer1.0-libav in ubuntu 14.04
+# gstreamer0.10-ffmpeg	# likely replace by gstreamer1.0-libav in ubuntu 14.04
 # sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
 simplescreenrecorder
 sudo apt-get install libavcodec-extra-* libavformat-extra-*
 sudo apt-get install simplescreenrecorder-lib:i386
 # sudo add-apt-repository ppa:numix/ppa
-numix-icon-theme-circle numix-gtk-theme
+numix-icon-theme-circle
+numix-gtk-theme
 gnome-themes-standard
 # sudo apt-add-repository ppa:synapse-core/testing
 synapse indicator-synapse
@@ -186,6 +191,8 @@ libstdc++-4.8-dev # for rtags building
 libguestfs-tools
 
 ** ARM Development
+# colored gcc output
+colorgcc
 # cross compiler for arm architecture
 gcc-arm-linux-gnueabi
 # fundamental build tools
@@ -227,6 +234,6 @@ Section "InputClass"
     Option      "ButtonMapping" "1 2 3 4 5 6 7 8 0 0 0 0 0 0 0 0 0 0 0"
 EndSection
 ---
-
-# http://www.webupd8.org/2014/03/install-bittorrent-sync-gui-in-ubuntu.html
-BtTorrent Sync
+# Hot cornner reset after reboot
+# try to install
+libgtk2.0-dev
