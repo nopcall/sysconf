@@ -1,6 +1,6 @@
 "{{ Appearance
 " set firefox gui output
-set go=bCsnr
+set go=bCsnrT
 " hide firefox tabline replace by buftabs
 set showtabline=never
 " load theme
