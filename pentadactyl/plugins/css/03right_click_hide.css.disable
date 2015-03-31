@@ -11,11 +11,11 @@
     #context-stop, /*停止*/
     #context-selectall,/*全选*/
     #context-savepage,/*网页另存为*/
-    /* #context-openlinkintab,	   /\*新标签页中打开链接*\/ */
+    #context-openlinkintab,	   /*新标签页中打开链接*/
     #context-setDesktopBackground,/*设为桌面背景*/
     #context-sep-stop, /*停止下面的分割线*/
     #context-sendlink, /*发送链接到*/
-    /* #context-copylink, /\*复制链接地址*\/ */
+    #context-copylink, /*复制链接地址*/
     #context-sendpage, /*发送页面链接到*/
     #context-viewbgimage,/*查看背景图片*/
     #context-sep-viewbgimage,/*查看背景图片下面分割线*/
@@ -33,7 +33,7 @@
     #spell-check-enabled, /*拼写检查*/
     #spell-separator, /*拼写检查分割线*/
     #inspect-separator /*Inspect Element分割线*/
-	{
+        {
 	    display: none !important;
-	}
+        }
 }
