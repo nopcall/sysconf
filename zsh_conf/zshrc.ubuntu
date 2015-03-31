@@ -1,4 +1,4 @@
-if [ ! -f "screenfetch-dev" ]; then
+if [ ! -f "screenfetch-dev" ] && [ ! $TMUX ]; then
     screenfetch-dev
+    echo 'You are using Ubuntu!'
 fi
-echo 'You are using Ubuntu!'
