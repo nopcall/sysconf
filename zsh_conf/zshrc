@@ -12,9 +12,9 @@ source $SYSCONF_ZSH_DIR/zshrc.theme
 
 # oh-my-zsh plugins dependence on platform
 if [ `uname` = 'Linux' ]; then
-    plugins=(autojump git history-substring-search knife)
+    plugins=(autojump git history-substring-search knife key-bindings)
 else if [ `uname` = 'Darwin' ]; then
-         plugins=(brew autojump git history-substring-search knife)
+         plugins=(brew autojump git history-substring-search knife key-bindings)
      fi
 fi
 
