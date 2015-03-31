@@ -10,7 +10,7 @@ set fbwhitelist=music|tieba|play.baidu.com,music.163.com,box.zhangmen.baidu.com,
 :map -silent <A-p> :flashtoggle<CR>
 
 " plugin: noscript-dev.js
-:map <A-S-s> :set nst!=<A-Tab><CR><C-r>
+" :map <A-S-s> :set nst!=<A-Tab><CR><C-r>
 
 "{{ plugin: buftabs.js works perfect with tab-on-statusline.js
 set bte=nbht
