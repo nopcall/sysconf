@@ -8,7 +8,12 @@
     #nav-bar {
         height: 0;
         overflow: hidden;
-        /* visibility: hidden; */
+        visibility: hidden;
+    }
+
+    /* whitelist uBlock */
+    #ublock-button {
+        visibility: visible;
     }
 
     /* Blacklist the known nav-bar children */
@@ -26,5 +31,4 @@
         {
             display: none;
         }
-
 }

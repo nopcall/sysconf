@@ -29,6 +29,8 @@ source $SYSCONF_ZSH_DIR/zshrc.func
 source $SYSCONF_ZSH_DIR/zshrc.plus
 # source alias
 source $SYSCONF_ZSH_DIR/zshrc.alias
+# fix HHKB numpad
+source $SYSCONF_ZSH_DIR/zshrc.hhkb
 
 #{{{ special system
 # Ubuntu

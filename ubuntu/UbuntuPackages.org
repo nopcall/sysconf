@@ -26,7 +26,7 @@ goldendict
 # drop-down terminal
 guake
 # disk manager
-gparted
+gparted ## conflict with other package at ubuntu 15.04
 # media player
 smplayer # vlc mplayer2
 # Clipboard manager
@@ -51,6 +51,10 @@ proxychains
 calibre
 # uml drawer
 dia
+# lik uml drawer
+graphviz
+# Mouse gestrue
+easystroke
 
 ** Diable by default
 ## steam
@@ -70,13 +74,22 @@ ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy
 
 ** PPA
 # sudo add-apt-repository ppa:cassou/emacs
-# emacs-snapshot-el emacs-snapshot-gtk emacs-snapshot
-
+# sudo add-apt-repository ppa:ubuntu-elisp/ppa
+emacs-snapshot # emacs-snapshot-el emacs-snapshot-gtk
 # try ubuntu elisp ppa to install the latest emacs
 # enable global menu by follow step.
 # 1.   open dconf editor (search "dconf" in the Unity dash)
 # 2.   go to "com | canonical | unity-gtk-module"
 # 3.   add emacs24 to whitelist, e.g. ['emacs24']
+
+# sudo add-apt-repository ppa:yorba/ppa
+geary # main client very nice
+
+# sudo add-apt-repository ppa:no1wantdthisname/ppa
+# sudo vim /etc/profile.d/infinality-settings.sh -> USES_STYLE="DEFAULT"
+# sudo bash /etc/fonts/infinality/infctl.sh setstyle -> OSX
+# .fonts.conf -> https://gist.github.com/nopcall/505b712ddcec86517b84
+##fontconfig-infinality
 
 # sudo apt-add-repository ppa:jtaylor/keepass
 # http://www.sysads.co.uk/2014/05/integrate-keepass-2-firefox-keefox-ubuntu-14-04-13-10/
@@ -97,29 +110,21 @@ indicator-cpufreq
 # intel_pstate
 cpufrequtils thermald
 sudo sed -i 's/^GOVERNOR=.*/GOVERNOR="powersave"/' /etc/init.d/cpufrequtils
-# sudo add-apt-repository ppa:kilian/f.lux
-#fluxgui # Xinyang coordinates: 32.1333° N, 114.0500° E
 # sudo add-apt-repository ppa:jconti/recent-notifications
 indicator-notifications
 # sudo add-apt-repository ppa:nilarimogard/webupd8
 prime-indicator nvidia-prime nvidia-331
 mesa-utils
 # sudo add-apt-repository ppa:webupd8team/java
-oracle-java8-installer oracle-java8-set-default
-# sudo add-apt-repository ppa:fossfreedom/rhythmbox-plugins
-rhythmbox-plugin-complete
-# sudo add-apt-repository ppa:mc3man/trusty-media
-# gstreamer0.10-ffmpeg	# likely replace by gstreamer1.0-libav in ubuntu 14.04
+oracle-java8-installer oracle-java8-set-default # maybe 7 is better
 # sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
 simplescreenrecorder
 sudo apt-get install libavcodec-extra-* libavformat-extra-*
 sudo apt-get install simplescreenrecorder-lib:i386
 # sudo add-apt-repository ppa:numix/ppa
 numix-icon-theme-circle
-numix-gtk-theme
-gnome-themes-standard
 # sudo apt-add-repository ppa:synapse-core/testing
-synapse indicator-synapse
+synapse
 # sudo add-apt-repository ppa:otto-kesselgulasch/gimp-edge
 # gimp
 # gimp-resynthesizer
@@ -132,26 +137,11 @@ linux-image-$(version)-pf2 linux-headers-$(version)-pf2
 tuxonice-userui
 sudo ln -s /usr/lib/tuxonice-userui/tuxoniceui /usr/local/sbin/tuxoniceui_text
 
-** Lib
-# sudo add-apt-repository ppa:jon-severinsson/ffmpeg
-ffpmpeg
-libdevil-dev
-** Drop
-# sudo add-apt-repository ppa:diesch/testing
-## classicmenu-indicator
-# sudo add-apt-repository ppa:noobslab/apps
-## indicator-synapse
-# sudo add-apt-repository ppa:atareao/atareao
-## calendar-indicator
-# sudo add-apt-repository ppa:eugenesan/ppa ######FUCK YOU
-## smartgithg
-# sudo add-apt-repository ppa:danjaredg/jayatana
-## jayatana
-
 ** Shell Tools
 zsh
 tmux
 xdotool
+
 cmake
 xbacklight
 htop
@@ -175,24 +165,19 @@ xclip
 # uncompressor
 p7zip-full
 p7zip-rar
-# DBMS
-postgresql postgresql-contrib pgadmin3 libpq-dev libpqxx-dev libpqxx-doc
 # emacs auto-complete-clang-async
-llvm clang llvm-dev libclang-dev
-# emacs irony-mode
+# irony-mode dependencise
+clang libclang-dev
 ## ninja-build
 ## doxygen doxygen-gui
-# rtags denpendence
-zlib1g-dev	# emacs c complete
-libtinfo-dev  	 # for ld -ltinfo issure
-libssl-dev	 # for ld -lcrypto issure
-libstdc++-4.8-dev # for rtags building
 # [[http://libguestfs.org/][VDI mount]]
 libguestfs-tools
 
 ** ARM Development
 # colored gcc output
 colorgcc
+# gcc cache
+ccache
 # cross compiler for arm architecture
 gcc-arm-linux-gnueabi
 # fundamental build tools
