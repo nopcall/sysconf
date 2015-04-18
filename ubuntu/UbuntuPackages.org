@@ -83,7 +83,7 @@ emacs-snapshot # emacs-snapshot-el emacs-snapshot-gtk
 # 3.   add emacs24 to whitelist, e.g. ['emacs24']
 
 # sudo add-apt-repository ppa:yorba/ppa
-geary # main client very nice
+#geary # main client very nice
 
 # sudo add-apt-repository ppa:no1wantdthisname/ppa
 # sudo vim /etc/profile.d/infinality-settings.sh -> USES_STYLE="DEFAULT"

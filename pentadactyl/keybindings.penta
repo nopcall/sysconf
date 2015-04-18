@@ -1,6 +1,4 @@
 "{{{ Keybinding Start--------------------------------------------------------}}}
-"" Leader key
-map , <Leader>
 "" disable some keys
 map -count -modes=c,i,n,t,v <C-c> <Pass>
 map -count -modes=c,i,t <C-v> <Pass>
@@ -34,6 +32,8 @@ map -count -modes=c  <C-n> <tab>
 map -count -modes=c  <C-p> <S-Tab>
 " U list closed tabs
 map -count -modes=n -builtin U :undo<Space>
+"" Leader key
+map , <Leader>
 " tabgroup
 if config.OS.isMacOSX
 	nmap -builtin <Leader>e <S-M-e>
