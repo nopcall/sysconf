@@ -16,15 +16,16 @@ set strictfocus^=tao123.com:despotic,baidu.com:despotic
 " flush browser dns
 command flushdns set! network.dnsCacheExpiration=0 | set! network.dnsCacheExpiration&
 " default search engine
-set defsearch=g
+" set defsearch=g
 " complete search engine suguest
-set complete=location,suggestion,file
+set complete=location,file
 " set complete=location,suggestion,file,bookmark,history
 " search current selected text with google
 map t -js content.getSelection().toString()!=""?dactyl.execute(':tabopen '+ content.getSelection()):CommandExMode().open('tabopen ')
 map o -js content.getSelection().toString()!=""?dactyl.execute(':open '+ content.getSelection()):CommandExMode().open('open ')
 " hint mode use letter replace to number
-set hintkeys=weroiusdfjklcvnm
+" set hintkeys=weriusdfjklcvnm
+set hintkeys=qwertasdfzxcvb
 " set hint time out
 set hinttimeout=1500
 " hint mode include labels

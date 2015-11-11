@@ -54,11 +54,21 @@ window.openDialog("chrome://global/content/viewSource.xul",
 EOF
 "}}
 
-"{{ change EX mode prompt
+"{{ change mode prompts
 js <<EOF
 overlay.overlayObject(modes, {
     _getModeMessage: function _getModeMessage() {
-        return _getModeMessage.superapply(this, arguments).replace(/^-- EX --/, '➜ ');
+        let modeMap = {
+            "-- EX --": "❯",
+            "-- MENU --": "☰",
+            "-- INSERT --": "▐",
+            "-- CARET --": "⍲",
+            "-- VISUAL --": "▒",
+            "-- TEXT EDIT --": "█"
+        };
+        let originModeMessage = _getModeMessage.superapply(this, arguments);
+        let modeMessage = modeMap[originModeMessage];
+        return modeMessage ? modeMessage : originModeMessage;
     }
 });
 EOF
