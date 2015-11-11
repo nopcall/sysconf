@@ -1,22 +1,17 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.sysconf/zsh_conf/oh-my-zsh
-DEFAULT_USER=nopcall
+DEFAULT_USER=`whoami`
 
-# custom config dir environment
+# custom config dir path
 DATA=$HOME/Data
-SYSCONF_DIR=$HOME/.sysconf/
+SYSCONF_DIR=$HOME/.sysconf
 SYSCONF_ZSH_DIR=$SYSCONF_DIR/zsh_conf
 
 # zsh theme
 source $SYSCONF_ZSH_DIR/zshrc.theme
 
 # oh-my-zsh plugins dependence on platform
-if [ `uname` = 'Linux' ]; then
-    plugins=(autojump archlinux git history-substring-search knife key-bindings)
-else if [ `uname` = 'Darwin' ]; then
-         plugins=(brew autojump git history-substring-search knife key-bindings)
-     fi
-fi
+plugins=(taskwarrior tmux colored-man autojump git sudo history-substring-search)
 
 # source oh-my-zsh environment
 source $ZSH/oh-my-zsh.sh
@@ -32,23 +27,10 @@ source $SYSCONF_ZSH_DIR/zshrc.alias
 # fix HHKB numpad
 source $SYSCONF_ZSH_DIR/zshrc.hhkb
 
-#{{{ special system
-# Ubuntu
-if [[ $(lsb_release -is 2>/dev/null) == "Ubuntu" ]] ; then
-    source $SYSCONF_ZSH_DIR/zshrc.ubuntu
-fi
 # Gentoo
-if [[ $(lsb_release -is 2>/dev/null) == "Gentoo" ]] ; then
-    source $SYSCONF_ZSH_DIR/zshrc.gentoo
-fi
-# Mac
-if [ `uname` = 'Darwin' ]; then
-    source $SYSCONF_ZSH_DIR/zshrc.mac
-fi
-#}}}
+source $SYSCONF_ZSH_DIR/zshrc.gentoo
 
 # Customize to your needs...
-# setxkbmap -option terminate:ctrl_alt_bksp
 if [[ -f ~/.zshrc.local ]]; then
 	source $HOME/.zshrc.local
 fi

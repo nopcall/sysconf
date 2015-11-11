@@ -60,10 +60,6 @@ zle -N self-insert check-cmd-self-insert
 zle -N backward-delete-char check-cmd-backward-delete-char
 #}}}
 
-#{{{ weather
-shweather() { curl -s http://newsrss.bbc.co.uk/weather/forecast/1713/Next3DaysRSS.xml | awk -F'</*title>' '!a[$2]++&&NF!=1 {gsub("&#xB0;","",$2); print $2}'; }
-#}}}
-
 #{{{
 png2jpg() {
     for img in *.png; do
@@ -82,12 +78,15 @@ jpg2png() {
 #{{{ reboot comfirm
 confirm_yes() {
     sure=$(dialog --stdout  --inputbox "Are you sure that you want to run '$1' command? Type YES to confirm." 10 50)
-    [[ $sure == YES ]] && $1
+    [[ $sure == YES ]] && $1 $2
 }
 
-for c in reboot halt shutdown; do
-    alias $c="confirm_yes $c";
-done
+alias reboot="confirm_yes systemctl reboot"
+alias poweroff="confirm_yes systemctl poweroff"
+alias halt="confirm_yes systemctl halt"
+#for c in reboot halt shutdown; do
+#    alias $c="confirm_yes $c";
+#done
 #}}}
 
 #{{{ check if a binary exists in path

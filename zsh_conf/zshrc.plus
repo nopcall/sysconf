@@ -156,16 +156,6 @@ bindkey "\t" user-complete
 cdpath="$HOME"
 # }}}
 
-## {{{ inser 'sudo' to the head of command
-sudo-command-line() {
-    [[ -z $BUFFER ]] && zle up-history
-    [[ $BUFFER != sudo\ * ]] && BUFFER="sudo $BUFFER"
-    zle end-of-line                 #光标移动到行末
-}
-zle -N sudo-command-line
-bindkey "\e\e" sudo-command-line						#定义快捷键为： [Esc] [Esc]
-# }}}
-
 # {{{
 zshaddhistory() {
     cmd=${1%%$'\n'}
