@@ -1,45 +1,45 @@
 {
-    "folders": [], 
-    "toggleServiceHotkey": {
-        "hotKey": "k", 
-        "modifiers": [
-            "<shift>", 
-            "<super>"
-        ], 
-        "enabled": false
-    }, 
-    "settings": {
-        "showTrayIcon": true, 
-        "sortByUsageCount": true, 
-        "scriptGlobals": {}, 
-        "undoUsingBackspace": true, 
-        "notificationIcon": "autokey-status", 
-        "enableQT4Workaround": false, 
-        "promptToSave": true, 
-        "menuTakesFocus": false, 
-        "interfaceType": "XRecord", 
-        "windowDefaultSize": [
-            914, 
-            601
-        ], 
-        "showToolbar": true, 
-        "serviceRunning": true, 
-        "columnWidths": [
-            150, 
-            50, 
-            100
-        ], 
-        "workAroundApps": ".*VirtualBox.*|krdc.Krdc", 
-        "hPanePosition": 229, 
-        "isFirstRun": true
-    }, 
-    "userCodeDir": null, 
-    "version": "0.90.4", 
+    "version": "0.90.4",
     "configHotkey": {
-        "hotKey": "k", 
+        "enabled": false,
         "modifiers": [
             "<super>"
-        ], 
-        "enabled": false
-    }
+        ],
+        "hotKey": "k"
+    },
+    "toggleServiceHotkey": {
+        "enabled": false,
+        "modifiers": [
+            "<shift>",
+            "<super>"
+        ],
+        "hotKey": "k"
+    },
+    "userCodeDir": null,
+    "settings": {
+        "workAroundApps": ".*VirtualBox.*|krdc.Krdc",
+        "windowDefaultSize": [
+            1366,
+            748
+        ],
+        "menuTakesFocus": false,
+        "serviceRunning": true,
+        "notificationIcon": "autokey-status",
+        "undoUsingBackspace": true,
+        "scriptGlobals": {},
+        "promptToSave": true,
+        "showTrayIcon": true,
+        "hPanePosition": 564,
+        "showToolbar": true,
+        "columnWidths": [
+            178,
+            70,
+            121
+        ],
+        "sortByUsageCount": true,
+        "enableQT4Workaround": false,
+        "isFirstRun": false,
+        "interfaceType": "XRecord"
+    },
+    "folders": []
 }

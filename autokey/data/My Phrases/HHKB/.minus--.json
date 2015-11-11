@@ -1,27 +1,29 @@
 {
-    "usageCount": 74, 
-    "omitTrigger": false, 
-    "prompt": false, 
-    "description": "minus->'-'", 
+    "sendMode": "kb",
     "abbreviation": {
-        "wordChars": "[\\w]", 
-        "abbreviations": [], 
-        "immediate": false, 
-        "ignoreCase": false, 
-        "backspace": true, 
-        "triggerInside": false
-    }, 
-    "hotkey": {
-        "hotKey": "<np_subtract>", 
-        "modifiers": []
-    }, 
-    "modes": [], 
-    "showInTrayMenu": false, 
-    "matchCase": false, 
+        "ignoreCase": false,
+        "immediate": false,
+        "backspace": true,
+        "triggerInside": false,
+        "wordChars": "[\\w]",
+        "abbreviations": []
+    },
     "filter": {
-        "regex": null, 
+        "regex": null,
         "isRecursive": false
-    }, 
-    "type": "phrase", 
-    "sendMode": "kb"
+    },
+    "prompt": false,
+    "type": "phrase",
+    "showInTrayMenu": false,
+    "matchCase": false,
+    "usageCount": 74,
+    "modes": [
+        3
+    ],
+    "description": "minus->'-'",
+    "hotkey": {
+        "hotKey": "<np_subtract>",
+        "modifiers": []
+    },
+    "omitTrigger": false
 }
