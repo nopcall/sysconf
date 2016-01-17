@@ -77,16 +77,14 @@ jpg2png() {
 
 #{{{ reboot comfirm
 confirm_yes() {
-    sure=$(dialog --stdout  --inputbox "Are you sure that you want to run '$1' command? Type YES to confirm." 10 50)
-    [[ $sure == YES ]] && $1 $2
+    sure=$(dialog --stdout --inputbox "Are you sure that you want to run '$1' command? \
+                Type YES to confirm." 10 50)
+    [[ $sure == YES ]] && systemctl $1
 }
 
-alias reboot="confirm_yes systemctl reboot"
-alias poweroff="confirm_yes systemctl poweroff"
-alias halt="confirm_yes systemctl halt"
-#for c in reboot halt shutdown; do
-#    alias $c="confirm_yes $c";
-#done
+for c in reboot poweroff halt shutdown; do
+   alias $c="confirm_yes $c";
+done
 #}}}
 
 #{{{ check if a binary exists in path

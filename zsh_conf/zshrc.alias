@@ -83,7 +83,7 @@ for i in rar zip 7z lzma;	alias -s $i="7z x "
 (bin-exist vim) && alias vi='vim'
 (bin-exist pal) && alias pal="pal -r 0-7 --color"
 (bin-exist setxkbmap) && alias c2c="setxkbmap -option ctrl:swapcaps" && alias cmc="setxkbmap -option caps:ctrl_modifier" && alias cnoc="setxkbmap -option ctrl:nocaps"
-(bin-exist trash) && alias rm="trash" && alias restrash="restore-trash" && alias lstrash="trash-list"
+# (bin-exist trash) && alias rm="trash" && alias restrash="restore-trash" && alias lstrash="trash-list"
 (bin-exist ag) || alias ag="grep"
 #}}}
 

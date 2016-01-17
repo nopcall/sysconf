@@ -1,5 +1,2 @@
-
-export PATH=/usr/sbin:$PATH
-
 alias emerge="emerge -avt"
 alias genlinux="make -j9 && make modules_install && genkernel initramfs && echo 'Make Linux Kernel completed. Happy hacking'"
