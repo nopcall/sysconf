@@ -1,45 +1,45 @@
 {
-    "configHotkey": {
-        "modifiers": [
-            "<super>"
-        ],
-        "enabled": false,
-        "hotKey": "k"
-    },
     "settings": {
         "promptToSave": true,
+        "interfaceType": "XRecord",
+        "menuTakesFocus": false,
+        "enableQT4Workaround": false,
+        "showTrayIcon": true,
+        "notificationIcon": "autokey-status",
+        "workAroundApps": ".*VirtualBox.*|krdc.Krdc",
+        "scriptGlobals": {},
+        "undoUsingBackspace": true,
+        "serviceRunning": true,
+        "windowDefaultSize": [
+            1920,
+            1060
+        ],
+        "isFirstRun": false,
         "columnWidths": [
             178,
             70,
             121
         ],
-        "isFirstRun": false,
-        "hPanePosition": 565,
-        "workAroundApps": ".*VirtualBox.*|krdc.Krdc",
-        "scriptGlobals": {},
-        "sortByUsageCount": true,
-        "showTrayIcon": true,
         "showToolbar": true,
-        "notificationIcon": "autokey-status",
-        "windowDefaultSize": [
-            1368,
-            748
-        ],
-        "interfaceType": "XRecord",
-        "enableQT4Workaround": false,
-        "serviceRunning": true,
-        "menuTakesFocus": false,
-        "undoUsingBackspace": true
+        "sortByUsageCount": true,
+        "hPanePosition": 793
     },
-    "version": "0.90.4",
-    "userCodeDir": null,
-    "folders": [],
     "toggleServiceHotkey": {
+        "enabled": false,
+        "hotKey": "k",
         "modifiers": [
             "<shift>",
             "<super>"
-        ],
+        ]
+    },
+    "configHotkey": {
         "enabled": false,
-        "hotKey": "k"
-    }
+        "hotKey": "k",
+        "modifiers": [
+            "<super>"
+        ]
+    },
+    "version": "0.90.4",
+    "userCodeDir": null,
+    "folders": []
 }
