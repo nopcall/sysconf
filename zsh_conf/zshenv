@@ -1,0 +1,43 @@
+#{{{ system path and tools
+export EDITOR="vim"
+# export SUDO_PROMPT=$'[\e[31;5msudo\e[m] password for \e[33;1m%p\e[m: '
+export SUDO_PROMPT=$'[\e[31;5msudo\e[m] The anwser to life, the universe and everything: '
+#}}}
+
+#{{{ cd ~xxx
+hash -d WWW="$HOME/wwwroot"
+hash -d WORK="$HOME/Workspace"
+hash -d E="/etc/env.d"
+hash -d C="/etc/conf.d"
+hash -d I="/etc/rc.d"
+hash -d X="/etc/X11"
+hash -d HIST="$HISTDIR"
+#}}}
+
+#{{{ have no idea
+typeset -U PATH
+if [[ "$TERM" == "dumb" ]]; then
+    unsetopt zle
+    unsetopt prompt_cr
+    unsetopt prompt_subst
+    unfunction precmd
+    unfunction preexec
+    PS1='$ '
+fi
+#}}}
+
+# execute file path
+PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
+
+# {{{ development environment
+# Scripts
+PATH=$HOME/bin/scripts:$PATH
+PATH=$HOME/bin/scripts/bashell:$PATH
+PATH=$HOME/bin/scripts/python:$PATH
+PATH=$HOME/bin/scripts/perl:$PATH
+
+# Android Development
+export ANDROID_SDK_ROOT=$HOME/Development/Android/SDK
+export PATH=$ANDROID_SDK_ROOT/tools:$PATH
+export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+# }}}

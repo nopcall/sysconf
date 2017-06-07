@@ -1,0 +1,54 @@
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
+URxvt.iconFile: /usr/share/icons/Numix-Circle/scalable/apps/terminal.svg
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+URxvt.urgentOnBell:         false
+URxvt.visualBell:           false
+! URxvt.loginShell:           true
+! URxvt.internalBorder:       3
+! URxvt.lineSpace:            0
+
+! Fonts
+URxvt.font: xft:Fira Mono:medium:size=12
+
+! Fix font space
+URxvt*letterSpace: -1
+
+! Scrollbar
+URxvt.scrollBar:            false
+! URxvt.scrollStyle:          rxvt
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.jumpScroll: true
+URxvt.saveLines: 9999
+
+! Cursor
+URxvt.cursorBlink:          false
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+!-*- Perl extensions -*-
+URxvt.perl-ext-common:default,clipboard,matcher,keyboard-select
+URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:   google-chrome-stable
+URxvt.underlineURLs:  true
+URxvt.matcher.button: 1
+URxvt.keysym.M-Escape:perl:keyboard-select:activate
+URxvt.keysym.M-c:     perl:clipboard:copy
+URxvt.keysym.M-v:     perl:clipboard:paste
+URxvt.keysym.M-C-v:   perl:clipboard:paste_escaped
+! URxvt.copyCommand:   xsel -ib
+! URxvt.pasteCommand:  xsel -ob
+! Comment this if you dont want copy when text is selected
+URxvt.clipboard.autocopy: true
