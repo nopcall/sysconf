@@ -1,3 +1,19 @@
+# execute file path
+PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
+
+# {{{ development environment
+# Scripts
+PATH=$HOME/bin/scripts:$PATH
+PATH=$HOME/bin/scripts/bashell:$PATH
+PATH=$HOME/bin/scripts/python:$PATH
+PATH=$HOME/bin/scripts/perl:$PATH
+
+# Android Development
+export ANDROID_SDK_ROOT=$HOME/Development/Android/SDK
+export PATH=$ANDROID_SDK_ROOT/tools:$PATH
+export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+# }}}
+
 #{{{ system path and tools
 export EDITOR="vim"
 # export SUDO_PROMPT=$'[\e[31;5msudo\e[m] password for \e[33;1m%p\e[m: '
@@ -25,19 +41,3 @@ if [[ "$TERM" == "dumb" ]]; then
     PS1='$ '
 fi
 #}}}
-
-# execute file path
-PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
-
-# {{{ development environment
-# Scripts
-PATH=$HOME/bin/scripts:$PATH
-PATH=$HOME/bin/scripts/bashell:$PATH
-PATH=$HOME/bin/scripts/python:$PATH
-PATH=$HOME/bin/scripts/perl:$PATH
-
-# Android Development
-export ANDROID_SDK_ROOT=$HOME/Development/Android/SDK
-export PATH=$ANDROID_SDK_ROOT/tools:$PATH
-export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
-# }}}
