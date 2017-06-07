@@ -5,3 +5,5 @@ pentadactyl/info
 *~
 /autokey/autokey.log
 /autokey/autokey.pid
+/.zcache
+/.zcache/*
