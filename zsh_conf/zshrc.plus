@@ -113,40 +113,40 @@ zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directori
 ## {{{ 行编辑高亮模式
 # Ctrl+@ 设置标记，标记和光标点之间为 region
 zle_highlight=(region:bg=magenta #选中区域
-	       special:bold      #特殊字符
-	       isearch:underline)#搜索时使用的关键字
+         special:bold      #特殊字符
+         isearch:underline)#搜索时使用的关键字
 # }}}
 
 ## {{{ 空行(光标在行首)补全 "cd "
 user-complete(){
     case $BUFFER in
-	"" )                       # 空行填入 "cd "
-	    BUFFER="cd "
-	    zle end-of-line
-	    zle expand-or-complete
-	    ;;
-	"cd  " )                   # TAB + 空格 替换为 "cd ~"
-	    BUFFER="cd ~"
-	    zle end-of-line
-	    zle expand-or-complete
-	    ;;
-	" " )
-	    BUFFER="!?"
-	    zle end-of-line
-	    ;;
-	"cd --" )                  # "cd --" 替换为 "cd +"
-	    BUFFER="cd +"
-	    zle end-of-line
-	    zle expand-or-complete
-	    ;;
-	"cd +-" )                  # "cd +-" 替换为 "cd -"
-	    BUFFER="cd -"
-	    zle end-of-line
-	    zle expand-or-complete
-	    ;;
-	* )
-	    zle expand-or-complete
-	    ;;
+  "" )                       # 空行填入 "cd "
+      BUFFER="cd "
+      zle end-of-line
+      zle expand-or-complete
+      ;;
+  "cd  " )                   # TAB + 空格 替换为 "cd ~"
+      BUFFER="cd ~"
+      zle end-of-line
+      zle expand-or-complete
+      ;;
+  " " )
+      BUFFER="!?"
+      zle end-of-line
+      ;;
+  "cd --" )                  # "cd --" 替换为 "cd +"
+      BUFFER="cd +"
+      zle end-of-line
+      zle expand-or-complete
+      ;;
+  "cd +-" )                  # "cd +-" 替换为 "cd -"
+      BUFFER="cd -"
+      zle end-of-line
+      zle expand-or-complete
+      ;;
+  * )
+      zle expand-or-complete
+      ;;
     esac
 }
 zle -N user-complete
@@ -164,6 +164,20 @@ zshaddhistory() {
     first_arg=${${(z)LASTCMD}[1]}
     ( [[ `id -u $USER` -eq 0 ]] || [[ $first_arg == sudo ]] ) && logger -t "$USER@${TTY/\/dev\/}[$PWD]" $LASTCMD
 }
+# }}}
+
+# {{{
+magic-enter() {
+    if [[ -z $BUFFER ]]
+    then
+        zle clear-screen
+    else
+        zle accept-line
+    fi
+}
+
+zle -N magic-enter
+bindkey "^M" magic-enter
 # }}}
 
 # {{{ pinyin change dir

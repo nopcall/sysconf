@@ -1,3 +1,9 @@
+# python disable cache
+PYTHONDONTWRITEBYTECODE=1
+
+# qt5ct
+export QT_QPA_PLATFORMTHEME=qt5ct
+
 # execute file path
 PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
 
@@ -8,8 +14,11 @@ PATH=$HOME/bin/scripts/bashell:$PATH
 PATH=$HOME/bin/scripts/python:$PATH
 PATH=$HOME/bin/scripts/perl:$PATH
 
+# ccache
+PATH="/usr/lib/ccache/bin:$PATH"
+
 # Android Development
-export ANDROID_SDK_ROOT=$HOME/Development/Android/SDK
+export ANDROID_SDK_ROOT=$HOME/DEV/LIB/Android/sdk
 export PATH=$ANDROID_SDK_ROOT/tools:$PATH
 export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
 # }}}
@@ -21,11 +30,6 @@ export SUDO_PROMPT=$'[\e[31;5msudo\e[m] The anwser to life, the universe and eve
 #}}}
 
 #{{{ cd ~xxx
-hash -d WWW="$HOME/wwwroot"
 hash -d WORK="$HOME/Workspace"
-hash -d E="/etc/env.d"
-hash -d C="/etc/conf.d"
-hash -d I="/etc/rc.d"
-hash -d X="/etc/X11"
 hash -d HIST="$HISTDIR"
 #}}}
