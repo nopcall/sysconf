@@ -4,6 +4,3 @@
 [submodule "pentadactyl/colors/pentadactyl-solarized"]
 	path = pentadactyl/colors/pentadactyl-solarized
 	url = https://github.com/claytron/pentadactyl-solarized.git
-[submodule "zsh_conf/oh-my-zsh"]
-	path = zsh_conf/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
