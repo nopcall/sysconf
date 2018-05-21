@@ -1,21 +1,21 @@
 # python disable cache
-PYTHONDONTWRITEBYTECODE=1
+export PYTHONDONTWRITEBYTECODE=1
 
 # qt5ct
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # execute file path
-PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH
 
 # {{{ development environment
 # Scripts
-PATH=$HOME/bin/scripts:$PATH
-PATH=$HOME/bin/scripts/bashell:$PATH
-PATH=$HOME/bin/scripts/python:$PATH
-PATH=$HOME/bin/scripts/perl:$PATH
+export PATH=$HOME/bin/scripts:$PATH
+export PATH=$HOME/bin/scripts/bashell:$PATH
+export PATH=$HOME/bin/scripts/python:$PATH
+export PATH=$HOME/bin/scripts/perl:$PATH
 
 # ccache
-PATH="/usr/lib/ccache/bin:$PATH"
+export PATH=/usr/lib/ccache/bin:$PATH
 
 # Android Development
 export ANDROID_SDK_ROOT=$HOME/DEV/LIB/Android/sdk

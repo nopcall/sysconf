@@ -1,14 +1,11 @@
 #{{{ my alias configuration
-alias top10='print -l  ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 alias web_python="python -m SimpleHTTPServer 3000"
-alias mspeed="xinput --set-prop 'pointer:Game mouse' 'Device Accel Constant Deceleration' 4 &"
 alias kbdoff="sleep 0.1 ; xinput set-prop 'AT Translated Set 2 keyboard' 'Device Enabled' 0 "
 alias kbdon="sleep 0.1; xinput set-prop 'AT Translated Set 2 keyboard' 'Device Enabled' 1"
 alias touchoff="sleep 1; synclient touchpadoff=1"
 alias touchon="sleep 1; synclient touchpadoff=0"
 #alias xtouchpadoff="xinput set-int-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Off' 8 1"
 alias setkbrate="kbdrate -r 30.0 -d 250 "
-alias rrm="/bin/rm -vi"
 alias l='ls -FlA1 --color=yes'
 alias find='noglob find'        # noglob for find
 alias grep='grep -I --color=yes'
@@ -16,39 +13,15 @@ alias egrep='egrep -I --color=yes'
 alias cal='cal -3'
 alias freeze='kill -STOP'
 alias ls=$'ls -Fh --color=yes -X'
-# alias ls=$'ls -h --color=auto -X --time-style="+\e[33m[\e[32m%Y-%m-%d \e[35m%k:%M\e[33m]\e[m"'
 alias ll='ls -Fl'
 alias df='df -Th'
 alias du='du -h'
 alias dud='du -s *(/)'								# show directories size
 # date for US and CN
 alias dateall='for i in US/Eastern Australia/{Brisbane,Sydney} Asia/{Hong_Kong,Singapore} Europe/Paris; do printf %-22s "$i:";TZ=$i date +"%m-%d %a %H:%M";done'
-# bloomberg radio
-alias pyprof='python -m cProfile'
-alias python='nice python'
 alias info='info --vi-keys'
-alias rsync='rsync --progress --partial'
-alias ri='ri -T -f ansi --width=$COLUMNS'
-alias history='history 1'       #zsh specific
-alias vless="/usr/share/vim/vim73/macros/less.sh"
-alias c='clear'
-alias port='netstat -ntlp'      #opening ports
 # Terminal - Harder, Faster, Stronger SSH clients
-# alias ssh="ssh -4 -C -c blowfish-cbc"
-#alias e264='mencoder -vf harddup -ovc x264 -x264encopts crf=22:subme=6:frameref=2:8x8dct:bframes=3:weight_b:threads=auto -oac mp3lame -lameopts aq=7:mode=0:vol=1.2:vbr=2:q=6 -srate 32000'
-#alias e264='mencoder -vf harddup -ovc x264 -x264encopts crf=22:subme=6:frameref=2:8x8dct:bframes=3:weight_b:threads=auto -oac copy'
-#alias tree="tree --dirsfirst"
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-[ -d /usr/share/man/zh_CN ] && alias cman="MANPATH=/usr/share/man/zh_CN man"
-alias tnethack='telnet nethack.alt.org'
-alias tslashem='telnet slashem.crash-override.net'
-#}}}
-
-#{{{ free ssh proxy
-#http://blog.onlybird.com/%E5%85%8D%E8%B4%B9ssh%E4%BB%A3%E7%90%86
-alias ssh_proxy_w="ssh -qTfnN -D 1991 onlybird@ssh.unssh.com -p 9999"
-alias ssh_proxy_u="ssh -qTfnN -D 1991 onlybird@ssh2012.unssh.com -p 9999"
-alias ipaddr="wget http://checkip.dyndns.org/ -q -O - | grep -Eo '\<[[:digit:]]{1,3}(\.[[:digit:]]{1,3}){3}\>'"
+alias ssh="ssh -4 -C -c blowfish-cbc"
 #}}}
 
 #{{{ quick get information of a graphic programe
@@ -78,7 +51,6 @@ for i in rar zip 7z lzma;	alias -s $i="7z x "
 
 #{{{ advance utils
 (bin-exist emacsclient) && alias em="emacsclient "
-(bin-exist gcp) && alias cp="/usr/bin/gcp "
 (bin-exist rsync) && alias bcp="rsync -aP "
 (bin-exist vim) && alias vi='vim'
 (bin-exist pal) && alias pal="pal -r 0-7 --color"
