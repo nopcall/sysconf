@@ -13,7 +13,7 @@ SYSCONF_ZSH_DIR=$SYSCONF_DIR/zsh_conf
 source $SYSCONF_ZSH_DIR/zshrc.theme
 
 # oh-my-zsh plugins dependence on platform
-plugins=(taskwarrior tmux colored-man autojump git sudo history-substring-search)
+plugins=(taskwarrior tmux colored-man-pages docker autojump git sudo history-substring-search)
 
 # source oh-my-zsh environment
 source $ZSH/oh-my-zsh.sh
