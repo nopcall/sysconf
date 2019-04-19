@@ -1,5 +1,0 @@
-"{{{ addon fix
-" ublock popup invisable
-style -name ublick * #nav-bar * { visibility: visible; }
-
-"}}}
