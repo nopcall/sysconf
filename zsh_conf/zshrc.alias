@@ -16,7 +16,6 @@ alias ls=$'ls -Fh --color=yes -X'
 alias ll='ls -Fl'
 alias df='df -Th'
 alias du='du -h'
-alias dud='du -s *(/)'								# show directories size
 # date for US and CN
 alias dateall='for i in US/Eastern Australia/{Brisbane,Sydney} Asia/{Hong_Kong,Singapore} Europe/Paris; do printf %-22s "$i:";TZ=$i date +"%m-%d %a %H:%M";done'
 alias info='info --vi-keys'
@@ -25,35 +24,17 @@ alias ssh="ssh -4 -C -c blowfish-cbc"
 #}}}
 
 #{{{ quick get information of a graphic programe
-# type: What kind of window is it? A menu, a dialog, a tooltip, or something else?
-alias typeofwin='xprop _NET_WM_WINDOW_TYPE | cut -d_ -f10'
-# role: What is the window's role? (Only useful for some programs. Usually blank.)
-alias roleofwin='xprop WM_WINDOW_ROLE | cut -d\" -f2 '
-# name: What is the window's class name?
-alias nameofwin='xprop WM_CLASS | cut -d\" -f2 '
-# class: What is the window's class?
-alias classofwin='xprop WM_CLASS | cut -d\" -f4 '
-# title: What is written in the window's title bar?
-alias titleofwin='xprop WM_NAME | cut -d\" -f2 '
-# xid: What is the window's XID? (Only useful for identifying a window that's already open.)
-alias xidofwin='xwininfo | grep "Window id:" | cut -d ' ' -f4 '
-#}}}
-
-#{{{ file types
-# (bin-exist zathura) && alias -s pdf=zathura || (bin-exist apvlv) && alias -s pdf=apvlv
-# (bin-exist chmsee) && alias -s chm=chmsee
-alias -s ps=gv
-# for i in gif jpeg jpg png;	alias -s $i=imgsee                #sxiv
-for i in avi rmvb wmv mp4;	alias -s $i=smplayer
-# for i in mp3 m4a ape flac kgx; alias -s $i=mocp
-for i in rar zip 7z lzma;	alias -s $i="7z x "
+alias wintype='xprop _NET_WM_WINDOW_TYPE | cut -d_ -f10'
+alias winrole='xprop WM_WINDOW_ROLE | cut -d\" -f2 '
+alias winname='xprop WM_CLASS | cut -d\" -f2 '
+alias winclass='xprop WM_CLASS | cut -d\" -f4 '
+alias wintitle='xprop WM_NAME | cut -d\" -f2 '
+alias winxid='xwininfo | grep "Window id:" | cut -d ' ' -f4 '
 #}}}
 
 #{{{ advance utils
-(bin-exist emacsclient) && alias em="emacsclient "
+(bin-exist emacsclient) && alias em="emacsclient"
 (bin-exist rsync) && alias bcp="rsync -aP "
-(bin-exist vim) && alias vi='vim'
-(bin-exist pal) && alias pal="pal -r 0-7 --color"
 (bin-exist setxkbmap) && alias c2c="setxkbmap -option ctrl:swapcaps" && alias cmc="setxkbmap -option caps:ctrl_modifier" && alias cnoc="setxkbmap -option ctrl:nocaps"
 # (bin-exist trash) && alias rm="trash" && alias restrash="restore-trash" && alias lstrash="trash-list"
 (bin-exist ag) || alias ag="grep"

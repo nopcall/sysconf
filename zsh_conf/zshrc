@@ -4,8 +4,7 @@ DEFAULT_USER=`whoami`
 # report to me when people login/logout
 watch=(notme)
 
-# custom config dir path
-EXTRA_DATA=$HOME/Data
+# config dir path
 SYSCONF_DIR=$HOME/.sysconf
 SYSCONF_ZSH_DIR=$SYSCONF_DIR/zsh_conf
 
@@ -32,19 +31,5 @@ source $SYSCONF_ZSH_DIR/zshrc.hhkb
 # Gentoo
 source $SYSCONF_ZSH_DIR/zshrc.gentoo
 
-# Customize to your needs...
-if [[ -f ~/.zshrc.local ]]; then
-  source $HOME/.zshrc.local
-fi
-
-#{{{ have no idea
-typeset -U PATH
-if [[ "$TERM" == "dumb" ]]; then
-    unsetopt zle
-    unsetopt prompt_cr
-    unsetopt prompt_subst
-    unfunction precmd
-    unfunction preexec
-    PS1='$ '
-fi
-#}}}
+# local
+[[ -f ~/.zshrc.local ]] && source $HOME/.zshrc.local

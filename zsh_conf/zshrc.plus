@@ -8,40 +8,7 @@ setopt EXTENDED_HISTORY								# add time-stamp for commands
 setopt AUTO_PUSHD								# cd with hitorical directory
 setopt PUSHD_IGNORE_DUPS
 
-# # {{{ 每个目录使用独立的历史纪录
-# HISTDIR="$HOME/.zhistory"
-# [[ ! -d "$HISTDIR" ]] && mkdir -p "$HISTDIR"
-# HISTFILE="$HISTDIR/${PWD//\//:}"
-# chpwd() {
-# #   fc -W                                       # write current history  file
-# #   "setopt INC_APPEND_HISTORY"
-#     HISTFILE="$HISTDIR/${PWD//\//:}"            # set new history file
-#     [[ ! -e "$HISTFILE" ]] && touch $HISTFILE
-#     local ohistsize=$HISTSIZE
-#         HISTSIZE=0                              # Discard previous dir's history
-#         HISTSIZE=$ohistsize                     # Prepare for new dir's history
-#     fc -R                                       # read from current histfile
-# }
-
-# function allhistory { cat $HISTDIR/* }                                   #*/
-# function convhistory {
-#             sort $1 | sed 's/^:\([ 0-9]*\):[0-9]*;\(.*\)/\1::::::\2/' |
-#             awk -F"::::::" '{ $1=strftime("%Y-%m-%d %T",$1) "|"; print }'
-# }
-
-# #使用 histall 命令查看全部历史纪录
-# function histall { convhistory =(allhistory) |
-#             sed '/^.\{20\} *cd/i\\' }
-# #使用 hist 查看当前目录历史纪录
-# function hist { convhistory $HISTFILE }
-
-# #全部历史纪录 top55
-# function top55 { allhistory | awk -F':[ 0-9]*:[0-9]*;' '{ $1="" ; print }' |	\
-#     sed 's/ /\n/g' | sed '/^$/d' | sort | uniq -c | sort -nr | head -n 55 }
-# # }}}
-
 # 以下字符视为单词的一部分
-#WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 WORDCHARS='*?[]~=&;!#$%^(){}<>'
 # }}}
 
@@ -74,7 +41,7 @@ zstyle ':completion:*' expand 'yes'
 zstyle ':completion:*' squeeze-slashes 'yes'
 zstyle ':completion::complete:*' '\\'
 
-# colofull menu *not* work with MAC
+# colofull menu *NOT* work on osx
 if [ `uname` != 'Darwin' ]; then
     eval $(dircolors -b)
     export ZLSCOLORS="${LS_COLORS}"
@@ -112,9 +79,9 @@ zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directori
 
 ## {{{ 行编辑高亮模式
 # Ctrl+@ 设置标记，标记和光标点之间为 region
-zle_highlight=(region:bg=magenta #选中区域
-         special:bold      #特殊字符
-         isearch:underline)#搜索时使用的关键字
+zle_highlight=(region:bg=magenta  #选中区域
+               special:bold       #特殊字符
+               isearch:underline) #搜索时使用的关键字
 # }}}
 
 ## {{{ 空行(光标在行首)补全 "cd "
