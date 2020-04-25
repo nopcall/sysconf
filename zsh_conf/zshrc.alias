@@ -1,6 +1,6 @@
 #{{{ my alias configuration
-alias web_python="python -m SimpleHTTPServer 3000"
-alias kbdoff="sleep 0.1 ; xinput set-prop 'AT Translated Set 2 keyboard' 'Device Enabled' 0 "
+alias web_python="python -m http.server 8080"
+alias kbdoff="sleep 0.1; xinput set-prop 'AT Translated Set 2 keyboard' 'Device Enabled' 0 "
 alias kbdon="sleep 0.1; xinput set-prop 'AT Translated Set 2 keyboard' 'Device Enabled' 1"
 alias touchoff="sleep 1; synclient touchpadoff=1"
 alias touchon="sleep 1; synclient touchpadoff=0"
@@ -19,7 +19,6 @@ alias du='du -h'
 # date for US and CN
 alias dateall='for i in US/Eastern Australia/{Brisbane,Sydney} Asia/{Hong_Kong,Singapore} Europe/Paris; do printf %-22s "$i:";TZ=$i date +"%m-%d %a %H:%M";done'
 alias info='info --vi-keys'
-# Terminal - Harder, Faster, Stronger SSH clients
 alias ssh="ssh -4 -C -c blowfish-cbc"
 #}}}
 
@@ -33,11 +32,11 @@ alias winxid='xwininfo | grep "Window id:" | cut -d ' ' -f4 '
 #}}}
 
 #{{{ advance utils
-(bin-exist emacsclient) && alias em="emacsclient"
+(bin-exist emacsclient) && alias em="emacsclient" && alias et="emacsclient -t" && alias ed="emacsclient -d $DISPLAY"
 (bin-exist rsync) && alias bcp="rsync -aP "
 (bin-exist setxkbmap) && alias c2c="setxkbmap -option ctrl:swapcaps" && alias cmc="setxkbmap -option caps:ctrl_modifier" && alias cnoc="setxkbmap -option ctrl:nocaps"
 # (bin-exist trash) && alias rm="trash" && alias restrash="restore-trash" && alias lstrash="trash-list"
-(bin-exist ag) || alias ag="grep"
+# (bin-exist ag) || alias ag="grep"
 #}}}
 
 #{{{ no correct for mkdir mv and cp
