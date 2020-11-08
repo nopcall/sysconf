@@ -1,5 +1,0 @@
-if [[ `whoami` = "root" ]]; then
-    ZSH_THEME="root"
-else
-    ZSH_THEME="nopcall"
-fi

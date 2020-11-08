@@ -1,0 +1,30 @@
+# report to me when people login/logout
+watch=(notme)
+
+# config dir path
+SYSCONF_DIR=$HOME/.sysconf
+CUSTOM=$SYSCONF_DIR/zsh/custom
+
+# oh-my-zsh
+source $CUSTOM/zshrc.omz
+
+# environment
+source $CUSTOM/zshrc.env
+
+# functions
+source $CUSTOM/zshrc.func
+
+# zsh plus
+source $CUSTOM/zshrc.plus
+
+# source alias
+source $CUSTOM/zshrc.alias
+
+# fix HHKB numpad
+source $CUSTOM/zshrc.hhkb
+
+# Gentoo
+source $CUSTOM/zshrc.gentoo
+
+# local
+[[ -f ~/.zshrc.local ]] && source $HOME/.zshrc.local
