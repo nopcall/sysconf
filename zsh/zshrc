@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.sysconf/zsh_conf/oh-my-zsh
+OMZ=$HOME/.sysconf/zsh/oh-my-zsh
 DEFAULT_USER=`whoami`
 # report to me when people login/logout
 watch=(notme)
 
 # config dir path
 SYSCONF_DIR=$HOME/.sysconf
-SYSCONF_ZSH_DIR=$SYSCONF_DIR/zsh_conf
+SYSCONF_ZSH_DIR=$SYSCONF_DIR/zsh
 
 # zsh theme
 source $SYSCONF_ZSH_DIR/zshrc.theme
@@ -15,7 +15,7 @@ source $SYSCONF_ZSH_DIR/zshrc.theme
 plugins=(taskwarrior tmux colored-man-pages docker autojump git sudo history-substring-search)
 
 # source oh-my-zsh environment
-source $ZSH/oh-my-zsh.sh
+source $OMZ/oh-my-zsh.sh
 
 # environment
 source $SYSCONF_ZSH_DIR/zshenv

@@ -1,10 +1,15 @@
 #!/bin/bash
 
 PWD="$(pwd)"
+ROOT="$HOME/.sysconf"
+ln -s $PWD $Root
 
-HCONF="$HOME/.sysconf"
+ZSH=$ROOT/zsh
+ln -s $ZSH/zshrc $HOME/.zshrc
 
-ln -s $PWD $HCONF
+TMUX=$ROOT/tmux
+ln -s $TMUX/init.conf $HOME/.tmux.conf
 
-ln -s $HCONF/init.conf $HOME/.tmux.conf
-ln -s $HCONF/zshrc $HOME/.zshrc
+EMACS=$ROOT/emacs
+SPACEMACS=$EMACS/spacemacs
+ln -s $SPACEMACS/init.el $HOME/.spacemacs
