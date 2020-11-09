@@ -1,5 +1,1 @@
-# *inux tools configuration
-
-# TODO
-
-more .
+dumpcode

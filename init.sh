@@ -17,7 +17,7 @@ install() {
 
     ln -s $TMUX/init.conf $HOME/.tmux.conf 2>&1
 
-    # ln -s $SPACEMACS/repos $HOME/.emacs.d 2>&1
+    ln -s $SPACEMACS/repos $HOME/.emacs.d 2>&1
     ln -s $SPACEMACS/init.el $HOME/.spacemacs 2>&1
 }
 
@@ -32,7 +32,7 @@ uninstall() {
     rm -rf $HOME/.tmux.conf 2>&1
 
     # emacs
-    # rm -rf $HOME/.emacs.d 2>&1
+    rm -rf $HOME/.emacs.d 2>&1
     rm -rf $HOME/.spacemacs 2>&1
 }
 
