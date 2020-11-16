@@ -308,21 +308,26 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
 
    ;; Default major mode of the scratch buffer (default `text-mode')
-   dotspacemacs-scratch-mode 'org-mode
+   dotspacemacs-scratch-mode 'emacs-lisp-mode
+
+   ;; If non-nil, *scratch* buffer will be persistent. Things you write down in
+   ;; *scratch* buffer will be saved and restored automatically.
+   dotspacemacs-scratch-buffer-persistent nil
+
+   ;; If non-nil, `kill-buffer' on *scratch* buffer
+   ;; will bury it instead of killing.
+   dotspacemacs-scratch-buffer-unkillable nil
 
    ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
    ;; (default nil)
-   dotspacemacs-initial-scratch-message nil
+   dotspacemacs-initial-scratch-message ";; SHOW ME YOUR TRICK!\n;; "
 
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(doom-solarized-light
-                         doom-gruvbox-light
-                         spacemacs-light
                          doom-solarized-dark
-                         kaolin-valley-dark
-                         doom-sourcerer
+                         spacemacs-light
                          spacemacs-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -382,11 +387,11 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil the default layout name is displayed in the mode-line.
    ;; (default nil)
-   dotspacemacs-display-default-layout nil
+   dotspacemacs-display-default-layout t
 
    ;; If non-nil then the last auto saved layouts are resumed automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts t
 
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
@@ -431,7 +436,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar t
+   dotspacemacs-loading-progress-bar nil
 
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
