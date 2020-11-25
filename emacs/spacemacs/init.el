@@ -150,12 +150,13 @@ This function should only modify configuration layer settings."
      common-lisp
      emacs-lisp
      (clojure :variables
-              cider-overlays-use-font-lock t
-              cider-preferred-build-tool 'clojure-cli
+              clojure-backend 'cider
               clojure-toplevel-inside-comment-form t
               clojure-enable-fancify-symbols t
               clojure-enable-linters 'clj-kondo
-              clojure-enable-clj-refactor t)
+              clojure-enable-clj-refactor t
+              cider-overlays-use-font-lock t
+              cider-preferred-build-tool 'clojure-cli)
      ;; java/ jvm
      (java :variables
            java-backend 'lsp)
