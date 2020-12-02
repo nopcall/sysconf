@@ -344,8 +344,7 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
-   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-   ;; quickly tweak the mode-line size to make separators look not too crappy.
+   ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("Fira Code Retina"
                                :size 10.0
                                :weight normal
@@ -501,9 +500,7 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers '(:visual t
-                                       :disabled-for-modes dired-mode doc-view-mode pdf-view-mode
-                                       :size-limit-kb 999)
+   dotspacemacs-line-numbers '(:visual t :size-limit-kb 999 :disabled-for-modes dired-mode doc-view-mode pdf-view-mode)
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
