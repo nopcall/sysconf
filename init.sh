@@ -3,7 +3,7 @@
 PWD="$(cd "$(dirname "$0")" > /dev/null 2>&1 ; pwd -P)"
 ROOT=$HOME/.sysconf
 
-XORG=$ROOT/Xorg
+XORG=$ROOT/xorg
 ZSH=$ROOT/zsh
 TMUX=$ROOT/tmux
 EMACS=$ROOT/emacs
