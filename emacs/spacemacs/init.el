@@ -152,10 +152,11 @@ This function should only modify configuration layer settings."
      (clojure :variables
               clojure-backend 'cider
               clojure-toplevel-inside-comment-form t
-              clojure-enable-fancify-symbols t
+              clojure-enable-fancify-symbols window-system
               clojure-enable-linters 'clj-kondo
               clojure-enable-clj-refactor t
               cider-overlays-use-font-lock t
+              cider-mode-line-show-connection nil
               cider-preferred-build-tool 'clojure-cli)
      ;; java/ jvm
      (java :variables
@@ -344,7 +345,9 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
-   ;; Default font or prioritized list of fonts.
+   ;; Default font or prioritized list of fonts. The `:size' can be specified as
+   ;; a non-negative integer (pixel size), or a floating-point (point size).
+   ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Fira Code Retina"
                                :size 10.0
                                :weight normal
@@ -658,7 +661,7 @@ before packages are loaded."
   (spacemacs/toggle-golden-ratio-on)
 
   ;; safe structural edit
-  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
+  ;; (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
 
   ;; enable some mode only when programing
   (add-hook 'prog-mode-hook (lambda ()
@@ -727,22 +730,3 @@ before packages are loaded."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(youdao-dictionary yasnippet-snippets yapfify yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify vterm volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unkillable-scratch unicode-fonts unfill undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toc-org terminal-here tagedit symon symbol-overlay string-inflection sphinx-doc spaceline-all-the-icons smeargle slime-company slim-mode shell-pop scss-mode sass-mode restart-emacs ranger rainbow-mode rainbow-identifiers rainbow-delimiters pytest pyenv-mode py-isort pug-mode prettier-js powershell popwin pippel pipenv pip-requirements persistent-scratch pcre2el password-generator parinfer paradox pangu-spacing ox-twbs ox-hugo ox-gfm overseer orgit org-superstar org-sticky-header org-roam org-rich-yank org-projectile org-present org-pomodoro org-mime org-journal org-download org-cliplink org-brain open-junk-file nodejs-repl nameless mwim mvn multi-term move-text mmm-mode meghanada maven-test-mode markdown-toc magit-svn magit-section magit-gitflow lsp-ui lsp-python-ms lsp-pyright lsp-origami lsp-latex lsp-java lorem-ipsum livid-mode live-py-mode link-hint ligature kotlin-mode json-navigator json-mode js2-refactor js-doc insert-shebang indent-guide importmagic impatient-mode ibuffer-projectile hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-gtags helm-gitignore helm-git-grep helm-flx helm-descbinds helm-ctest helm-css-scss helm-company helm-cider helm-c-yasnippet helm-ag groovy-mode groovy-imports grip-mode graphviz-dot-mode google-translate google-c-style golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md ggtags fuzzy forge font-lock+ flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flycheck-kotlin flycheck-elsa flycheck-clj-kondo flycheck-bashate flx-ido fish-mode find-by-pinyin-dired fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras esh-help emr emojify emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-themes disaster dired-quick-sort diminish diff-hl devdocs deft define-word dactyl-mode cython-mode csv-mode cpp-auto-include conda company-ycmd company-web company-shell company-rtags company-reftex company-quickhelp company-lua company-emoji company-c-headers company-auctex company-anaconda common-lisp-snippets command-log-mode column-enforce-mode color-identifiers-mode cmake-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu chinese-wbim chinese-conv centered-cursor-mode ccls browse-at-remote blacken auto-yasnippet auto-highlight-symbol auto-compile ahk-mode aggressive-indent ace-pinyin ace-link ace-jump-helm-line ac-ispell)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
