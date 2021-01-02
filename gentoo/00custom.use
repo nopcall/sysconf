@@ -1,0 +1,15 @@
+# dev-lang/python		sqlite
+sys-apps/systemd         cgroup-hybrid
+x11-wm/awesome		dbus
+x11-terms/rxvt-unicode	256-color blink fading-colors pixbuf xft perl
+app-editors/emacs	gui Xaw3d athena dbus harfbuzz lcms m17n-lib json xft libxml2 dynamic-loading zlib jpeg png -alsa
+app-emulation/docker	btrfs aufs device-mapper
+app-text/texlive	cjk png
+dev-python/PyQt5	designer declarative gui widgets network
+media-sound/pulseaudio	dbus
+xorg-base/x11		-fonts
+# media-fonts/font-xfree86-type1 X
+
+#sys-block/gpartd	btrfs kde ntfs policykit fat
+#kde-frameworks/kio-extras	mtp
+#kde-frameworks/kwallet	gpg

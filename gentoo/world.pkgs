@@ -1,0 +1,47 @@
+// base
+eix
+pf-sources
+networkmanager
+linux-firmware
+sudo
+laptop-mode-tools
+nvidia-drivers
+bumblebee
+grub:2
+os-prober
+xorg-server / xorg-x11
+btrfs-progs
+
+// essential
+zsh
+tmux
+autojump
+emacs
+vim / neovim
+git
+the_silver_searcher
+
+// develop
+dev-java/openjdk-bin
+dev-lang/clojure
+
+
+// facilities
+awesome
+rxvt-unicode
+privoxy
+
+// fonts
+fira-code
+quivira
+dejavu
+wqy-microhei
+
+systemctl enable ---------------
+sshd
+bumblebeed
+NetworkManager
+laptop-mode
+
+/etc/systemd/logind.conf ------
+lidswitch = ignore
