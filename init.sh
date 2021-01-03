@@ -9,6 +9,9 @@ TMUX=$ROOT/tmux
 EMACS=$ROOT/emacs
 SPACEMACS=$EMACS/spacemacs
 
+CLOJURE=$ROOT/clojure
+LEIN=$CLOJURE/lein
+
 install() {
     ln -s $PWD $ROOT 2>&1
 
@@ -26,6 +29,9 @@ install() {
     # emacs
     ln -s $SPACEMACS/repos $HOME/.emacs.d 2>&1
     ln -s $SPACEMACS/init.el $HOME/.spacemacs 2>&1
+
+    # clojure lein
+    ln -s $LEIN $HOME/.lein
 }
 
 uninstall() {
@@ -45,6 +51,9 @@ uninstall() {
     # emacs
     unlink $HOME/.emacs.d 2>&1
     unlink $HOME/.spacemacs 2>&1
+
+    # clojure lein
+    unlink $HOME/.lein
 }
 
 # usage: init.sh [install|uninstall]
