@@ -82,9 +82,9 @@ confirm_yes() {
     [[ $sure == YES ]] && systemctl $1
 }
 
-for c in reboot poweroff halt shutdown; do
-   alias $c="confirm_yes $c";
-done
+#for c in reboot poweroff halt shutdown; do
+#   alias $c="confirm_yes $c";
+#done
 #}}}
 
 #{{{ check if a binary exists in path
