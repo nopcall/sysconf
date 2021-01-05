@@ -16,8 +16,8 @@ install() {
     ln -s $PWD $ROOT 2>&1
 
     # Xorg
-    ln -s $XORG/Xdefaults $HOME/.Xdefaults
-    ln -s $XORG/xinitrc $HOME/.xinitrc
+    ln -s $XORG/Xdefaults $HOME/.Xdefaults 2>&1
+    ln -s $XORG/xinitrc $HOME/.xinitrc 2>&1
 
     # zsh
     ln -s $ZSH/init.rc $HOME/.zshrc 2>&1
@@ -31,15 +31,15 @@ install() {
     ln -s $SPACEMACS/init.el $HOME/.spacemacs 2>&1
 
     # clojure lein
-    ln -s $LEIN $HOME/.lein
+    ln -s $LEIN $HOME/.lein 2>&1
 }
 
 uninstall() {
     unlink $ROOT 2>&1
 
     # Xorg
-    unlink $HOME/.Xdefaults
-    unlink $HOME/.xinitrc
+    unlink $HOME/.Xdefaults 2>&1
+    unlink $HOME/.xinitrc 2>&1
 
     # zsh
     unlink $HOME/.zshrc 2>&1
@@ -53,7 +53,7 @@ uninstall() {
     unlink $HOME/.spacemacs 2>&1
 
     # clojure lein
-    unlink $HOME/.lein
+    unlink $HOME/.lein 2>&1
 }
 
 # usage: init.sh [install|uninstall]
