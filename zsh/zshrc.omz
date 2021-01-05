@@ -3,7 +3,7 @@ OMZ=$HOME/.sysconf/zsh/oh-my-zsh
 
 # oh-my-zsh plugins dependence on platform
 plugins=(taskwarrior tmux colored-man-pages docker autojump history-substring-search
-        sudo gitfast lein zsh_reload)
+         sudo gitfast lein zsh_reload gpg-agent)
 
 # theme
 if [[ `whoami` = "root" ]]; then
