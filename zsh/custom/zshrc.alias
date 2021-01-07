@@ -1,10 +1,10 @@
-#{{{ my alias configuration
+# userful alias configuration ------------------------------------------------------
 alias web_python="python -m http.server 8080"
 alias kbdoff="sleep 0.1; xinput set-prop 'AT Translated Set 2 keyboard' 'Device Enabled' 0 "
 alias kbdon="sleep 0.1; xinput set-prop 'AT Translated Set 2 keyboard' 'Device Enabled' 1"
 alias touchoff="sleep 1; synclient touchpadoff=1"
 alias touchon="sleep 1; synclient touchpadoff=0"
-#alias xtouchpadoff="xinput set-int-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Off' 8 1"
+# alias xtouchpadoff="xinput set-int-prop 'SynPS/2 Synaptics TouchPad' 'Synaptics Off' 8 1"
 alias setkbrate="kbdrate -r 30.0 -d 250 "
 alias l='ls -FlA1 --color=yes'
 alias find='noglob find'        # noglob for find
@@ -20,25 +20,20 @@ alias du='du -h'
 alias dateall='for i in US/Eastern Australia/{Brisbane,Sydney} Asia/{Hong_Kong,Singapore} Europe/Paris; do printf %-22s "$i:";TZ=$i date +"%m-%d %a %H:%M";done'
 alias info='info --vi-keys'
 alias ssh="ssh -4 -C -c blowfish-cbc"
-#}}}
 
-#{{{ quick get information of a graphic programe
+# quick get information of a graphic programe ---------------------------------
 alias wintype='xprop _NET_WM_WINDOW_TYPE | cut -d_ -f10'
 alias winrole='xprop WM_WINDOW_ROLE | cut -d\" -f2 '
 alias winname='xprop WM_CLASS | cut -d\" -f2 '
 alias winclass='xprop WM_CLASS | cut -d\" -f4 '
 alias wintitle='xprop WM_NAME | cut -d\" -f2 '
 alias winxid='xwininfo | grep "Window id:" | cut -d ' ' -f4 '
-#}}}
 
-#{{{ advance utils
-(bin-exist emacsclient) && alias em="emacsclient" && alias et="emacsclient -t" && alias ed="emacsclient -d $DISPLAY"
+# advance utils ---------------------------------------------------------------
+# helper function to check if a binary exists in path
+bin-exist() {[[ -n ${commands[$1]} ]]}
+
+(bin-exist emacsclient) && alias e="emacsclient -a '' -c -t" && alias ec="emacsclient -a '' -c"
 (bin-exist rsync) && alias bcp="rsync -aP "
 (bin-exist setxkbmap) && alias c2c="setxkbmap -option ctrl:swapcaps" && alias cmc="setxkbmap -option caps:ctrl_modifier" && alias cnoc="setxkbmap -option ctrl:nocaps"
-# (bin-exist trash) && alias rm="trash" && alias restrash="restore-trash" && alias lstrash="trash-list"
-# (bin-exist ag) || alias ag="grep"
-#}}}
-
-#{{{ no correct for mkdir mv and cp
-# for i in mkdir mv cp;       alias $i="nocorrect $i"
-#}}}
+(bin-exist rg) || alias grep="rg" || (bin-exist ag) || alias grep="ag"

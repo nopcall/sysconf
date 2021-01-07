@@ -1,4 +1,4 @@
-# {{{ 关于历史纪录的配置
+# 关于历史纪录的配置 ----------------------------------------------------------
 export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE=~/.zhistory
@@ -8,11 +8,10 @@ setopt EXTENDED_HISTORY								# add time-stamp for commands
 setopt AUTO_PUSHD								# cd with hitorical directory
 setopt PUSHD_IGNORE_DUPS
 
-# 以下字符视为单词的一部分
+# 以下字符视为单词的一部分 ----------------------------------------------------
 WORDCHARS='*?[]~=&;!#$%^(){}<>'
-# }}}
 
-# {{{ 自动补全功能
+# 自动补全功能 ----------------------------------------------------------------
 setopt AUTO_LIST
 setopt AUTO_MENU
 #setopt MENU_COMPLETE								# auto select the first iterm of candidates
@@ -20,12 +19,12 @@ setopt AUTO_MENU
 autoload -U compinit
 compinit
 
-# auto complete cache
+# auto complete cache ---------------------------------------------------------
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path .zcache
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
-# auto complete candidate
+# auto complete candidate -----------------------------------------------------
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' menu select
 zstyle ':completion:*:*:default' force-list always
@@ -36,12 +35,12 @@ zstyle ':completion:predict:*' completer _complete
 zstyle ':completion:incremental:*' completer _complete _correct
 zstyle ':completion:*' completer _complete _prefix _correct _prefix _match _approximate
 
-# complete path
+# complete path ---------------------------------------------------------------
 zstyle ':completion:*' expand 'yes'
 zstyle ':completion:*' squeeze-slashes 'yes'
 zstyle ':completion::complete:*' '\\'
 
-# colofull menu *NOT* work on osx
+# colofull menu *NOT* work on osx ---------------------------------------------
 if [ `uname` != 'Darwin' ]; then
     eval $(dircolors -b)
     export ZLSCOLORS="${LS_COLORS}"
@@ -50,14 +49,7 @@ if [ `uname` != 'Darwin' ]; then
     zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 fi
 
-# 修正大小写
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-# 错误校正
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
-
-# kill 命令补全
+# kill 命令补全 ---------------------------------------------------------------
 compdef pkill=killall
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:*:*:*:processes' force-list always
@@ -73,18 +65,16 @@ zstyle ':completion:*:messages' format $'\e[01;35m -- %d --\e[0m'
 zstyle ':completion:*:warnings' format $'\e[01;31m -- No Matches Found --\e[0m'
 zstyle ':completion:*:corrections' format $'\e[01;32m -- %d (errors: %e) --\e[0m'
 
-# cd ~ 补全顺序
+# cd ~ 补全顺序 ---------------------------------------------------------------
 zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
-# }}}
 
-## {{{ 行编辑高亮模式
+## 行编辑高亮模式 -------------------------------------------------------------
 # Ctrl+@ 设置标记，标记和光标点之间为 region
 zle_highlight=(region:bg=magenta  #选中区域
                special:bold       #特殊字符
                isearch:underline) #搜索时使用的关键字
-# }}}
 
-## {{{ 空行(光标在行首)补全 "cd "
+## 空行(光标在行首)补全 "cd " -------------------------------------------------
 user-complete(){
     case $BUFFER in
   "" )                       # 空行填入 "cd "
@@ -116,24 +106,14 @@ user-complete(){
       ;;
     esac
 }
+
 zle -N user-complete
 bindkey "\t" user-complete
 
 # 显示 path-directories ,避免候选项唯一时直接选中
 cdpath="$HOME"
-# }}}
 
-# {{{
-zshaddhistory() {
-    cmd=${1%%$'\n'}
-    print -sr -- $cmd
-    LASTCMD="${(pj:\\\n:)${(f)1}}"
-    first_arg=${${(z)LASTCMD}[1]}
-    ( [[ `id -u $USER` -eq 0 ]] || [[ $first_arg == sudo ]] ) && logger -t "$USER@${TTY/\/dev\/}[$PWD]" $LASTCMD
-}
-# }}}
-
-# {{{
+# magic Enter button ----------------------------------------------------------
 magic-enter() {
     if [[ -z $BUFFER ]]
     then
@@ -145,14 +125,8 @@ magic-enter() {
 
 zle -N magic-enter
 bindkey "^M" magic-enter
-# }}}
 
-# {{{ pinyin change dir
-zstyle ':completion:*' user-expand _pinyin
-function _pinyin() { reply=($($HOME/bin/chsdir 0 $*)) }
-# }}}
-
-# {{{ 设置参数
+# 设置参数 --------------------------------------------------------------------
 setopt complete_aliases         #do not expand aliases _before_ completion has finished
 setopt auto_cd                  # if not a command, try to cd to it.
 setopt auto_pushd               # automatically pushd directories on dirstack
@@ -180,4 +154,3 @@ setopt numeric_glob_sort        # when globbing numbered files, use real countin
 setopt inc_append_history       # append to history once executed
 setopt prompt_subst             # prompt more dynamic, allow function in prompt
 setopt nonomatch
-# }}}
