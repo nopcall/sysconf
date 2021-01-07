@@ -649,13 +649,14 @@ before packages are loaded."
   (global-set-key (kbd "<f12>") 'toggle-input-method)
 
   ;; kill frame instead of kill process
-  ;; (defun kill-frame-or-server ()
-  ;;   "kill frame instead of process if running on daemon."
-  ;;   (interactive)
-  ;;   (if dotspacemacs-enable-server (spacemacs/frame-killer)
-  ;;     (spacemacs/prompt-kill-emacs)))
+  (defun kill-frame-or-server ()
+    "kill frame instead of process if running on daemon."
+    (interactive)
+    (if dotspacemacs-enable-server
+        (spacemacs/frame-killer)
+      (spacemacs/prompt-kill-emacs)))
 
-  ;; (evil-leader/set-key "q q" 'kill-frame-or-server)
+  (evil-leader/set-key "q q" 'kill-frame-or-server)
 
   ;; enable default settings
   (spacemacs/toggle-golden-ratio-on)
