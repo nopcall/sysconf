@@ -100,8 +100,12 @@ This function should only modify configuration layer settings."
           lsp-file-watch-threshold nil)
      ;; python interpreter / packages management
      (conda :variables
-            conda-anaconda-home (or (getenv "CONDA_HOME")
-                                    "~/Development/Python/miniconda3/envs"))
+            conda-anaconda-home (concat (getenv "HOME")
+                                        "/development/kit/python/miniconda3")
+            :eval-after-load
+            (conda-env-initialize-interactive-shells)
+            (conda-env-initialize-eshell)
+            (conda-env-autoactivate-mode))
      (deft :variables
        deft-directory org-directory
        deft-extensions '("org" "md" "txt"))
@@ -138,7 +142,7 @@ This function should only modify configuration layer settings."
              python-format-on-save nil
              python-save-before-test t
              python-test-runner '(pytest nose))
-     ;; ipython-notebook
+     ipython-notebook
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-enable-rtags-support nil
@@ -439,7 +443,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar nil
+   dotspacemacs-loading-progress-bar t
 
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
