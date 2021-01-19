@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first t
                       better-defaults-move-to-end-of-code-first t)
-     (git :variables git-magit-status-fullscreen t)
+     (git :variables git-magit-status-fullscreen nil)
      (multiple-cursors :variables multiple-cursors-backend 'evil-mc)
      (treemacs :variables
                treemacs-use-follow-mode t
