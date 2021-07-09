@@ -35,25 +35,25 @@ install() {
 }
 
 uninstall() {
-    unlink $ROOT 2>&1
+    rm -rf $ROOT 2>&1
 
     # Xorg
-    unlink $HOME/.Xdefaults 2>&1
-    unlink $HOME/.xinitrc 2>&1
+    rm -rf $HOME/.Xdefaults 2>&1
+    rm -rf $HOME/.xinitrc 2>&1
 
     # zsh
-    unlink $HOME/.zshrc 2>&1
-    unlink $PWD/zsh/oh-my-zsh/custom/themes/nopcall.zsh-theme 2>&1
+    rm -rf $HOME/.zshrc 2>&1
+    rm -rf $PWD/zsh/oh-my-zsh/custom/themes/nopcall.zsh-theme 2>&1
 
     # tmux
-    unlink $HOME/.tmux.conf 2>&1
+    rm -rf $HOME/.tmux.conf 2>&1
 
     # emacs
-    unlink $HOME/.emacs.d 2>&1
-    unlink $HOME/.spacemacs 2>&1
+    rm -rf $HOME/.emacs.d 2>&1
+    rm -rf $HOME/.spacemacs 2>&1
 
     # clojure lein
-    unlink $HOME/.lein 2>&1
+    rm -rf $HOME/.lein 2>&1
 }
 
 # usage: init.sh [install|uninstall]
