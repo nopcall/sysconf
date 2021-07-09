@@ -1,6 +1,6 @@
 // base
 eix
-pf-sources
+// pf-sources
 networkmanager
 linux-firmware
 sudo
@@ -19,12 +19,11 @@ autojump
 emacs
 vim / neovim
 git
-the_silver_searcher
+ripgrep / the_silver_searcher
 
 // develop
 dev-java/openjdk-bin
 dev-lang/clojure
-
 
 // facilities
 awesome
