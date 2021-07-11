@@ -93,9 +93,8 @@ This function should only modify configuration layer settings."
      github syntax-checking dap sphinx gtags imenu-list
      command-log csv graphviz ranger emoji
      (unicode-fonts :variables
-                    ;;unicode-fonts-enable-ligatures t
-                    ;;unicode-fonts-ligature-modes '(prog-mode)
-		    )
+                    unicode-fonts-enable-ligatures t
+                    unicode-fonts-ligature-modes '(prog-mode))
      (lsp :variables
           lsp-enable-file-watchers t
           lsp-file-watch-threshold nil)
@@ -165,7 +164,7 @@ This function should only modify configuration layer settings."
               cider-preferred-build-tool 'clojure-cli)
      ;; java/ jvm
      (java :variables
-           java-backend 'lsp)
+           java-backend 'meghanada)
      (kotlin :variables
              kotlin-backend 'company-kotlin)
      ;; web
@@ -365,7 +364,7 @@ It should only modify the values of Spacemacs settings."
    ;; Point size is recommended, because it's device independent. (default 10.0)
    ;; "Fira Code Retina"
    dotspacemacs-default-font '("Cascadia Code"
-                               :size 12.0
+                               :size 14.0
                                :weight normal
                                :width normal)
 
@@ -503,7 +502,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Show the scroll bar while scrolling. The auto hide time can be configured
    ;; by setting this variable to a number. (default t)
-   dotspacemacs-scroll-bar-while-scrolling t
+   dotspacemacs-scroll-bar-while-scrolling nil
 
    ;; Control line numbers activation.
    ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
@@ -652,10 +651,10 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; mirror
-  ;; (setq configuration-layer-elpa-archives
-  ;;       '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
-  ;;         ("org-cn"   . "http://elpa.emacs-china.org/org/")
-  ;;         ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+  (setq configuration-layer-elpa-archives
+        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
   ;; custom theme modification
   ;; - overriding default height of modeline
@@ -673,8 +672,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
-dump."
-  )
+dump.")
+
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -772,24 +771,4 @@ before packages are loaded."
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(evil-want-Y-yank-to-eol nil)
- '(safe-local-variable-values
-   '((eval progn
-           (pp-buffer)
-           (indent-buffer))
-     (javascript-backend . tide)
-     (javascript-backend . tern)
-     (javascript-backend . lsp))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+This function is called at the very end of Spacemacs initialization.")
