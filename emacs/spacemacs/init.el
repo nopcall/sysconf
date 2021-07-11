@@ -144,12 +144,12 @@ This function should only modify configuration layer settings."
              python-test-runner '(pytest nose))
      ipython-notebook
      (c-c++ :variables
-            c-c++-enable-clang-support t
-            c-c++-enable-rtags-support nil
-            c-c++-enable-cmake-ide-support nil
             c-c++-backend 'lsp-clangd
-            c-c++-lsp-enable-semantic-highlight 'rainbow
-            c-c++-default-mode-for-headers 'c-mode)
+            c-c++-adopt-subprojects t
+            c-c++-enable-google-style t
+            c-c++-enable-google-newline t
+            c-c++-enable-cmake-ide-support nil
+            c-c++-lsp-enable-semantic-highlight 'rainbow)
      ;; lisp
      common-lisp
      emacs-lisp
