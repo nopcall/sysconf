@@ -130,7 +130,7 @@ This function should only modify configuration layer settings."
                          doom-modeline-display-default-persp-name t
                          doom-modeline-minor-modes nil
                          doom-modeline-modal-icon nil)
-     spacemacs-editing spacemacs-editing-visual
+     spacemacs-editing spacemacs-editing-visual themes-megapack
      ;; for lisp dialect
      parinfer
      ;; programing language ------------------------------------------
@@ -343,7 +343,7 @@ It should only modify the values of Spacemacs settings."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes (if (display-graphic-p)
                            '(doom-solarized-light spacemacs-dark)
-                         '(doom-vibrant doom-onet))
+                         '(doom-vibrant doom-one))
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
