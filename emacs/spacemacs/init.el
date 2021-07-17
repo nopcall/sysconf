@@ -65,16 +65,18 @@ This function should only modify configuration layer settings."
                treemacs-collapse-dirs 3
                treemacs-lock-width t)
      (org :variables
-          org-directory (or (getenv "ORG_HOME") "~/Org")
+          org-directory (or (getenv "ORG_HOME") "~/documents/org")
           org-projectile-file "TODOs.org"
           org-enable-github-support t
           org-enable-bootstrap-support t
           org-enable-sticky-header t
+          ;; roam
           org-enable-roam-support t
+          org-roam-directory (or (getenv "ROAM_HOME") "~/documents/roam")
           ;; journal
           org-enable-org-journal-support t
-          org-journal-encrypt-journal t
           org-journal-dir (expand-file-name "Journal" org-directory)
+          org-journal-encrypt-journal t
           org-journal-file-format "%Y-%m-d"
           ;; hugo
           org-enable-hugo-support t)
@@ -107,8 +109,8 @@ This function should only modify configuration layer settings."
             (conda-env-initialize-eshell)
             (conda-env-autoactivate-mode))
      (deft :variables
-       deft-directory org-directory
-       deft-extensions '("org" "md" "txt"))
+           deft-directory org-directory
+           deft-extensions '("org" "md" "txt"))
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      (chinese :variables
               chinese-default-input-method 'wubi
@@ -341,9 +343,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes (if (display-graphic-p)
-                           '(doom-solarized-light spacemacs-dark)
-                         '(doom-vibrant doom-one))
+   dotspacemacs-themes '(doom-one doom-solarized-light spacemacs-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -352,7 +352,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(spacemacs :separator bar :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -521,7 +521,10 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers '(:visual t :size-limit-kb 999 :disabled-for-modes dired-mode doc-view-mode pdf-view-mode)
+   dotspacemacs-line-numbers '(:relative nil
+                               :visual t
+                               :size-limit-kb 512
+                               :disabled-for-modes dired-mode doc-view-mode pdf-view-mode)
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
@@ -655,14 +658,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
           ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
           ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
-  ;; custom theme modification
-  ;; - overriding default height of modeline
-  (setq-default theming-modifications
-                '((spacemacs-light (mode-line :height 0.92)
-                                   (mode-line-inactive :height 0.92))
-                  (doom-solarized-light (mode-line :height 0.92)
-                                        (mode-line-inactive :height 0.92))))
-
   ;; helm use tramp to figure out SSH/DNS setting
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"))
@@ -693,6 +688,11 @@ before packages are loaded."
 
   (evil-leader/set-key "q q" 'kill-frame-or-server)
 
+  ;; hide/change those icon
+  (spacemacs|diminish helm-gtags-mode " Ǥ" " hg")
+  (spacemacs|diminish hybrid-mode)
+  (spacemacs|diminish which-key-mode)
+
   ;; enable default settings
   (spacemacs/toggle-golden-ratio-on)
 
@@ -702,9 +702,9 @@ before packages are loaded."
   ;; enable some mode only when programing
   (add-hook 'prog-mode-hook (lambda ()
                               ;; (spacemacs/toggle-indent-guide-on)
-                              (spacemacs/toggle-truncate-lines-on)
+                              (spacemacs/toggle-fill-column-indicator-on)
                               ;; (spacemacs/toggle-hungry-delete-on)
-                              (spacemacs/toggle-fill-column-indicator-on)))
+                              (spacemacs/toggle-truncate-lines-on)))
 
   ;; org
   (with-eval-after-load 'org
