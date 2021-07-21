@@ -66,16 +66,16 @@ This function should only modify configuration layer settings."
                treemacs-lock-width t)
      (org :variables
           org-directory (or (getenv "ORG_HOME") "~/documents/org")
-          org-projectile-file "TODOs.org"
+          org-projectile-file "todo.org"
           org-enable-github-support t
           org-enable-bootstrap-support t
           org-enable-sticky-header t
           ;; roam
           org-enable-roam-support t
-          org-roam-directory (or (getenv "ROAM_HOME") "~/documents/roam")
+          org-roam-directory (expand-file-name "roam" org-directory)
           ;; journal
           org-enable-org-journal-support t
-          org-journal-dir (expand-file-name "Journal" org-directory)
+          org-journal-dir (expand-file-name "journal" org-directory)
           org-journal-encrypt-journal t
           org-journal-file-format "%Y-%m-d"
           ;; hugo
@@ -737,27 +737,9 @@ before packages are loaded."
                                  '((python . t) (C . t) (latex . t) (lisp . t)
                                    (emacs-lisp . t)))
 
-    ;; org-brain
-    (setq org-id-track-globally t
-          org-id-locations-file (expand-file-name ".org-id-locations"
-                                                  org-directory)
-          org-brain-path (or (getenv "BRAIN_HOME")
-                             (expand-file-name "Brain" org-directory))
-          org-brain-visualize-default-choices 'all
-          org-brain-title-max-length 12)
-
-    (with-eval-after-load 'org-capture
-      (push '("b" "Brain" plain (function org-brain-goto-end)
-              "* %i%?" :empty-lines 1)
-            org-capture-templates))
-
-    (with-eval-after-load 'evil
-      (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
-
     ;; org-agenda
     (setq org-agenda-files (dolist (file '("GTD.org" "Work.org" "Schedule.org"))
                              (expand-file-name file org-directory)))
-
     (with-eval-after-load 'org-agenda
       (require 'org-projectile)
       (mapcar #'(lambda (file)
