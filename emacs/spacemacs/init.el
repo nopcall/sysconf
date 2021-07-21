@@ -73,6 +73,7 @@ This function should only modify configuration layer settings."
           ;; roam
           org-enable-roam-support t
           org-roam-directory (expand-file-name "roam" org-directory)
+          org-roam-v2-ack t
           ;; journal
           org-enable-org-journal-support t
           org-journal-dir (expand-file-name "journal" org-directory)
@@ -91,9 +92,8 @@ This function should only modify configuration layer settings."
                       version-control-diff-tool 'diff-hl
                       version-control-global-margin t)
      ;; utilize ---------------------------------------------------------------
-     ;; spell-checking emoji
      github syntax-checking dap sphinx gtags imenu-list
-     command-log csv graphviz ranger emoji
+     command-log csv graphviz ranger emoji spell-checking
      (unicode-fonts :variables
                     unicode-fonts-enable-ligatures t
                     unicode-fonts-ligature-modes '(prog-mode))
@@ -102,7 +102,7 @@ This function should only modify configuration layer settings."
           lsp-file-watch-threshold nil)
      ;; python interpreter / packages management
      (conda :variables
-            conda-anaconda-home (file-truename (or (getenv "MINICONDA")
+            conda-anaconda-home (file-truename (or (getenv "CONDA_HOME")
                                                    "~/development/kit/python/miniconda3"))
             :eval-after-load
             (conda-env-initialize-interactive-shells)
