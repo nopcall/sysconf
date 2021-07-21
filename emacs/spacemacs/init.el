@@ -65,7 +65,7 @@ This function should only modify configuration layer settings."
                treemacs-collapse-dirs 3
                treemacs-lock-width t)
      (org :variables
-          org-directory (or (getenv "ORG_HOME") "~/documents/org")
+          org-directory (file-truename (or (getenv "ORG_HOME") "~/documents/org"))
           org-projectile-file "todo.org"
           org-enable-github-support t
           org-enable-bootstrap-support t
@@ -102,8 +102,8 @@ This function should only modify configuration layer settings."
           lsp-file-watch-threshold nil)
      ;; python interpreter / packages management
      (conda :variables
-            conda-anaconda-home (concat (getenv "HOME")
-                                        "/development/kit/python/miniconda3")
+            conda-anaconda-home (file-truename (or (getenv "MINICONDA")
+                                                   "~/development/kit/python/miniconda3"))
             :eval-after-load
             (conda-env-initialize-interactive-shells)
             (conda-env-initialize-eshell)
@@ -153,8 +153,7 @@ This function should only modify configuration layer settings."
             c-c++-enable-cmake-ide-support nil
             c-c++-lsp-enable-semantic-highlight 'rainbow)
      ;; lisp
-     common-lisp
-     emacs-lisp
+     common-lisp emacs-lisp
      (clojure :variables
               clojure-backend 'cider
               clojure-toplevel-inside-comment-form t
