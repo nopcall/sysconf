@@ -93,7 +93,7 @@ This function should only modify configuration layer settings."
                       version-control-global-margin t)
      ;; utilize ---------------------------------------------------------------
      github syntax-checking dap sphinx gtags imenu-list
-     command-log csv graphviz ranger emoji spell-checking
+     command-log csv graphviz ranger emoji
      (unicode-fonts :variables
                     unicode-fonts-enable-ligatures t
                     unicode-fonts-ligature-modes '(prog-mode))
