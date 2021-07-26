@@ -351,7 +351,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator bar :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(spacemacs :separator nil :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -612,7 +612,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-use-clean-aindent-mode t
 
    ;; Accept SPC as y for prompts if non nil. (default nil)
-   dotspacemacs-use-SPC-as-y t
+   dotspacemacs-use-SPC-as-y nil
 
    ;; If non-nil shift your number row to match the entered keyboard layout
    ;; (only in insert state). Currently supported keyboard layouts are:
@@ -726,9 +726,9 @@ before packages are loaded."
     (setq org-todo-keywords '((sequence "☛ TODO(t)" "|" "✔ DONE(d!/!)")
                               (sequence "⚑ WAITING(w@/!)" "⚑ SUSPEND(s@/!)" "|"
                                         "✘ CANCELED(c@/!)")))
+
     ;; latex preview scale
-    (setq org-format-latex-options (plist-put
-                                    org-format-latex-options :scale 2.0))
+    (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 
     ;; org-babel
     (setq org-confirm-babel-evaluate nil)
