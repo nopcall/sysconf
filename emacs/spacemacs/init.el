@@ -118,7 +118,7 @@ This function should only modify configuration layer settings."
               chinese-enable-fcitx nil
               chinese-enable-avy-pinyin t)
      (colors :variables
-             colors-enable-nyan-cat-progress-bar nil
+             colors-enable-nyan-cat-progress-bar t
              colors-colorize-identifiers 'variables)
      (spacemacs-layouts :variables
                         spacemacs-layouts-restrict-spc-tab t
