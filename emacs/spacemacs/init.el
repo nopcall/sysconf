@@ -93,7 +93,12 @@ This function should only modify configuration layer settings."
                       version-control-global-margin t)
      ;; utilize ---------------------------------------------------------------
      github syntax-checking dap sphinx gtags imenu-list
-     command-log csv graphviz ranger emoji
+     command-log csv graphviz emoji
+     (ranger :variable
+             ranger-override-dired 'ranger
+             ranger-show-prerview t
+             ranger-max-preview-size 2
+             ranger-ignored-extensions '("mkv" "mp4" "iso" "db"))
      (unicode-fonts :variables
                     unicode-fonts-enable-ligatures t
                     unicode-fonts-ligature-modes '(prog-mode))
@@ -152,6 +157,7 @@ This function should only modify configuration layer settings."
             c-c++-enable-google-newline t
             c-c++-enable-cmake-ide-support nil
             c-c++-lsp-enable-semantic-highlight 'rainbow)
+     csharp
      ;; lisp
      common-lisp emacs-lisp
      (clojure :variables
@@ -506,8 +512,8 @@ It should only modify the values of Spacemacs settings."
    ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
    ;; `prog-mode' and `text-mode' derivatives. If set to `relative', line
    ;; numbers are relative. If set to `visual', line numbers are also relative,
-   ;; but lines are only visual lines are counted. For example, folded lines
-   ;; will not be counted and wrapped lines are counted as multiple lines.
+   ;; but only visual lines are counted. For example, folded lines will not be
+   ;; counted and wrapped lines are counted as multiple lines.
    ;; This variable can also be set to a property list for finer control:
    ;; '(:relative nil
    ;;   :visual nil
@@ -604,14 +610,14 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup `trailing
 
-   ;; If non nil activate `clean-aindent-mode' which tries to correct
-   ;; virtual indentation of simple modes. This can interfer with mode specific
+   ;; If non-nil activate `clean-aindent-mode' which tries to correct
+   ;; virtual indentation of simple modes. This can interfere with mode specific
    ;; indent handling like has been reported for `go-mode'.
    ;; If it does deactivate it here.
    ;; (default t)
    dotspacemacs-use-clean-aindent-mode t
 
-   ;; Accept SPC as y for prompts if non nil. (default nil)
+   ;; Accept SPC as y for prompts if non-nil. (default nil)
    dotspacemacs-use-SPC-as-y nil
 
    ;; If non-nil shift your number row to match the entered keyboard layout
@@ -631,7 +637,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-pretty-docs nil
 
    ;; If nil the home buffer shows the full path of agenda items
-   ;; and todos. If non nil only the file name is shown.
+   ;; and todos. If non-nil only the file name is shown.
    dotspacemacs-home-shorten-agenda-source nil
 
    ;; If non-nil then byte-compile some of Spacemacs files.
@@ -692,8 +698,8 @@ before packages are loaded."
   (spacemacs|diminish hybrid-mode)
   (spacemacs|diminish which-key-mode)
 
-  ;; enable default settings
-  (spacemacs/toggle-golden-ratio-on)
+  ;; enable default settings it's anoying on some mode
+  ;; (spacemacs/toggle-golden-ratio-on)
 
   ;; safe structural edit
   ;; (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
