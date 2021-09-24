@@ -137,7 +137,7 @@ This function should only modify configuration layer settings."
                          doom-modeline-display-default-persp-name t
                          doom-modeline-minor-modes nil
                          doom-modeline-modal-icon nil)
-     spacemacs-editing spacemacs-editing-visual themes-megapack
+     spacemacs-editing spacemacs-editing-visual
      ;; for lisp dialect
      parinfer
      ;; programing language ------------------------------------------
@@ -348,7 +348,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(doom-one doom-solarized-light spacemacs-dark)
+   dotspacemacs-themes '(spacemacs-dark
+                         spacemacs-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -658,6 +659,7 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; mirror
+  (setq package-check-signature nil)
   (setq configuration-layer-elpa-archives
         '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
           ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
