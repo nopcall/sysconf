@@ -529,7 +529,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-line-numbers '(:relative t
                                :visual nil
                                :size-limit-kb 1024
-                               :disabled-for-modes dired-mode doc-view-mode pdf-view-mode)
+                               :disabled-for-modes dired-mode doc-view-mode pdf-view-mode text-mode)
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
