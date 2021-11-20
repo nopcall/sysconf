@@ -1,19 +1,23 @@
 {:repl {:plugins [;; When running an older version of CIDER (pre 0.18), use the
                   ;; version that best matches M-x cider-version. For versions since
                   ;; 0.18.0 use whatever version is the most recent.
-                  [cider/cider-nrepl "0.21.1"]
+                  [cider/cider-nrepl "0.27.2"]
 
                   ;; Only necessary when using clj-refactor
-                  [refactor-nrepl "2.4.0"]
+                  [refactor-nrepl "3.1.0"]
 
                   ;; Only necessary when using sayid
-                  [com.billpiel/sayid "0.0.17"]]
-        :dependencies [[nrepl "0.4.5"]]
-        :repl-options {:nrepl-middleware [refactor-nrepl.middleware/wrap-refactor ;; clj-refactor
-                                          com.billpiel.sayid.nrepl-middleware/wrap-sayid]}} ;; sayid
+                  [com.billpiel/sayid "0.1.0"]
+
+                  ;; format
+                  [lein-cljfmt "0.8.0"]]
+        :dependencies [[nrepl "0.9.0-beta3"]]
+        :repl-options {:nrepl-middleware
+                       [refactor-nrepl.middleware/wrap-refactor ;; clj-refactor
+                        com.billpiel.sayid.nrepl-middleware/wrap-sayid]}} ;; sayid
 
  :user {:plugins []
-        :dependencies [[clj-kondo "2020.06.21"]]
+        :dependencies [[clj-kondo "2021.10.20-SNAPSHOT"]]
         :injections []
         :aliases {"clj-kondo" ["run" "-m" "clj-kondo.main" "--lint" "src"]}
         ;; :ultra {:repl false}

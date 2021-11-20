@@ -92,8 +92,9 @@ This function should only modify configuration layer settings."
                       version-control-diff-tool 'diff-hl
                       version-control-global-margin t)
      ;; utilize ---------------------------------------------------------------
-     github syntax-checking dap sphinx gtags imenu-list
-     command-log csv graphviz emoji
+     github syntax-checking dap sphinx
+     (gtags :variables gtags-enable-by-default nil)
+     imenu-list command-log csv graphviz emoji
      (ranger :variable
              ranger-override-dired 'ranger
              ranger-show-prerview t
@@ -157,14 +158,19 @@ This function should only modify configuration layer settings."
             c-c++-enable-google-newline t
             c-c++-enable-cmake-ide-support nil
             c-c++-lsp-enable-semantic-highlight 'rainbow)
+     (go :variables go-tab-width 4
+         godoc-at-point-function 'godoc-gogetdoc
+         go-format-before-save t
+         go-use-golangci-lint t)
+     rust
      csharp
      ;; lisp
      common-lisp emacs-lisp
      (clojure :variables
-              clojure-backend 'cider
-              clojure-toplevel-inside-comment-form t
-              clojure-enable-fancify-symbols window-system
+              clojure-backend 'lsp
               clojure-enable-linters 'clj-kondo
+              clojure-enable-fancify-symbols `display-graphic-p
+              clojure-toplevel-inside-comment-form t
               clojure-enable-clj-refactor t
               cider-overlays-use-font-lock t
               cider-mode-line-show-connection nil
@@ -741,6 +747,7 @@ before packages are loaded."
     (setq org-confirm-babel-evaluate nil)
     (org-babel-do-load-languages 'org-babel-load-languages
                                  '((python . t) (C . t) (latex . t) (lisp . t)
+                                   (clojure . t)
                                    (emacs-lisp . t)))
 
     ;; org-agenda
