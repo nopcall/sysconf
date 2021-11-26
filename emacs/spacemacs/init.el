@@ -562,7 +562,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, start an Emacs server if one is not already running.
    ;; (default nil)
-   dotspacemacs-enable-server nil
+   dotspacemacs-enable-server t
 
    ;; Set the emacs server socket location.
    ;; If nil, uses whatever the Emacs default is, otherwise a directory path
@@ -573,7 +573,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server nil
+   dotspacemacs-persistent-server t
 
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
@@ -691,14 +691,14 @@ before packages are loaded."
   (global-set-key (kbd "<f12>") 'toggle-input-method)
 
   ;; kill frame instead of kill process
-  (defun kill-frame-or-server ()
-    "kill frame instead of process if running on daemon."
-    (interactive)
-    (if dotspacemacs-enable-server
-        (spacemacs/frame-killer)
-      (spacemacs/prompt-kill-emacs)))
+  ;; (defun kill-frame-or-server ()
+  ;;   "kill frame instead of process if running on daemon."
+  ;;   (interactive)
+  ;;   (if dotspacemacs-enable-server
+  ;;       (spacemacs/frame-killer)
+  ;;     (spacemacs/prompt-kill-emacs)))
 
-  (evil-leader/set-key "q q" 'kill-frame-or-server)
+  ;; (evil-leader/set-key "q q" 'kill-frame-or-server)
 
   ;; hide/change those icon
   (spacemacs|diminish helm-gtags-mode " Ǥ" " hg")

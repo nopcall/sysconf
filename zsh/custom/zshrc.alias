@@ -1,7 +1,7 @@
 # userful alias configuration ------------------------------------------------------
 
 # useful service
-alias web_python="python -m http.server 8080"
+alias webpy="python -m http.server 8080"
 # date for US and CN
 alias dateall='for i in US/Eastern Australia/{Brisbane,Sydney} Asia/{Hong_Kong,Singapore} Europe/Paris; do printf %-22s "$i:";TZ=$i date +"%m-%d %a %H:%M";done'
 
@@ -38,7 +38,7 @@ alias setkbrate="kbdrate -r 30.0 -d 250 "
 # helper function to check if a binary exists in path
 bin-exist() {[[ -n ${commands[$1]} ]]}
 
-(bin-exist emacsclient) && alias et="emacsclient -a '' -c -t" && alias em="emacsclient -a '' -c"
+(bin-exist emacsclient) && alias ed="emacs --daemon" && alias e="emacsclient -a '' -c -t" && alias ee="emacsclient -a '' -c"
 (bin-exist rsync) && alias bcp="rsync -aP "
 (bin-exist setxkbmap) && alias c2c="setxkbmap -option ctrl:swapcaps" && alias cmc="setxkbmap -option caps:ctrl_modifier" && alias cnoc="setxkbmap -option ctrl:nocaps"
 (bin-exist ag) && alias grep="ag"
