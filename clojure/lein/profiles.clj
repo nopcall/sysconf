@@ -17,7 +17,7 @@
                         com.billpiel.sayid.nrepl-middleware/wrap-sayid]}} ;; sayid
 
  :user {:plugins []
-        :dependencies [[clj-kondo "2021.10.20-SNAPSHOT"]]
+        :dependencies [[clj-kondo "2021.09.25"]]
         :injections []
         :aliases {"clj-kondo" ["run" "-m" "clj-kondo.main" "--lint" "src"]}
         ;; :ultra {:repl false}
