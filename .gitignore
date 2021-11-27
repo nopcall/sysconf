@@ -9,3 +9,6 @@ pentadactyl/info
 /.zcache/*
 /clojure/lein/bin/
 /clojure/lein/self-installs/
+.lsp
+.clj-kondo
+/clojure/lein/repl-history
