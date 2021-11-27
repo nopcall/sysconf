@@ -7,3 +7,5 @@ pentadactyl/info
 /autokey/autokey.pid
 /.zcache
 /.zcache/*
+/clojure/lein/bin/
+/clojure/lein/self-installs/
