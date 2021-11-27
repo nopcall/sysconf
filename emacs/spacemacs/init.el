@@ -71,7 +71,7 @@ This function should only modify configuration layer settings."
           org-enable-bootstrap-support t
           org-enable-sticky-header t
           ;; roam
-          org-enable-roam-support t
+          org-enable-roam-support nil
           org-roam-directory (expand-file-name "roam" org-directory)
           org-roam-v2-ack t
           ;; journal
@@ -668,6 +668,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; (setq configuration-layer-elpa-archives
   ;;       '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
   ;;         ("org-cn"   . "http://elpa.emacs-china.org/org/")
+  ;;         ("nongnu-cn"   . "http://elpa.emacs-china.org/nongnu/")
   ;;         ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
   ;; helm use tramp to figure out SSH/DNS setting
